@@ -1,0 +1,13 @@
+{
+	"request":{
+		"method":"GET",
+		"url":"/mockservice"
+	},
+	"response":{
+		"status":200,
+		"body": "This is a Mock response",
+		"headers":{
+			"Content-Type":"text/plain"
+		}
+	}
+}

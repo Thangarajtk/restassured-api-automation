@@ -1,0 +1,39 @@
+package com.automation.tests;
+
+import static io.restassured.RestAssured.given;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
+
+import java.io.File;
+
+import org.testng.annotations.Test;
+
+import com.automation.constants.Constants;
+
+import io.restassured.response.Response;
+
+/**
+ * Dependency "json-schema-validator" has to be added to the project to perform JSON-Schema validation
+ * @author Administrator
+ *
+ */
+public class JsonSchemaValidation extends BaseTest {
+	
+	@Test(description = "Validating the JSON Schema")
+	public void validateJsonSchema() {
+		
+		File file = new File(Constants.JSONSCHEMAPATH);
+		
+		Response response = given().
+				spec(requestSpecification).
+			when().
+				get("/normal/webapi/all").
+			then().
+				statusCode(200).
+				body(matchesJsonSchema(file)).
+				extract().response();
+			
+			logRequestInReport(stringWriter.toString());
+			logResponseInReport("API RESPONSE", response.prettyPrint());
+	}
+
+}

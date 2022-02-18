@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="com.automation.listeners.CustomTestListeners"/>
+    <listener class-name="com.automation.listeners.RetryListener"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="com.automation.tests.DeleteParticularJobId">
+        <methods>
+          <include name="tearDown"/>
+          <include name="deleteRequestWithPathParam"/>
+          <include name="deleteSpecificRecordUsingDeleteRequest"/>
+          <include name="setUpSuite"/>
+          <include name="createResponseSpecification"/>
+          <include name="createRequestSpecification"/>
+        </methods>
+      </class> <!-- com.automation.tests.DeleteParticularJobId -->
+      <class name="com.automation.tests.PatchRequestToUpdateParticularJobId">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUpSuite"/>
+          <include name="createResponseSpecification"/>
+          <include name="patchRequestWithQueryParam"/>
+          <include name="createRequestSpecification"/>
+        </methods>
+      </class> <!-- com.automation.tests.PatchRequestToUpdateParticularJobId -->
+      <class name="com.automation.tests.PutRequestToUpdateJobDetails">
+        <methods>
+          <include name="tearDown"/>
+          <include name="updateUsingPutRequest"/>
+          <include name="setUpSuite"/>
+          <include name="createResponseSpecification"/>
+          <include name="createRequestSpecification"/>
+        </methods>
+      </class> <!-- com.automation.tests.PutRequestToUpdateJobDetails -->
+      <class name="com.automation.tests.XmlSchemaValidation">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUpSuite"/>
+          <include name="validateXmlDtdSchema"/>
+          <include name="createResponseSpecification"/>
+          <include name="createRequestSpecification"/>
+        </methods>
+      </class> <!-- com.automation.tests.XmlSchemaValidation -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

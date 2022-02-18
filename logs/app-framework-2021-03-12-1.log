@@ -1,0 +1,6 @@
+2021-03-12T12:42:53.205 | INFO  | tests.BaseTest : Inside @BeforeSuite Annotation to initialie the Extent Report
+2021-03-12T12:42:54.680 | INFO  | tests.BaseTest : Inside @BeforeMethod Annotation to log Request details
+2021-03-12T12:45:14.106 | INFO  | tests.BaseTest : Inside @BeforeSuite Annotation to initialie the Extent Report
+2021-03-12T12:45:20.032 | INFO  | tests.BaseTest : Inside @BeforeMethod Annotation to log Request details
+2021-03-12T12:47:24.921 | INFO  | tests.BaseTest : Inside @BeforeSuite Annotation to initialie the Extent Report
+2021-03-12T12:47:32.532 | INFO  | tests.BaseTest : Inside @BeforeMethod Annotation to log Request details

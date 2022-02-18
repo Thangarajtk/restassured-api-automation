@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": [
+    {
+      "type": "object",
+      "properties": {
+        "jobId": {
+          "type": "integer"
+        },
+        "jobTitle": {
+          "type": "string"
+        },
+        "jobDescription": {
+          "type": "string"
+        },
+        "experience": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "project": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "projectName": {
+                  "type": "string"
+                },
+                "technology": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "projectName",
+                "technology"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "jobId",
+        "jobTitle",
+        "jobDescription",
+        "experience",
+        "project"
+      ]
+    }
+  ]
+}

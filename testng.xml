@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<listeners>
+		<listener class-name="com.automation.listeners.CustomTestListeners"></listener>
+		<listener class-name="com.automation.listeners.RetryListener"></listener>
+	</listeners>
+	<test thread-count="5" name="Test">
+		<classes>
+			<class name = "com.automation.tests.GetJobDetails"></class>
+			<class name = "com.automation.tests.PostJobDetails"></class>
+			<class name = "com.automation.tests.PutRequestToUpdateJobDetails"></class>
+			<class name = "com.automation.tests.DeleteParticularJobId"></class>
+			<class name = "com.automation.tests.GetRequestWithQueryParams"></class>
+			<class name = "com.automation.tests.PatchRequestToUpdateParticularJobId"></class>
+			<class name = "com.automation.tests.HeadRequest"></class>
+			<class name = "com.automation.tests.GetRequestWithBasicAuth"/>
+			<class name = "com.automation.tests.GetRequestWithDigestAuth"/>
+			<class name = "com.automation.tests.JsonSchemaValidation"/>
+			<class name = "com.automation.tests.XmlSchemaValidation"/>
+			<class name = "com.automation.tests.XmlNamespaceValidation"/>
+			<class name = "com.automation.tests.SpecifyingRequestPort"/>
+			<class name = "com.automation.tests.ResponseAwareMatcher"/>
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
