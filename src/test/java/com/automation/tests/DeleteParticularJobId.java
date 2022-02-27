@@ -1,6 +1,8 @@
 package com.automation.tests;
 
 import static io.restassured.RestAssured.*;
+
+import com.automation.base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import io.restassured.http.ContentType;

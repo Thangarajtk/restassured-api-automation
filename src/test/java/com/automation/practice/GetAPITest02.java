@@ -3,7 +3,7 @@ package com.automation.practice;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.automation.tests.BaseTest;
+import com.automation.base.BaseTest;
 
 import io.restassured.RestAssured;
 import io.restassured.http.Method;

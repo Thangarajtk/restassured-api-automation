@@ -1,5 +1,6 @@
 package com.automation.tests;
 
+import com.automation.base.BaseTest;
 import org.testng.annotations.Test;
 import io.restassured.RestAssured;
 import io.restassured.config.XmlConfig;

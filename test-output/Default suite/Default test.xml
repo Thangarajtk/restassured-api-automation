@@ -5,7 +5,7 @@
     <failure type="java.lang.NullPointerException">
       <![CDATA[java.lang.NullPointerException
 at com.automation.reports.ExtentReportLogStatus.info(ExtentReportLogStatus.java:21)
-at com.automation.tests.BaseTest.writeRequestAndResponseInReport(BaseTest.java:71)
+at com.automation.base.BaseTest.writeRequestAndResponseInReport(BaseTest.java:71)
 at com.automation.tests.APITests.getNumberOfCircuits(APITests.java:22)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)

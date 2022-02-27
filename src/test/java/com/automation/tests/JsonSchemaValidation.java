@@ -5,9 +5,10 @@ import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 
 import java.io.File;
 
+import com.automation.base.BaseTest;
 import org.testng.annotations.Test;
 
-import com.automation.constants.Constants;
+import com.automation.constants.FrameworkConstants;
 
 import io.restassured.response.Response;
 
@@ -21,7 +22,7 @@ public class JsonSchemaValidation extends BaseTest {
 	@Test(description = "Validating the JSON Schema")
 	public void validateJsonSchema() {
 		
-		File file = new File(Constants.JSONSCHEMAPATH);
+		File file = new File(FrameworkConstants.JSONSCHEMAPATH);
 		
 		Response response = given().
 				spec(requestSpecification).

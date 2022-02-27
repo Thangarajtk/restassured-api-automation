@@ -2,6 +2,8 @@ package com.automation.tests;
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
+
+import com.automation.base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.automation.reports.ExtentReportLogStatus;

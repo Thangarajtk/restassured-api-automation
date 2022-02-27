@@ -2,6 +2,8 @@ package com.automation.tests;
 
 import static io.restassured.RestAssured.*;
 import java.io.File;
+
+import com.automation.base.BaseTest;
 import org.testng.annotations.Test;
 import io.restassured.response.Response;
 

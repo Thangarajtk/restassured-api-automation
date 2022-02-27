@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <listeners>
-    <listener class-name="com.automation.listeners.CustomTestListeners"/>
+    <listener class-name="com.automation.listeners.Listeners"/>
     <listener class-name="com.automation.listeners.RetryListener"/>
   </listeners>
   <test thread-count="5" name="Test(failed)">

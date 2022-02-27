@@ -4,7 +4,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-import com.automation.constants.Constants;
+import com.automation.constants.FrameworkConstants;
+
 
 public class PropertyUtils {
 	
@@ -16,7 +17,7 @@ public class PropertyUtils {
 	public static void initProperty() throws IOException {
 		prop = new Properties();
 		try {
-			input = new FileInputStream(Constants.CONFIGFILEPATH);
+			input = new FileInputStream(FrameworkConstants.CONFIGFILEPATH);
 			prop.load(input);
 		}
 		catch(Exception e) {

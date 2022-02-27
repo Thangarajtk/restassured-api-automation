@@ -3,8 +3,7 @@ package com.automation.practice;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.automation.practice.HandlingJson;
-import com.automation.tests.BaseTest;
+import com.automation.base.BaseTest;
 
 public class GetRequest extends BaseTest {
 	

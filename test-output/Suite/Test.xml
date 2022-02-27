@@ -113,85 +113,85 @@ at com.automation.tests.XmlSchemaValidation.validateXmlDtdSchema(XmlSchemaValida
   <testcase name="specifyPort" time="0.023" classname="com.automation.tests.SpecifyingRequestPort"/>
   <testcase name="validateResponseTime" time="0.035" classname="com.automation.tests.SpecifyingRequestPort"/>
   <testcase name="responseAwareMatcherTest" time="0.062" classname="com.automation.tests.ResponseAwareMatcher"/>
-  <testcase name="@AfterSuite tearDown" time="0.0" classname="com.automation.tests.BaseTest">
+  <testcase name="@AfterSuite tearDown" time="0.0" classname="com.automation.base.BaseTest">
     <ignored/>
   </testcase> <!-- @AfterSuite tearDown -->
-  <testcase name="@AfterSuite tearDown" time="0.0" classname="com.automation.tests.BaseTest">
+  <testcase name="@AfterSuite tearDown" time="0.0" classname="com.automation.base.BaseTest">
     <ignored/>
   </testcase> <!-- @AfterSuite tearDown -->
-  <testcase name="@AfterSuite tearDown" time="0.0" classname="com.automation.tests.BaseTest">
+  <testcase name="@AfterSuite tearDown" time="0.0" classname="com.automation.base.BaseTest">
     <ignored/>
   </testcase> <!-- @AfterSuite tearDown -->
-  <testcase name="@AfterSuite tearDown" time="0.0" classname="com.automation.tests.BaseTest">
+  <testcase name="@AfterSuite tearDown" time="0.0" classname="com.automation.base.BaseTest">
     <ignored/>
   </testcase> <!-- @AfterSuite tearDown -->
-  <testcase name="@AfterSuite tearDown" time="0.0" classname="com.automation.tests.BaseTest">
+  <testcase name="@AfterSuite tearDown" time="0.0" classname="com.automation.base.BaseTest">
     <ignored/>
   </testcase> <!-- @AfterSuite tearDown -->
-  <testcase name="@AfterSuite tearDown" time="0.0" classname="com.automation.tests.BaseTest">
+  <testcase name="@AfterSuite tearDown" time="0.0" classname="com.automation.base.BaseTest">
     <ignored/>
   </testcase> <!-- @AfterSuite tearDown -->
-  <testcase name="@AfterSuite tearDown" time="0.0" classname="com.automation.tests.BaseTest">
+  <testcase name="@AfterSuite tearDown" time="0.0" classname="com.automation.base.BaseTest">
     <ignored/>
   </testcase> <!-- @AfterSuite tearDown -->
-  <testcase name="@AfterSuite tearDown" time="0.0" classname="com.automation.tests.BaseTest">
+  <testcase name="@AfterSuite tearDown" time="0.0" classname="com.automation.base.BaseTest">
     <ignored/>
   </testcase> <!-- @AfterSuite tearDown -->
-  <testcase name="@AfterSuite tearDown" time="0.0" classname="com.automation.tests.BaseTest">
+  <testcase name="@AfterSuite tearDown" time="0.0" classname="com.automation.base.BaseTest">
     <ignored/>
   </testcase> <!-- @AfterSuite tearDown -->
-  <testcase name="@AfterSuite tearDown" time="0.0" classname="com.automation.tests.BaseTest">
+  <testcase name="@AfterSuite tearDown" time="0.0" classname="com.automation.base.BaseTest">
     <ignored/>
   </testcase> <!-- @AfterSuite tearDown -->
-  <testcase name="@AfterSuite tearDown" time="0.0" classname="com.automation.tests.BaseTest">
+  <testcase name="@AfterSuite tearDown" time="0.0" classname="com.automation.base.BaseTest">
     <ignored/>
   </testcase> <!-- @AfterSuite tearDown -->
-  <testcase name="@AfterSuite tearDown" time="0.0" classname="com.automation.tests.BaseTest">
+  <testcase name="@AfterSuite tearDown" time="0.0" classname="com.automation.base.BaseTest">
     <ignored/>
   </testcase> <!-- @AfterSuite tearDown -->
-  <testcase name="@AfterSuite tearDown" time="0.0" classname="com.automation.tests.BaseTest">
+  <testcase name="@AfterSuite tearDown" time="0.0" classname="com.automation.base.BaseTest">
     <ignored/>
   </testcase> <!-- @AfterSuite tearDown -->
   <testcase name="postRequestUsingJsonBody" time="0.0" classname="com.automation.tests.PostJobDetails">
     <ignored/>
   </testcase> <!-- postRequestUsingJsonBody -->
-  <testcase name="@BeforeSuite setUpSuite" time="0.0" classname="com.automation.tests.BaseTest">
+  <testcase name="@BeforeSuite setUpSuite" time="0.0" classname="com.automation.base.BaseTest">
     <ignored/>
   </testcase> <!-- @BeforeSuite setUpSuite -->
-  <testcase name="@BeforeSuite setUpSuite" time="0.0" classname="com.automation.tests.BaseTest">
+  <testcase name="@BeforeSuite setUpSuite" time="0.0" classname="com.automation.base.BaseTest">
     <ignored/>
   </testcase> <!-- @BeforeSuite setUpSuite -->
-  <testcase name="@BeforeSuite setUpSuite" time="0.0" classname="com.automation.tests.BaseTest">
+  <testcase name="@BeforeSuite setUpSuite" time="0.0" classname="com.automation.base.BaseTest">
     <ignored/>
   </testcase> <!-- @BeforeSuite setUpSuite -->
-  <testcase name="@BeforeSuite setUpSuite" time="0.0" classname="com.automation.tests.BaseTest">
+  <testcase name="@BeforeSuite setUpSuite" time="0.0" classname="com.automation.base.BaseTest">
     <ignored/>
   </testcase> <!-- @BeforeSuite setUpSuite -->
-  <testcase name="@BeforeSuite setUpSuite" time="0.0" classname="com.automation.tests.BaseTest">
+  <testcase name="@BeforeSuite setUpSuite" time="0.0" classname="com.automation.base.BaseTest">
     <ignored/>
   </testcase> <!-- @BeforeSuite setUpSuite -->
-  <testcase name="@BeforeSuite setUpSuite" time="0.0" classname="com.automation.tests.BaseTest">
+  <testcase name="@BeforeSuite setUpSuite" time="0.0" classname="com.automation.base.BaseTest">
     <ignored/>
   </testcase> <!-- @BeforeSuite setUpSuite -->
-  <testcase name="@BeforeSuite setUpSuite" time="0.0" classname="com.automation.tests.BaseTest">
+  <testcase name="@BeforeSuite setUpSuite" time="0.0" classname="com.automation.base.BaseTest">
     <ignored/>
   </testcase> <!-- @BeforeSuite setUpSuite -->
-  <testcase name="@BeforeSuite setUpSuite" time="0.0" classname="com.automation.tests.BaseTest">
+  <testcase name="@BeforeSuite setUpSuite" time="0.0" classname="com.automation.base.BaseTest">
     <ignored/>
   </testcase> <!-- @BeforeSuite setUpSuite -->
-  <testcase name="@BeforeSuite setUpSuite" time="0.0" classname="com.automation.tests.BaseTest">
+  <testcase name="@BeforeSuite setUpSuite" time="0.0" classname="com.automation.base.BaseTest">
     <ignored/>
   </testcase> <!-- @BeforeSuite setUpSuite -->
-  <testcase name="@BeforeSuite setUpSuite" time="0.0" classname="com.automation.tests.BaseTest">
+  <testcase name="@BeforeSuite setUpSuite" time="0.0" classname="com.automation.base.BaseTest">
     <ignored/>
   </testcase> <!-- @BeforeSuite setUpSuite -->
-  <testcase name="@BeforeSuite setUpSuite" time="0.0" classname="com.automation.tests.BaseTest">
+  <testcase name="@BeforeSuite setUpSuite" time="0.0" classname="com.automation.base.BaseTest">
     <ignored/>
   </testcase> <!-- @BeforeSuite setUpSuite -->
-  <testcase name="@BeforeSuite setUpSuite" time="0.0" classname="com.automation.tests.BaseTest">
+  <testcase name="@BeforeSuite setUpSuite" time="0.0" classname="com.automation.base.BaseTest">
     <ignored/>
   </testcase> <!-- @BeforeSuite setUpSuite -->
-  <testcase name="@BeforeSuite setUpSuite" time="0.0" classname="com.automation.tests.BaseTest">
+  <testcase name="@BeforeSuite setUpSuite" time="0.0" classname="com.automation.base.BaseTest">
     <ignored/>
   </testcase> <!-- @BeforeSuite setUpSuite -->
 </testsuite> <!-- Test -->

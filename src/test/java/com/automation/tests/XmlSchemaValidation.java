@@ -3,6 +3,8 @@ package com.automation.tests;
 import static io.restassured.RestAssured.*;
 import static io.restassured.matcher.RestAssuredMatchers.*;
 import java.io.File;
+
+import com.automation.base.BaseTest;
 import org.testng.annotations.Test;
 
 import io.restassured.http.ContentType;
