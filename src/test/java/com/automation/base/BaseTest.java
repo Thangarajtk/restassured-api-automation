@@ -6,10 +6,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
-
 import org.apache.commons.io.output.WriterOutputStream;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
@@ -28,8 +25,6 @@ import io.restassured.specification.ResponseSpecification;
 
 public class BaseTest {
 	
-	private static final Logger logger = LogManager.getLogger(BaseTest.class);
-	
 	protected static RequestSpecification requestSpecification;
 	protected static ResponseSpecification responseSpecification;
 	
@@ -40,7 +35,6 @@ public class BaseTest {
 	
 	@BeforeSuite
 	public void setUpSuite() {
-		logger.info("Inside @BeforeSuite Annotation to initialie the Extent Report");
 		ExtentReportManager.initExtentReport();
 	}
 	
@@ -62,7 +56,7 @@ public class BaseTest {
 	@AfterSuite
 	public void tearDown() {
 		try {
-			Desktop.getDesktop().browse(new File(FrameworkConstants.EXTENTREPORTPATH).toURI());
+			Desktop.getDesktop().browse(new File(FrameworkConstants.getExtentReportPath()).toURI());
 		} 
 		catch (IOException e) {
 			e.printStackTrace();

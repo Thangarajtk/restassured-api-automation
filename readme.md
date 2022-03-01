@@ -1,4 +1,4 @@
-## REST ASSURED - API Automation Framework
+# REST ASSURED - API Automation Framework
 1) Java library (API) for testing RESTful web services.
 2) Used to test XML and JSON based web services.
 3) Supports GET, POST, PATCH, PUT, DELETE, HEAD, OPTIONS
