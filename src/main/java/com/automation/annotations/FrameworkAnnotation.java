@@ -16,5 +16,4 @@ public @interface FrameworkAnnotation {
     String[] author();
 
     CategoryType[] category();
-
 }

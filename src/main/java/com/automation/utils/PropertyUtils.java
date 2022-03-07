@@ -13,11 +13,19 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class PropertyUtils {
 
-	private static final Properties property = new Properties();
+	private static Properties property;
+
+	// Singleton design pattern
+	public static Properties getInstance() {
+		if (property == null) {
+			property = new Properties();
+		}
+		return property;
+	}
 
 	static void loadProperties(String propertyFilePath) {
 		try (FileInputStream input = new FileInputStream(propertyFilePath)) {
-			property.load(input);
+			getInstance().load(input);
 		} catch (IOException e) {
 			throw new FrameworkException("IOException occurred while loading Property file in the specified path");
 		}
