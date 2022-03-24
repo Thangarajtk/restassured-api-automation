@@ -14,7 +14,7 @@ public class CookieBasedAuth {
 	public void testCookieBasedAuthentication() {
 		JSONObject request = new JSONObject();
 		//POST request body
-		request.put("username", "Raj");
+		request.put("username", "User");
 		request.put("password", "test@123");
 		
 		

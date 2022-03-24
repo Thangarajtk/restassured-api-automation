@@ -15,10 +15,11 @@ public final class FrameworkConstants {
 	@Getter
 	private static final String resourcesPath = PROJECT_PATH + File.separator + "src/test/resources";
 	@Getter
-	private static final String extentReportPath = PROJECT_PATH + File.separator + "extent-test-report";
-	@Getter
 	private static final String configPropertiesPath = resourcesPath + File.separator + "config.properties";
-	public static final String JSONSCHEMAPATH = resourcesPath + File.separator +"json/json-schema.json";
+	@Getter
+	private static final String jsonSchemaPath = resourcesPath + File.separator +"json/json-schema.json";
+
+	private static final String extentReportPath = PROJECT_PATH + File.separator + "extent-test-report";
 
 	public static String getExtentReportPath() {
 		if (ConfigFactory.getConfig().override_reports().equalsIgnoreCase("yes")) {

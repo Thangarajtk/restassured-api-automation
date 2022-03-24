@@ -1,7 +1,6 @@
 package com.automation.annotations;
 
 import com.automation.enums.CategoryType;
-
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;

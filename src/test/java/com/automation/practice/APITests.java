@@ -1,11 +1,8 @@
 package com.automation.practice;
 
 import static io.restassured.RestAssured.given;
-
 import org.testng.annotations.Test;
-
 import com.automation.base.BaseTest;
-
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.response.Response;
 

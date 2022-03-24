@@ -6,9 +6,13 @@
 ### Create a Fake REST API:
 JSON Server: Used to create our own fake Rest API.
 1) Installing JSON Server: 
-	On terminal, run command `npm install -g json-server`
-2) Running The Server: 
-	Let’s start JSON server by executing the following command: json-server --watch db.json
+```
+npm install -g json-server
+```
+2) Start JSON Server: 
+```
+json-server --watch db.json
+```
 REFERENCE LINK: https://medium.com/codingthesmartway-com-blog/create-a-rest-api-with-json-server-36da8680136d
 3) Created API will be available in the local server "http://localhost:3000/".
 
