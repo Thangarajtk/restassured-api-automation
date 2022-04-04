@@ -69,8 +69,7 @@ public class CustomApiTestDemo {
 			statusCode(200).
 			log().all();
 	}
-	
-	@SuppressWarnings("unchecked")
+
 	@Test(enabled = false)
 	public void putRequest() {
 

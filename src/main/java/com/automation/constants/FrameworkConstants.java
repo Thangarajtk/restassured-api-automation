@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class FrameworkConstants {
 	
-	public static final String PROJECT_PATH = System.getProperty("user.dir");
+	private static final String PROJECT_PATH = System.getProperty("user.dir");
 	@Getter
 	private static final String resourcesPath = PROJECT_PATH + File.separator + "src/test/resources";
 	@Getter

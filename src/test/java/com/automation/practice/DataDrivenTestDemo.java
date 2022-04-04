@@ -21,7 +21,6 @@ public class DataDrivenTestDemo {
 		};
 	}
 
-	@SuppressWarnings("unchecked")
 	@Test(dataProvider = "test_data", enabled = false)
 	public void postRequest(String firstName, int subjectId) {
 
