@@ -2,9 +2,7 @@ package com.automation.practice;
 
 import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
-
 import io.restassured.http.ContentType;
-
 import static io.restassured.RestAssured.*;
 
 public class CustomApiTestDemo {
@@ -25,7 +23,6 @@ public class CustomApiTestDemo {
 			log().all();
 	}
 
-	@SuppressWarnings("unchecked")
 	@Test(enabled = false)
 	public void postRequest() {
 
@@ -46,8 +43,7 @@ public class CustomApiTestDemo {
 			assertThat().
 			statusCode(201);
 	}
-	
-	@SuppressWarnings("unchecked")
+
 	@Test(enabled = false)
 	public void patchRequest() {
 

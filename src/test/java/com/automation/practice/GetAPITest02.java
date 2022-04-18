@@ -37,7 +37,7 @@ public class GetAPITest02 extends BaseTest{
 		String humidity = jsonPathEvaluator.get("Humidity");
 		String temperature = jsonPathEvaluator.get("Temperature");
 
-		/*obj.writeData("TC02","ResponseBody", responseBody);
+		/* obj.writeData("TC02","ResponseBody", responseBody);
 		obj.writeData("TC02","City", city);
 		obj.writeData("TC02","Humidity", humidity);
 		obj.writeData("TC02","Temperature", temperature);*/

@@ -18,14 +18,14 @@ public class CookieBasedAuth {
         request.put("password", "test@123");
 
 
-        Response res = given()
+        Response response = given()
                 .header("Content-Type", "application/json")
                 .body(request)
                 .post("http://localhost:8086/rest/auth/1/session");
 
-        System.out.println(res.getStatusCode());
-        System.out.println(res.getBody().jsonPath().prettify());
-        String sessionID = res.getCookies().get("JSESSIONID");
+        System.out.println(response.getStatusCode());
+        System.out.println(response.getBody().jsonPath().prettify());
+        String sessionID = response.getCookies().get("JSESSIONID");
 
         given().contentType(ContentType.JSON)
                 .cookie("JSESSIONID", sessionID)

@@ -5,6 +5,7 @@ import static io.restassured.matcher.RestAssuredMatchers.*;
 import java.io.File;
 
 import com.automation.base.BaseTest;
+import com.automation.constants.FrameworkConstants;
 import org.testng.annotations.Test;
 
 import io.restassured.http.ContentType;
@@ -15,7 +16,7 @@ public class XmlSchemaValidation extends BaseTest {
 	@Test(enabled = true, description = "Validating the XML DTD Schema")
 	public void validateXmlDtdSchema() {
 		
-		File file = new File(System.getProperty("user.dir")+"/src/test/resources/xml/xml-dtd-schema.dtd");
+		File file = new File(FrameworkConstants.XML_DTD_SCHEMAPATH);
 		
 		Response response = given().
 				baseUri("http://localhost:9091").
@@ -33,7 +34,7 @@ public class XmlSchemaValidation extends BaseTest {
 	@Test(description = "Validating the XML XSD Schema")
 	public void validateXmlXsdSchema() {
 		
-		File file = new File(System.getProperty("user.dir")+"/src/test/resources/xml/xml-xsd-schema.xsd");
+		File file = new File(FrameworkConstants.XML_XSD_SCHEMAPATH);
 		
 		Response response = given().
 				baseUri("http://localhost:9091").

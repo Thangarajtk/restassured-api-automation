@@ -34,7 +34,8 @@ public class BaseTest {
 	protected PrintStream printStream = new PrintStream(new WriterOutputStream(stringWriter, StandardCharsets.UTF_8), true);
 	
 	@BeforeSuite
-	public void setUpSuite() {
+	public void setUp() {
+		System.out.println("-----BEFORE SUITE-----");
 		ExtentReportManager.initExtentReport();
 	}
 	

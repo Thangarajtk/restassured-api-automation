@@ -8,6 +8,7 @@ public class Listeners implements ITestListener, ISuiteListener {
 
 	@Override
 	public void onStart(ISuite suite) {
+        System.out.println("----- ON START ------");
 		ExtentReportManager.initExtentReport();
 	}
 

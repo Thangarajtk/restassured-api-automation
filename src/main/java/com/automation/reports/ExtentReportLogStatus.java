@@ -1,7 +1,5 @@
 package com.automation.reports;
 
-import com.automation.config.ConfigFactory;
-import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.Markup;
@@ -18,7 +16,6 @@ public final class ExtentReportLogStatus {
 
     public static void fail(String message, Throwable t) {
         ExtentReportManager.getExtentTest().fail(message).fail(t);
-
     }
 
     public static void skip(String message) {

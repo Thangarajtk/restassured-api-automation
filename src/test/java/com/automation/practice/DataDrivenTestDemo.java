@@ -2,7 +2,6 @@ package com.automation.practice;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
-
 import org.json.simple.JSONObject;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -13,12 +12,13 @@ public class DataDrivenTestDemo {
 	
 	@DataProvider(name = "test_data")
 	public Object[][] dataForPostRequest() {
-		
-		return new Object[][] {
-			{"Appium", 2},
-			{"Docker", 1},
-			{"Jenkins CI", 1}
+
+		Object[][] objects = {
+				{"Appium", 2},
+				{"Docker", 1},
+				{"Jenkins CI", 1}
 		};
+		return objects;
 	}
 
 	@Test(dataProvider = "test_data", enabled = false)

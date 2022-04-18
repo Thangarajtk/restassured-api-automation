@@ -1,20 +1,24 @@
 # REST ASSURED - API Automation Framework
+
 1) Java library (API) for testing RESTful web services.
 2) Used to test XML and JSON based web services.
 3) Supports GET, POST, PATCH, PUT, DELETE, HEAD, OPTIONS
 
 ### Create a Fake REST API:
 JSON Server: Used to create our own fake Rest API.
-1) Installing JSON Server: 
+1) Installing JSON Server 
 ```
 npm install -g json-server
 ```
-2) Start JSON Server: 
+2) Start JSON Server
 ```
 json-server --watch db.json
 ```
 REFERENCE LINK: https://medium.com/codingthesmartway-com-blog/create-a-rest-api-with-json-server-36da8680136d
-3) Created API will be available in the local server "http://localhost:3000/".
+3) Created API will be available in the local server 
+```
+http://localhost:3000/
+```
 
 ### Demo Url's
 https://reqres.in/

@@ -8,12 +8,6 @@ public class GetApiTestDemo {
 
 	@Test
 	public void getNumberOfCircuits() {
-		
-		//given()
-		//when()
-		//then()
-		//assert
-		
 		given().
 		when().
 			get("http://ergast.com/api/f1/2017/circuits.json").
@@ -28,7 +22,6 @@ public class GetApiTestDemo {
 	
 	@Test(enabled=false)
 	public void preemptiveBasicAuthTest() {
-		
 		given().
 			auth().preemptive().basic("", "").
 		when().
@@ -39,7 +32,6 @@ public class GetApiTestDemo {
 	
 	@Test(enabled=false)
 	public void oauthTest() {
-		
 		given().
 			auth().oauth("", "", "", "").
 		when().
