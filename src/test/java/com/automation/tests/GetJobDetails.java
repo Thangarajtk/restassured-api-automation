@@ -6,7 +6,7 @@ import static org.hamcrest.Matchers.*;
 import com.automation.base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import com.automation.reports.ExtentReportLogStatus;
+import com.automation.reports.ExtentReportLogger;
 import io.restassured.http.Headers;
 import io.restassured.response.Response;
 
@@ -20,9 +20,9 @@ public class GetJobDetails extends BaseTest {
 		when().
 			get("/normal/webapi/all").
 		then().
-			log().all().
-			log().ifError().
-			log().ifValidationFails().
+			log().all(). // All Response logging
+			log().ifError(). // Log response only if error
+			log().ifValidationFails(). // Log response only if there is failure in validation
 			extract().response();
 		
 		logRequestInReport(stringWriter.toString());
@@ -142,6 +142,6 @@ public class GetJobDetails extends BaseTest {
 		logResponseInReport("API RESPONSE STATUS LINE", actualStatusLine.toString());
 			
 		Assert.assertEquals(actualStatusLine.trim(), "HTTP/1.1 404");
-		ExtentReportLogStatus.pass("Expected Status line is HTTP/1.1 404 but actual was " + actualStatusLine.trim());
+		ExtentReportLogger.pass("Expected Status line is HTTP/1.1 404 but actual was " + actualStatusLine.trim());
 	}
 }

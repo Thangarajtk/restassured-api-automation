@@ -3,6 +3,7 @@
 1) Java library (API) for testing RESTful web services.
 2) Used to test XML and JSON based web services.
 3) Supports GET, POST, PATCH, PUT, DELETE, HEAD, OPTIONS
+4) Uses Groovy under the hood to fetch the JSON object (GPath Expression)
 
 ### Create a Fake REST API:
 JSON Server: Used to create our own fake Rest API.
@@ -20,9 +21,12 @@ REFERENCE LINK: https://medium.com/codingthesmartway-com-blog/create-a-rest-api-
 http://localhost:3000/
 ```
 
-### Demo Url's
+### Demo Uri's
 https://reqres.in/
 http://ergast.com/mrd/
+
+### Headers
+
 
 ### Authentication
 Example : Login with registered account
@@ -55,17 +59,22 @@ Stored procedure (Store Proc) -> DAS layer will be integrated with Business laye
 
 Apigee -> POST(Client ID, client Secret, grant type) Response -> Token, Access token
 
-### WIREMOCK
-WireMock is a library for stubbing and mocking web services. It constructs a HTTP server that we could connect to as we would to an actual web service.
+### WIREMOCK - Running as standalone process
+WireMock is a library for stubbing and mocking web services. 
+It constructs an HTTP server that we could connect to as we would to an actual web service.
 
 When a WireMock server is in action, we can set up expectations, call the service, and then verify its behaviors.
 
 The WireMock server can be run in its own process, and configured via the Java API, JSON over HTTP or JSON files.
 
 Once you have downloaded the standalone JAR you can run it simply by doing this:
-java -jar wiremock-standalone-2.27.2.jar
+```
+java -jar wiremock-jre8-standalone-2.33.1.jar
+```
 
 ### Command line options
---port: Set the HTTP port number e.g. java -jar wiremock-standalone-2.27.2.jar --port 9091
+`--port`: Set the HTTP port number e.g. java -jar wiremock-jre8-standalone-2.33.1.jar --port 9091
 
---https-port: If specified, enables HTTPS on the supplied port. Note: When you specify this parameter, WireMock will still, additionally, bind to an HTTP port (8080 by default). So when running multiple WireMock servers you will also need to specify the --port parameter in order to avoid conflicts.
+`--https-port`: If specified, enables HTTPS on the supplied port. 
+Note: When you specify this parameter, WireMock will still, additionally, bind to an HTTP port (8080 by default). 
+So when running multiple WireMock servers you will also need to specify the --port parameter in order to avoid conflicts.

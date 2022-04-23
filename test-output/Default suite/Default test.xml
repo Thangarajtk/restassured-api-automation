@@ -3,8 +3,8 @@
 <testsuite hostname="MININT-8IR53KS" ignored="0" name="Default test" tests="1" failures="1" timestamp="07 Mar 2021 19:00:08 GMT" time="2.78" errors="0">
   <testcase name="getNumberOfCircuits" time="2.762" classname="com.automation.tests.APITests">
     <failure type="java.lang.NullPointerException">
-      <![CDATA[java.lang.NullPointerException
-at com.automation.reports.ExtentReportLogStatus.info(ExtentReportLogStatus.java:21)
+        <![CDATA[java.lang.NullPointerException
+at com.automation.reports.ExtentReportLogger.info(ExtentReportLogStatus.java:21)
 at com.automation.base.BaseTest.writeRequestAndResponseInReport(BaseTest.java:71)
 at com.automation.tests.APITests.getNumberOfCircuits(APITests.java:22)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)

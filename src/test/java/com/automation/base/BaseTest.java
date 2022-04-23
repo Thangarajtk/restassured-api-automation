@@ -11,8 +11,8 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import com.automation.constants.FrameworkConstants;
-import com.automation.reports.ExtentReportLogStatus;
-import com.automation.reports.ExtentReportManager;
+import com.automation.reports.ExtentReportLogger;
+import com.automation.reports.ExtentReport;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import io.restassured.builder.RequestSpecBuilder;
@@ -36,7 +36,7 @@ public class BaseTest {
 	@BeforeSuite
 	public void setUp() {
 		System.out.println("-----BEFORE SUITE-----");
-		ExtentReportManager.initExtentReport();
+		ExtentReport.initExtentReport();
 	}
 	
 	@BeforeClass
@@ -65,12 +65,12 @@ public class BaseTest {
 	}	
 	
 	protected void logRequestInReport(String request) {
-		ExtentReportLogStatus.info(MarkupHelper.createLabel("API REQUEST", ExtentColor.ORANGE));
-		ExtentReportLogStatus.info(MarkupHelper.createCodeBlock(request));
+		ExtentReportLogger.info(MarkupHelper.createLabel("API REQUEST", ExtentColor.ORANGE));
+		ExtentReportLogger.info(MarkupHelper.createCodeBlock(request));
 	}
 	
 	protected void logResponseInReport(String label, String response) {
-		ExtentReportLogStatus.info(MarkupHelper.createLabel(label, ExtentColor.ORANGE));
-		ExtentReportLogStatus.info(MarkupHelper.createCodeBlock(response));
+		ExtentReportLogger.info(MarkupHelper.createLabel(label, ExtentColor.ORANGE));
+		ExtentReportLogger.info(MarkupHelper.createCodeBlock(response));
 	}
 }

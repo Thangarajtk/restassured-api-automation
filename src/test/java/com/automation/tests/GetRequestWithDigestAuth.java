@@ -1,8 +1,8 @@
 package com.automation.tests;
 
-import static io.restassured.RestAssured.given;
-
+import static io.restassured.RestAssured.*;
 import com.automation.base.BaseTest;
+import io.restassured.config.LogConfig;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import io.restassured.http.ContentType;
@@ -21,6 +21,7 @@ public class GetRequestWithDigestAuth extends BaseTest {
 				accept(ContentType.JSON).
 				contentType(ContentType.JSON).
 				auth().digest("postman", "password").
+				config(config.logConfig(LogConfig.logConfig().blacklistHeader("Accept"))).
 			when().
 				get("/digest-auth").
 			then().

@@ -1,38 +1,38 @@
 package com.automation.listeners;
 
 import org.testng.*;
-import com.automation.reports.ExtentReportLogStatus;
-import com.automation.reports.ExtentReportManager;
+import com.automation.reports.ExtentReportLogger;
+import com.automation.reports.ExtentReport;
 
 public class Listeners implements ITestListener, ISuiteListener {
 
 	@Override
 	public void onStart(ISuite suite) {
         System.out.println("----- ON START ------");
-		ExtentReportManager.initExtentReport();
+		ExtentReport.initExtentReport();
 	}
 
 	@Override
 	public void onFinish(ISuite suite) {
-		ExtentReportManager.flushExtentReport();
+		ExtentReport.flushExtentReport();
 	}
 
 	@Override
     public void onTestStart(ITestResult result) {
-		ExtentReportManager.createTest(result.getMethod().getMethodName());
-        ExtentReportLogStatus.pass("Test - <b>" + result.getMethod().getMethodName() + "</b>  is started");
+		ExtentReport.createTest(result.getMethod().getMethodName());
+        ExtentReportLogger.pass("Test - <b>" + result.getMethod().getMethodName() + "</b>  is started");
     }
 
     public void onTestSuccess(ITestResult result) {
-        ExtentReportLogStatus.pass("Test - <b>" + result.getMethod().getMethodName() + "</b> is passed");
+        ExtentReportLogger.pass("Test - <b>" + result.getMethod().getMethodName() + "</b> is passed");
     }
 
     public void onTestFailure(ITestResult result) {
-        ExtentReportLogStatus.fail("Test - <b>" + result.getMethod().getMethodName() + "</b> is failed", result.getThrowable());
+        ExtentReportLogger.fail("Test - <b>" + result.getMethod().getMethodName() + "</b> is failed", result.getThrowable());
     }
 
     public void onTestSkipped(ITestResult result) {
-        ExtentReportLogStatus.skip("Test - <b>" + result.getMethod().getMethodName() + "</b> is skipped");
+        ExtentReportLogger.skip("Test - <b>" + result.getMethod().getMethodName() + "</b> is skipped");
     }
 
     public void onTestFailedButWithinSuccessPercentage(ITestResult result) {

@@ -1,7 +1,6 @@
 package com.automation.tests;
 
 import static io.restassured.RestAssured.given;
-
 import com.automation.base.BaseTest;
 import org.testng.annotations.Test;
 import static org.hamcrest.Matchers.*;
