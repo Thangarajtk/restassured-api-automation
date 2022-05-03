@@ -20,6 +20,7 @@ public class APITests extends BaseTest {
                         then().
                         statusCode(200).
                         extract().response();
+
         System.out.println(response.asString());
     }
 }

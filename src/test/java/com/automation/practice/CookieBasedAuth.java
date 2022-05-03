@@ -25,6 +25,7 @@ public class CookieBasedAuth {
 
         System.out.println(response.getStatusCode());
         System.out.println(response.getBody().jsonPath().prettify());
+
         String sessionID = response.getCookies().get("JSESSIONID");
 
         given().contentType(ContentType.JSON)

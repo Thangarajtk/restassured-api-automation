@@ -2,10 +2,23 @@
 
 1) Java library (API) for testing RESTful web services.
 2) Used to test XML and JSON based web services.
-3) Supports GET, POST, PATCH, PUT, DELETE, HEAD, OPTIONS
-4) Uses Groovy under the hood to fetch the JSON object (GPath Expression)
+3) Supports GET, POST, PATCH, PUT, DELETE, HEAD, OPTIONS. Can be integrated with testing frameworks like JUnit, TestNG.
+4) Rest Assured is implement in Groovy. It uses Groovy under the hood to fetch the JSON object (GPath Expression)
 
-### Create a Fake REST API:
+REST:
+	- Representation State Transfer is an architectural style sending the representational state of an object at that particular time.
+	- Rest API is Stateless (i.e., Server will not store any information about the client)
+JSON:
+    - Key value pair where key is always a String and Value can be String, number, boolean, JSON Object, JSON Array, null etc.,
+    - {} --> JSON Object
+    - [] --> JSON Array
+
+### Quick Start
+Java
+IDE (IntelliJ)
+Maven (It is required if we need to run from command line)
+
+### Create a local REST API for testing
 JSON Server: Used to create our own fake Rest API.
 1) Installing JSON Server 
 ```
@@ -25,8 +38,14 @@ http://localhost:3000/
 https://reqres.in/
 http://ergast.com/mrd/
 
-### Headers
+### Validate JSON Schema
+1) Create or Get JSON Schema
+2) Add JSON Schema file in src/test/resources path
+3) Add maven dependency for JSON Schema validator
 
+### Validate XML Schema
+1) Create or Get XML Schema (XSD)
+2) Add XSD in src/test/resources path
 
 ### Authentication
 Example : Login with registered account

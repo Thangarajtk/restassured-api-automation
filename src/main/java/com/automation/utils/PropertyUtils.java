@@ -33,7 +33,8 @@ public class PropertyUtils {
 
 	public static String getPropertyValue(ConfigProperties key) {
 		loadProperties(FrameworkConstants.getConfigPropertiesPath());
-		if (Objects.isNull(property.getProperty(key.name().toLowerCase())) || Objects.isNull(key.name().toLowerCase())) {
+		if (Objects.isNull(property.getProperty(key.name().toLowerCase())) ||
+				Objects.isNull(key.name().toLowerCase())) {
 			throw new FrameworkException("Property name - " + key + " is not found. Please check the config.properties");
 		}
 		return property.getProperty(key.name().toLowerCase());

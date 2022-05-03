@@ -3,17 +3,15 @@ package com.automation.tests;
 import static io.restassured.RestAssured.*;
 import static io.restassured.matcher.RestAssuredMatchers.*;
 import java.io.File;
-
 import com.automation.base.BaseTest;
 import com.automation.constants.FrameworkConstants;
 import org.testng.annotations.Test;
-
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 public class XmlSchemaValidation extends BaseTest {
 
-	@Test(enabled = true, description = "Validating the XML DTD Schema")
+	@Test(description = "Validating the XML DTD Schema")
 	public void validateXmlDtdSchema() {
 		
 		File file = new File(FrameworkConstants.XML_DTD_SCHEMAPATH);
