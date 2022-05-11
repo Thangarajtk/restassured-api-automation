@@ -14,9 +14,9 @@ JSON:
     - [] --> JSON Array
 
 ### Quick Start
-Java
-IDE (IntelliJ)
-Maven (It is required if we need to run from command line)
+	- Java
+	- IDE (IntelliJ)
+	- Maven (It is required if we need to run from command line)
 
 ### Create a local REST API for testing
 JSON Server: Used to create our own fake Rest API.
@@ -79,14 +79,13 @@ Stored procedure (Store Proc) -> DAS layer will be integrated with Business laye
 Apigee -> POST(Client ID, client Secret, grant type) Response -> Token, Access token
 
 ### WIREMOCK - Running as standalone process
-WireMock is a library for stubbing and mocking web services. 
-It constructs an HTTP server that we could connect to as we would to an actual web service.
+	- WireMock is a library for stubbing and mocking web services. 
+	- It constructs an HTTP server that we could connect to as we would to an actual web service.
+	- When a WireMock server is in action, we can set up expectations, call the service, and then verify its behaviors.
+	- The WireMock server can be run in its own process, and configured via the Java API, JSON over HTTP or JSON files.
+	- Running it through Maven/gradle will start the mock service once the test start running and stops after test completes.
 
-When a WireMock server is in action, we can set up expectations, call the service, and then verify its behaviors.
-
-The WireMock server can be run in its own process, and configured via the Java API, JSON over HTTP or JSON files.
-
-Once you have downloaded the standalone JAR you can run it simply by doing this:
+Once you have downloaded the standalone JAR you can run it simply by doing this
 ```
 java -jar wiremock-jre8-standalone-2.33.1.jar
 ```

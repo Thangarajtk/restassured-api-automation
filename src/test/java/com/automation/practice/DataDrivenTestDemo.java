@@ -43,10 +43,10 @@ public class DataDrivenTestDemo {
 	}
 	
 	@DataProvider(name = "deleteTestData")
-	public Object[] dataForDeleteRequest() {
+	public Object[][] dataForDeleteRequest() {
 
-		return new Object[] {
-				1,2,7,8,9
+		return new Object[][] {
+				{1},{2},{7},{8},{9}
 		};
 	}
 	

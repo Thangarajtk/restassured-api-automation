@@ -19,7 +19,7 @@ public class CustomApiTestDemo {
 			get("/users").
 		then().
 			assertThat().
-			statusCode(200).
+				statusCode(200).
 			log().all();
 	}
 
@@ -41,7 +41,7 @@ public class CustomApiTestDemo {
 			post("/users").
 		then().
 			assertThat().
-			statusCode(201);
+				statusCode(201);
 	}
 
 	@Test(enabled = false)
@@ -62,7 +62,7 @@ public class CustomApiTestDemo {
 			patch("/users/4").
 		then().
 			assertThat().
-			statusCode(200).
+				statusCode(200).
 			log().all();
 	}
 

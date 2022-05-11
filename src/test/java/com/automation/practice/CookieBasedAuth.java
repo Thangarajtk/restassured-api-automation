@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.*;
 
 public class CookieBasedAuth {
 
-    @Test(enabled = false)
+    @Test
     public void testCookieBasedAuthentication() {
         JSONObject request = new JSONObject();
         //POST request body
