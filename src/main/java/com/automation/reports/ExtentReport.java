@@ -55,6 +55,4 @@ public final class ExtentReport {
 			e.printStackTrace();
 		}
 	}
-
-
 }

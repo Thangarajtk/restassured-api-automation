@@ -2,7 +2,6 @@ package com.automation.constants;
 
 import com.automation.config.ConfigFactory;
 import lombok.AccessLevel;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.io.File;
@@ -13,15 +12,12 @@ import java.time.format.DateTimeFormatter;
 public final class FrameworkConstants {
 
     private static final String PROJECT_PATH = System.getProperty("user.dir");
-    @Getter
-    private static final String resourcesPath = PROJECT_PATH + File.separator + "src" + File.separator
+    private static final String RESOURCES_FOLDER_PATH = PROJECT_PATH + File.separator + "src" + File.separator
             + "test" + File.separator + "resources";
-    @Getter
-    private static final String configPropertiesPath = resourcesPath + File.separator + "config.properties";
-
-    public static final String JSONSCHEMAPATH = resourcesPath + File.separator + "json" + File.separator + "json-schema.json";
-    public static final String XML_XSD_SCHEMAPATH = resourcesPath + File.separator + "xml" + File.separator + "xml-xsd-schema.xsd";
-    public static final String XML_DTD_SCHEMAPATH = resourcesPath + File.separator + "xml" + File.separator + "xml-dtd-schema.dtd";
+    private static final String CONFIG_PROPERTIES_PATH = RESOURCES_FOLDER_PATH + File.separator + "config.properties";
+    public static final String JSON_SCHEMA_PATH = RESOURCES_FOLDER_PATH + File.separator + "json" + File.separator + "json-schema.json";
+    public static final String XML_XSD_SCHEMA_PATH = RESOURCES_FOLDER_PATH + File.separator + "xml" + File.separator + "xml-xsd-schema.xsd";
+    public static final String XML_DTD_SCHEMA_PATH = RESOURCES_FOLDER_PATH + File.separator + "xml" + File.separator + "xml-dtd-schema.dtd";
 
     private static final String extentReportPath = PROJECT_PATH + File.separator + "extent-test-report";
 

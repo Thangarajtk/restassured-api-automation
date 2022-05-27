@@ -14,7 +14,7 @@ public class XmlSchemaValidation extends BaseTest {
 	@Test(description = "Validating the XML DTD Schema")
 	public void validateXmlDtdSchema() {
 		
-		File file = new File(FrameworkConstants.XML_DTD_SCHEMAPATH);
+		File file = new File(FrameworkConstants.XML_DTD_SCHEMA_PATH);
 		
 		Response response = given().
 				baseUri("http://localhost:9091").
@@ -32,7 +32,7 @@ public class XmlSchemaValidation extends BaseTest {
 	@Test(description = "Validating the XML XSD Schema")
 	public void validateXmlXsdSchema() {
 		
-		File file = new File(FrameworkConstants.XML_XSD_SCHEMAPATH);
+		File file = new File(FrameworkConstants.XML_XSD_SCHEMA_PATH);
 		
 		Response response = given().
 				baseUri("http://localhost:9091").

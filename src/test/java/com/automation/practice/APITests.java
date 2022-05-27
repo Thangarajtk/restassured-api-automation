@@ -11,7 +11,6 @@ public class APITests extends BaseTest {
 
     @Test
     public void getNumberOfCircuits() {
-
         Response response =
                 given().
                         filter(new RequestLoggingFilter(printStream)).  // This line is mandatory to log the request details to extent report

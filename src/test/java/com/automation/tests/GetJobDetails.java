@@ -6,7 +6,7 @@ import static org.hamcrest.Matchers.*;
 import com.automation.base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import com.automation.reports.ExtentReportLogger;
+import com.automation.reports.ExtentLogger;
 import io.restassured.http.Headers;
 import io.restassured.response.Response;
 
@@ -142,6 +142,6 @@ public class GetJobDetails extends BaseTest {
 		logResponseInReport("API RESPONSE STATUS LINE", actualStatusLine.toString());
 			
 		Assert.assertEquals(actualStatusLine.trim(), "HTTP/1.1 404");
-		ExtentReportLogger.pass("Expected Status line is HTTP/1.1 404 but actual was " + actualStatusLine.trim());
+		ExtentLogger.pass("Expected Status line is HTTP/1.1 404 but actual was " + actualStatusLine.trim());
 	}
 }

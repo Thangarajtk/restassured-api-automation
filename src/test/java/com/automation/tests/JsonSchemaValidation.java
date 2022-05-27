@@ -22,7 +22,7 @@ public class JsonSchemaValidation extends BaseTest {
 	@Test(description = "Validating the JSON Schema")
 	public void validateJsonSchema() {
 		
-		File file = new File(FrameworkConstants.JSONSCHEMAPATH);
+		File file = new File(FrameworkConstants.JSON_SCHEMA_PATH);
 		
 		Response response = given().
 				spec(requestSpecification).
