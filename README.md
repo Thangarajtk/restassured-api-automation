@@ -28,7 +28,9 @@ npm install -g json-server
 ```
 json-server --watch db.json
 ```
-REFERENCE LINK: https://medium.com/codingthesmartway-com-blog/create-a-rest-api-with-json-server-36da8680136d
+REFERENCE LINK: 
+https://medium.com/codingthesmartway-com-blog/create-a-rest-api-with-json-server-36da8680136d
+
 3) Created API will be available in the local server 
 ```
 http://localhost:3000/

@@ -12,7 +12,8 @@ public class HandlingJson {
         JSONObject obj = null;
 
         try {
-            HttpResponse<JsonNode> response = Unirest.get(url)
+            HttpResponse<JsonNode> response = Unirest
+                    .get(url)
                     .header("Authorization", auth)
                     .asJson();
 
@@ -47,7 +48,8 @@ public class HandlingJson {
     public static String HttpPostResponseAsString(String url, String auth) {
         String obj = null;
         try {
-            HttpResponse<String> response = Unirest.get(url).header("Authorization", auth)
+            HttpResponse<String> response = Unirest.get(url)
+                    .header("Authorization", auth)
                     .header("Cache-Control", "no-cache").asString();
 
             int responsecode = response.getStatus();

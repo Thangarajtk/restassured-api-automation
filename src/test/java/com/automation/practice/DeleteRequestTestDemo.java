@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class DeleteRequestTestDemo {
 
     @Test
-    public void deleteRequestTest() {
+    public void testDeleteRequest() {
 
         given().
                 when().

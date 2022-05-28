@@ -19,8 +19,8 @@ public class GetApiTestDemo {
 			and().
 				header("content-length", equalTo("4551"));
 	}
-	
-	@Test(enabled=false)
+
+	@Test(enabled = false)
 	public void preemptiveBasicAuthTest() {
 		given().
 			auth().preemptive().basic("", "").
@@ -29,8 +29,8 @@ public class GetApiTestDemo {
 		then().
 			assertThat().statusCode(200);
 	}
-	
-	@Test(enabled=false)
+
+	@Test(enabled = false)
 	public void oauthTest() {
 		given().
 			auth().oauth("", "", "", "").

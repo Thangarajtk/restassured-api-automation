@@ -33,9 +33,8 @@ public class PostRequestDataDrivenExcelTest {
 		return data;
 	}
 
-	@SuppressWarnings("unchecked")
 	@Test(dataProvider="input")
-	public void postRequest(String firstName, String subjectId) {
+	public void testPostRequest(String firstName, String subjectId) {
 
 		JSONObject request = new JSONObject();
 		request.put("firstName", firstName);

@@ -8,16 +8,15 @@ import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.*;
 
-public class CookieBasedAuth {
+public class CookieBasedAuthentication {
 
     @Test
     public void testCookieBasedAuthentication() {
         JSONObject request = new JSONObject();
-        //POST request body
+        // POST request body
         request.put("username", "User");
         request.put("password", "test@123");
-
-
+        
         Response response = given()
                 .header("Content-Type", "application/json")
                 .body(request)

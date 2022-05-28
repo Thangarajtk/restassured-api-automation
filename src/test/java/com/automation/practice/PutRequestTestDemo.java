@@ -11,7 +11,7 @@ import io.restassured.http.ContentType;
 public class PutRequestTestDemo {
 	
 	@Test
-	public void putRequestTest() {
+	public void testPutRequest() {
 		
 		JSONObject request = new JSONObject();
 	

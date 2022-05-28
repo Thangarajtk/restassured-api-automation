@@ -11,7 +11,7 @@ public class PostApiTestDemo {
 
 	// Available Libraries Gson, Jackson, Json and Simple Json
 	@Test
-	public void postRequestTest() {
+	public void testPostRequest() {
 		
 		JSONObject request = new JSONObject();
 		//POST request body

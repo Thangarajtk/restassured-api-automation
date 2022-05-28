@@ -13,7 +13,7 @@ import io.restassured.http.ContentType;
 public class PatchRequestTestDemo {
 
 	@Test
-	public void patchRequestTest() {
+	public void testPatchRequest() {
 		
 		JSONObject request = new JSONObject();
 	
