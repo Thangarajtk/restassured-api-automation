@@ -32,4 +32,24 @@ public class CookieBasedAuthentication {
                 .body("")
                 .post("http://localhost:8086/rest/api/2/issue/");
     }
+
+    @Test(enabled = false)
+    public void preemptiveBasicAuthTest() {
+        given().
+                auth().preemptive().basic("", "").
+                when().
+                get("").
+                then().
+                assertThat().statusCode(200);
+    }
+
+    @Test(enabled = false)
+    public void oauthTest() {
+        given().
+                auth().oauth("", "", "", "").
+                when().
+                post("").
+                then().
+                assertThat().statusCode(201);
+    }
 }

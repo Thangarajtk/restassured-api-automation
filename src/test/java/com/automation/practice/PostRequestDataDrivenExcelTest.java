@@ -1,8 +1,5 @@
 package com.automation.practice;
 
-import static io.restassured.RestAssured.baseURI;
-import static io.restassured.RestAssured.given;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -13,6 +10,8 @@ import org.testng.annotations.Test;
 import com.automation.utils.ExcelUtils;
 
 import io.restassured.http.ContentType;
+
+import static io.restassured.RestAssured.*;
 
 
 public class PostRequestDataDrivenExcelTest {
@@ -52,5 +51,27 @@ public class PostRequestDataDrivenExcelTest {
 		then().
 			assertThat().
 			statusCode(201);
+	}
+
+	// Available Libraries Gson, Jackson, Json and Simple Json
+	@Test
+	public void testPostRequest() {
+
+		org.json.JSONObject request = new org.json.JSONObject();
+		//POST request body
+		request.put("name", "Raj");
+		request.put("Job", "Automation Engineer");
+
+		given().
+				baseUri("https://reqres.in").
+				header("Content-Type", "application.json").
+				contentType(ContentType.JSON).
+				accept(ContentType.JSON).
+				body(request.toString());
+		when().
+				post("/api/users").
+				then().
+				assertThat().
+				statusCode(201);
 	}
 }
