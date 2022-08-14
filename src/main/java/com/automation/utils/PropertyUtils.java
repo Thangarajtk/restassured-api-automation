@@ -11,7 +11,7 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class PropertyUtils {
+public final class PropertyUtils {
 
 	private static Properties property;
 
@@ -23,8 +23,8 @@ public class PropertyUtils {
 		return property;
 	}
 
-	static void loadProperties(String propertyFilePath) {
-		try (FileInputStream input = new FileInputStream(propertyFilePath)) {
+	static void loadProperties() {
+		try (FileInputStream input = new FileInputStream(FrameworkConstants.CONFIG_PROPERTIES_PATH)) {
 			getInstance().load(input);
 		} catch (IOException e) {
 			throw new FrameworkException("IOException occurred while loading Property file in the specified path");
@@ -32,7 +32,7 @@ public class PropertyUtils {
 	}
 
 	public static String getPropertyValue(ConfigProperties key) {
-		loadProperties(FrameworkConstants.CONFIG_PROPERTIES_PATH);
+		loadProperties();
 		if (Objects.isNull(property.getProperty(key.name().toLowerCase())) ||
 				Objects.isNull(key.name().toLowerCase())) {
 			throw new FrameworkException("Property name - " + key + " is not found. Please check the config.properties");

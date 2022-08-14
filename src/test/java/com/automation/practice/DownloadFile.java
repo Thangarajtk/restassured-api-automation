@@ -19,7 +19,7 @@ public class DownloadFile {
                 log().all().
                 extract().asInputStream();
 
-        OutputStream os = new FileOutputStream(new File("ApiDemos-debug.apk"));
+        OutputStream os = new FileOutputStream("ApiDemos-debug.apk");
         byte[] bytes = new byte[is.available()];
         is.read(bytes);
         os.write(bytes);

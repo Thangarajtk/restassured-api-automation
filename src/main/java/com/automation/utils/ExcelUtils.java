@@ -11,7 +11,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class ExcelUtils {
+public final class ExcelUtils {
 
 	private XSSFWorkbook wb;
 	private XSSFSheet sh;
@@ -38,14 +38,12 @@ public class ExcelUtils {
 	}
 
 	public int getRowCount() {
-		int rowCount = getSheetByIndex(0).getLastRowNum();
-		return rowCount;
+		return getSheetByIndex(0).getLastRowNum();
 	}
 
 	public int getColumnCount() {
 		row = getSheetByIndex(0).getRow(0);
-		int cellCount = row.getLastCellNum();
-		return cellCount;
+		return row.getLastCellNum();
 	}
 
 	public HashMap<String, ArrayList<Object>> getExcelData() {

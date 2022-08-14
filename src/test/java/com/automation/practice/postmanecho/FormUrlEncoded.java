@@ -1,4 +1,4 @@
-package com.automation.practice;
+package com.automation.practice.postmanecho;
 
 import io.restassured.config.EncoderConfig;
 import io.restassured.config.RestAssuredConfig;
