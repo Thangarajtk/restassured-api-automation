@@ -25,9 +25,7 @@ public class BaseTest {
 
     protected static RequestSpecification requestSpecification;
     protected static ResponseSpecification responseSpecification;
-
     public static Response response;
-
     protected StringWriter stringWriter = new StringWriter();
     protected PrintStream printStream = new PrintStream(new WriterOutputStream(stringWriter, StandardCharsets.UTF_8), true);
 

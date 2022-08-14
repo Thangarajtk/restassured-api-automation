@@ -10,42 +10,42 @@ import io.restassured.response.Response;
 
 public class DeleteParticularJobId extends BaseTest {
 
-	@Test(description="Validate the status code for DELETE request")
-	public void deleteSpecificRecordUsingDeleteRequest() {
-		
-		Response response = given().
-				spec(requestSpecification).
-				accept(ContentType.JSON).
-				contentType(ContentType.JSON).
-			when().
-				delete("/normal/webapi/remove/3").
-			then().
-				extract().response();
-		
-		logRequestInReport(stringWriter.toString());
-		logResponseInReport("API RESPONSE", response.prettyPrint());
-		
-		// Assert the status code
-		Assert.assertEquals(response.statusCode(), 200);	
-	}
-	
-	@Test(description="Validate the DELETE request with Path param")
-	public void deleteRequestWithPathParam() {
-		
-		Response response = given().
-				spec(requestSpecification).
-				accept(ContentType.JSON).
-				contentType(ContentType.JSON).
-				pathParam("id", 5).
-			when().
-				delete("/normal/webapi/remove/{id}").
-			then().
-				extract().response();
-		
-		logRequestInReport(stringWriter.toString());
-		logResponseInReport("API RESPONSE", response.prettyPrint());
-		
-		// Assert the status code
-		Assert.assertEquals(response.statusCode(), 200);	
-	}
+    @Test(description = "Validate the status code for DELETE request")
+    public void deleteSpecificRecordUsingDeleteRequest() {
+
+        Response response = given().
+                	spec(requestSpecification).
+                	accept(ContentType.JSON).
+                	contentType(ContentType.JSON).
+                when().
+                	delete("/normal/webapi/remove/3").
+                then().
+                	extract().response();
+
+        logRequestInReport(stringWriter.toString());
+        logResponseInReport("API RESPONSE", response.prettyPrint());
+
+        // Assert the status code
+        Assert.assertEquals(response.statusCode(), 200);
+    }
+
+    @Test(description = "Validate the DELETE request with Path param")
+    public void deleteRequestWithPathParam() {
+
+        Response response = given().
+                spec(requestSpecification).
+                accept(ContentType.JSON).
+                contentType(ContentType.JSON).
+                pathParam("id", 5).
+                when().
+                delete("/normal/webapi/remove/{id}").
+                then().
+                extract().response();
+
+        logRequestInReport(stringWriter.toString());
+        logResponseInReport("API RESPONSE", response.prettyPrint());
+
+        // Assert the status code
+        Assert.assertEquals(response.statusCode(), 200);
+    }
 }

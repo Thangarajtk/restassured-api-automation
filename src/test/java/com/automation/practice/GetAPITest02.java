@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import com.automation.base.BaseTest;
 
-import io.restassured.RestAssured;
+import static io.restassured.RestAssured.*;
 import io.restassured.http.Method;
 import io.restassured.path.json.JsonPath;
 
@@ -14,9 +14,9 @@ public class GetAPITest02 extends BaseTest{
 	@BeforeClass
 	public void beforeTest()
 	{
-		RestAssured.baseURI = "http://restapi.demoqa.com/utilities/weather/city";
+		baseURI = "http://restapi.demoqa.com/utilities/weather/city";
 
-		requestSpecification = RestAssured.given();
+		requestSpecification = given();
 
 		response = requestSpecification.request(Method.GET, "/Bangalore");	
 	}

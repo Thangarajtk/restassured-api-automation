@@ -1,23 +1,20 @@
-package com.automation.practice;
+package com.automation.practice.reqres;
 
 import java.util.Arrays;
 import java.util.List;
-
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import com.automation.base.BaseTest;
-import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.path.json.JsonPath;
+
+import static io.restassured.RestAssured.*;
 
 public class GetAPITest01 extends BaseTest {
 
     @BeforeClass
     public void beforeTest() {
-        RestAssured.baseURI = "https://reqres.in/api/unknown";
-
-        requestSpecification = RestAssured.given();
-
+        baseURI = "https://reqres.in/api/unknown";
+        requestSpecification = given();
         response = requestSpecification.request(Method.GET, "");
     }
 
@@ -31,10 +28,6 @@ public class GetAPITest01 extends BaseTest {
 
         // First get the JsonPath object instance from the Response interface
         JsonPath jsonPathEvaluator = response.jsonPath();
-		
-		/*String city = jsonPathEvaluator.get("City");
-		System.out.println(city);
-		String humidity = jsonPathEvaluator.get("Humidity");*/
 
         List<String> li = jsonPathEvaluator.getList("data.name");
         System.out.println(li.size());

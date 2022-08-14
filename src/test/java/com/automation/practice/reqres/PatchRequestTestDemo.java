@@ -1,4 +1,4 @@
-package com.automation.practice;
+package com.automation.practice.reqres;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;

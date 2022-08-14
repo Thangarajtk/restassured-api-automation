@@ -1,4 +1,4 @@
-package com.automation.practice;
+package com.automation.practice.jsonserver;
 
 import org.json.simple.JSONObject;
 import org.testng.annotations.DataProvider;
@@ -11,7 +11,6 @@ public class CustomApiUsingJsonServer {
 	// GET Request
 	@Test
 	public void getTest() {
-
 		baseURI = "http://localhost:3000/";
 
 		given().
@@ -26,7 +25,6 @@ public class CustomApiUsingJsonServer {
 
 	@Test(enabled = false)
 	public void postRequest() {
-
 		JSONObject request = new JSONObject();
 		request.put("firstName", "Automation Testing");
 		request.put("subjectId", 1);
@@ -47,7 +45,6 @@ public class CustomApiUsingJsonServer {
 
 	@Test(enabled = false)
 	public void patchRequest() {
-
 		JSONObject request = new JSONObject();
 		
 		request.put("firstName", "DevOps Automation");
@@ -69,7 +66,6 @@ public class CustomApiUsingJsonServer {
 
 	@Test(enabled = false)
 	public void putRequest() {
-
 		JSONObject request = new JSONObject();
 		
 		request.put("firstName", "DevOps Engineer");
@@ -91,7 +87,6 @@ public class CustomApiUsingJsonServer {
 	
 	@Test
 	public void deleteRequest() {
-
 		baseURI = "http://localhost:3000/";
 		
 		given().
@@ -104,7 +99,6 @@ public class CustomApiUsingJsonServer {
 
 	@DataProvider(name = "test_data")
 	public Object[][] dataForPostRequest() {
-
 		Object[][] objects = {
 				{"Appium", 2},
 				{"Docker", 1},
@@ -115,7 +109,6 @@ public class CustomApiUsingJsonServer {
 
 	@Test(dataProvider = "test_data", enabled = false)
 	public void postRequest(String firstName, int subjectId) {
-
 		JSONObject request = new JSONObject();
 		request.put("firstName", firstName);
 		request.put("subjectId", subjectId);
@@ -136,7 +129,6 @@ public class CustomApiUsingJsonServer {
 
 	@DataProvider(name = "deleteTestData")
 	public Object[][] dataForDeleteRequest() {
-
 		return new Object[][] {
 				{1},{2},{7},{8},{9}
 		};
@@ -144,7 +136,6 @@ public class CustomApiUsingJsonServer {
 
 	@Test(dataProvider = "deleteTestData")
 	public void deleteRequest(int id) {
-
 		baseURI = "http://localhost:3000/";
 
 		given().

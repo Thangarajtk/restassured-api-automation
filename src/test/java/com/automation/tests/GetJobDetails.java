@@ -14,7 +14,6 @@ public class GetJobDetails extends BaseTest {
 
 	@Test(description="Validate the status code for GET request")
 	public void getRequestToValidateStatusCode() {
-		
 		Response response = given().
 			spec(requestSpecification).
 		when().
@@ -33,7 +32,6 @@ public class GetJobDetails extends BaseTest {
 	
 	@Test(description="Validate the JSON response body for GET request")
 	public void getRequestToValidateJsonResponseBody() {
-		
 		Response response = given().
 			spec(requestSpecification).
 		when().
@@ -53,7 +51,6 @@ public class GetJobDetails extends BaseTest {
 	
 	@Test(description="Validate the XML response body for GET request")
 	public void getRequestToValidateXmlResponseBody() {
-		
 		Response response = given().
 			spec(requestSpecification).
 			header("Accept", "application/xml").
@@ -72,7 +69,6 @@ public class GetJobDetails extends BaseTest {
 	
 	@Test(description="Validate the JSON response body using Json Path for GET request")
 	public void getRequestToValidateResponseBodyUsingJsonPath() {
-		
 		Response response = given().
 			spec(requestSpecification).
 		when().
@@ -92,7 +88,6 @@ public class GetJobDetails extends BaseTest {
 	
 	@Test(description="Validate the JSON response header for GET request")
 	public void getRequestToValidateJsonResponseHeader() {
-		
 		Response response = given().
 			spec(requestSpecification).
 		when().
@@ -109,7 +104,6 @@ public class GetJobDetails extends BaseTest {
 	
 	@Test(description="Validate the XML response header for GET request")
 	public void getRequestToValidateXmlResponseHeader() {
-		
 		Response response = given().
 			spec(requestSpecification).
 			header("Accept", "application/xml").
@@ -129,7 +123,6 @@ public class GetJobDetails extends BaseTest {
 	
 	@Test(description="Validate the status line for GET request")
 	public void getRequestToValidateStatusLine() {
-		
 		Response response = given().
 			spec(requestSpecification).
 		when().
@@ -139,7 +132,7 @@ public class GetJobDetails extends BaseTest {
 		
 		logRequestInReport(stringWriter.toString());
 		logResponseInReport("API RESPONSE", response.prettyPrint());
-		logResponseInReport("API RESPONSE STATUS LINE", actualStatusLine.toString());
+		logResponseInReport("API RESPONSE STATUS LINE", actualStatusLine);
 			
 		Assert.assertEquals(actualStatusLine.trim(), "HTTP/1.1 404");
 		ExtentLogger.pass("Expected Status line is HTTP/1.1 404 but actual was " + actualStatusLine.trim());

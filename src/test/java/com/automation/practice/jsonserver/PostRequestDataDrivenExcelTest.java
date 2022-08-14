@@ -1,4 +1,4 @@
-package com.automation.practice;
+package com.automation.practice.jsonserver;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,7 +18,7 @@ public class PostRequestDataDrivenExcelTest {
 
 	@DataProvider(name = "input")
 	public Object[][] getPostData() {
-		Object[][] data = null;
+		Object[][] data;
 		ExcelUtils xlReader = new ExcelUtils();
 		HashMap<String, ArrayList<Object>> map = xlReader.getExcelData();
 		

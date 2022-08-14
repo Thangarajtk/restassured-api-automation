@@ -13,12 +13,15 @@ JSON:
     - {} --> JSON Object
     - [] --> JSON Array
 
+Path Param - Used to identify specific resource, it is mandatory.
+Query Param - Used to Sort/filter the resources, it is optional.
+
 ### Quick Start
 	- Java
 	- IDE (IntelliJ)
 	- Maven (It is required if we need to run from command line)
 
-### Create a local REST API for testing
+### Create a local REST API with JSON Server for testing
 JSON Server: Used to create our own fake Rest API.
 1) Installing JSON Server 
 ```
@@ -28,7 +31,7 @@ npm install -g json-server
 ```
 json-server --watch db.json
 ```
-REFERENCE LINK: 
+<b>REFERENCE LINK: </b>
 https://medium.com/codingthesmartway-com-blog/create-a-rest-api-with-json-server-36da8680136d
 
 3) Created API will be available in the local server 

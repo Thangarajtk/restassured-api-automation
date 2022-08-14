@@ -1,4 +1,4 @@
-package com.automation.practice;
+package com.automation.practice.postmanecho;
 
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;

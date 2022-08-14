@@ -1,4 +1,4 @@
-package com.automation.practice;
+package com.automation.practice.reqres;
 
 import static io.restassured.RestAssured.*;
 
@@ -8,7 +8,6 @@ public class DeleteRequestTestDemo {
 
     @Test
     public void testDeleteRequest() {
-
         given().
                 when().
                 delete("https://reqres.in/api/users/2").

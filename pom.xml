@@ -8,10 +8,10 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven-compiler-source>1.8</maven-compiler-source>
-		<maven-compiler-target>1.8</maven-compiler-target>
-		<testng-version>7.5</testng-version>
-		<restassured-version>5.0.1</restassured-version>
+		<maven-compiler-source>11</maven-compiler-source>
+		<maven-compiler-target>11</maven-compiler-target>
+		<testng-version>7.6.1</testng-version>
+		<restassured-version>5.1.1</restassured-version>
 		<extentreports-version>5.0.9</extentreports-version>
 		<apache-poi-version>5.2.2</apache-poi-version>
 		<json-simple-version>1.1.1</json-simple-version>
@@ -29,7 +29,7 @@
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy</artifactId>
-			<version>3.0.10</version>
+			<version>3.0.12</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
