@@ -1,4 +1,4 @@
-/.idea/
-/extent-test-report/
-/target/
-/test-output/
+.idea
+extent-test-report
+target
+test-output
