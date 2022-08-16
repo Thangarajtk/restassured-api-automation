@@ -18,7 +18,7 @@ public class CookieBasedAuthentication {
         request.put("password", "test@123");
         
         Response response = given()
-                .header("Content-Type", "application/json")
+                .header("Content-Type", ContentType.JSON)
                 .body(request)
                 .post("http://localhost:8086/rest/auth/1/session");
 
