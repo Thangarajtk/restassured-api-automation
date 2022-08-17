@@ -3,6 +3,7 @@ package com.automation.practice.jsonserver;
 import com.automation.pojo.Employee;
 import com.automation.pojo.Skill;
 import io.restassured.response.Response;
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
@@ -19,7 +20,7 @@ public final class PostRequestUsingPojo {
     public void pojoTestUsingConstructor() {
         // Construction helps to create immutable objects
         Skill skill = new Skill("core java", Arrays.asList("rest-assured", "jackson"));
-        Employee employee = new Employee(13, "fname", "lname", "testmail@test.com", Arrays.asList("QA", "SDET"), skill);
+        Employee employee = new Employee(22, "fname", "lname", "testmail@test.com", Arrays.asList("QA", "SDET"), skill);
 
         Response response = given()
                 .baseUri("http://localhost:3000")
@@ -28,5 +29,9 @@ public final class PostRequestUsingPojo {
                 .when()
                 .post("/employees");
         response.prettyPrint();
+
+        Assertions.assertThat(response.statusCode()).isEqualTo(201);
+        Assertions.assertThat(response.jsonPath().getString("firstname")).isEqualTo("fname");
+        Assertions.assertThat(response.jsonPath().getList("jobs")).asList();
     }
 }
