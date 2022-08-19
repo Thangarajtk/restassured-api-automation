@@ -1,5 +1,6 @@
 package com.automation.practice.jsonserver;
 
+import com.automation.utils.ApiUtils;
 import com.github.javafaker.Faker;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -56,14 +57,17 @@ public final class ConstructPostRequest {
     @Test
     public void postRequestFromFileAsString() throws IOException {
 
-        String requestBody = new String(Files.readAllBytes(Paths.get(System.getProperty("user.dir") + "/src/test/java/com/automation/practice/jsonserver/test.json")));
-        String replacedRequestBody = requestBody.replace("6",
-                String.valueOf(new Faker().number().numberBetween(10,50)));
+//        String requestBody = new String(Files.readAllBytes(Paths.get(System.getProperty("user.dir") + "/src/test/java/com/automation/practice/jsonserver/test.json")));
+//        String replacedRequestBody = requestBody.replace("6",
+//                String.valueOf(new Faker().number().numberBetween(10,50)));
+
+        String resource = ApiUtils.readJsonAndGetAsString(System.getProperty("user.dir") + "/src/test/java/com/automation/practice/jsonserver/test.json")
+                .replace("6", String.valueOf(new Faker().number().numberBetween(10,50)));
 
         given()
                 .baseUri("http://localhost:3000")
                 .header("Content-Type", "application/json")
-                .body(replacedRequestBody)
+                .body(resource)
                 .when()
                 .post("/employees")
                 .then()
