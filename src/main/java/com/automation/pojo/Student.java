@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
 
-@Getter
+@Getter // This is required for Serialization and DeSerialization
 @AllArgsConstructor
 @ToString
 @Builder
