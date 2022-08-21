@@ -1,5 +1,6 @@
 package com.automation.practice.jsonserver;
 
+import com.automation.constants.FrameworkConstants;
 import com.automation.utils.ApiUtils;
 import com.github.javafaker.Faker;
 import lombok.AccessLevel;
@@ -7,12 +8,12 @@ import lombok.NoArgsConstructor;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.testng.annotations.Test;
-
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
@@ -61,7 +62,7 @@ public final class ConstructPostRequest {
 //        String replacedRequestBody = requestBody.replace("6",
 //                String.valueOf(new Faker().number().numberBetween(10,50)));
 
-        String resource = ApiUtils.readJsonAndGetAsString(System.getProperty("user.dir") + "/src/test/java/com/automation/practice/jsonserver/test.json")
+        String resource = ApiUtils.readJsonAndGetAsString(FrameworkConstants.RESOURCES_FOLDER_PATH + "/test.json")
                 .replace("6", String.valueOf(new Faker().number().numberBetween(10,50)));
 
         given()

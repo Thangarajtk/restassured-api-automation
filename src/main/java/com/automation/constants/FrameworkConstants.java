@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter;
 public final class FrameworkConstants {
 
     private static final String PROJECT_PATH = System.getProperty("user.dir");
-    private static final String RESOURCES_FOLDER_PATH = PROJECT_PATH + File.separator + "src" + File.separator
+    public static final String RESOURCES_FOLDER_PATH = PROJECT_PATH + File.separator + "src" + File.separator
             + "test" + File.separator + "resources";
     public static final String CONFIG_PROPERTIES_PATH = RESOURCES_FOLDER_PATH + File.separator + "config.properties";
     public static final String JSON_SCHEMA_PATH = RESOURCES_FOLDER_PATH + File.separator + "json" + File.separator + "json-schema.json";
