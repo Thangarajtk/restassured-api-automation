@@ -31,7 +31,6 @@ public final class FrameworkConstants {
 
     private static String getCurrentDateTime() {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy_MM_dd-HH_mm_ss");
-        LocalDateTime localDateTime = LocalDateTime.now();
-        return dateTimeFormatter.format(localDateTime);
+        return dateTimeFormatter.format(LocalDateTime.now());
     }
 }

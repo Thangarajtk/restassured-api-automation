@@ -1,4 +1,4 @@
-package com.automation.practice;
+package com.automation.practice.auth;
 
 import org.json.JSONObject;
 import org.testng.annotations.Test;
