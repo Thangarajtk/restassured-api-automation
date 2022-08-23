@@ -1,7 +1,6 @@
 package com.automation.base;
 
 import com.automation.reports.ExtentLogger;
-import com.automation.reports.ExtentReport;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import io.restassured.builder.RequestSpecBuilder;
@@ -13,13 +12,13 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import org.apache.commons.io.output.WriterOutputStream;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
 
 import java.io.PrintStream;
 import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
+
+import static com.automation.config.ConfigFactory.getConfig;
 
 public class BaseTest {
 
@@ -29,19 +28,13 @@ public class BaseTest {
     protected StringWriter stringWriter = new StringWriter();
     protected PrintStream printStream = new PrintStream(new WriterOutputStream(stringWriter, StandardCharsets.UTF_8), true);
 
-    @BeforeSuite
-    public void setUp() {
-        System.out.println("-----BEFORE SUITE-----");
-        ExtentReport.initExtentReport();
-    }
-
     /**
      * RequestSpecification is an Interface and RequestSpecBuilder is a class
      */
     @BeforeClass
     public void createRequestSpecification() {
         requestSpecification = new RequestSpecBuilder()
-                .setBaseUri("http://localhost:5050")
+                .setBaseUri(getConfig().base_uri())
                 .addFilter(new RequestLoggingFilter(printStream))
                 .log(LogDetail.ALL)
                 .build();
@@ -52,11 +45,6 @@ public class BaseTest {
         responseSpecification = new ResponseSpecBuilder().
                 expectStatusCode(200).
                 expectContentType(ContentType.JSON).build();
-    }
-
-    @AfterSuite
-    public void tearDown() {
-
     }
 
     protected void logRequestInReport(String request) {

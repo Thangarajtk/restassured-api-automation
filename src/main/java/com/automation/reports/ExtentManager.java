@@ -1,8 +1,11 @@
 package com.automation.reports;
 
 import com.aventstack.extentreports.ExtentTest;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
-public class ExtentManager {
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public final class ExtentManager {
 
     private static final ThreadLocal<ExtentTest> threadLocalExtentTest = new ThreadLocal<>();
 

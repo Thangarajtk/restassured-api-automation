@@ -11,7 +11,7 @@ public final class GetRequest {
     @Test
     public void getEmployeeDetails() {
 
-        RequestBuilder.buildGetRequest()
+        RequestBuilder.buildRequestForGetCalls()
                 .pathParam("id", 13)
                 .when()
                 .get("/employees/{id}")

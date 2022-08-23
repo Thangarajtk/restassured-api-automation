@@ -14,4 +14,6 @@ public interface FrameworkConfig extends Config {
     boolean retry_failed_tests();
 
     int retry_count();
+
+    String base_uri();
 }

@@ -1,6 +1,9 @@
 package com.automation.reports;
 
+import com.automation.enums.Authors;
+import com.automation.enums.CategoryType;
 import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.CodeLanguage;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.Markup;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
@@ -19,19 +22,35 @@ public final class ExtentLogger {
     }
 
     public static void skip(String message) {
-        ExtentManager.getExtentTest().log(Status.SKIP, message);
+        ExtentManager.getExtentTest().skip(message);
     }
 
     public static void info(Markup markup) {
         ExtentManager.getExtentTest().log(Status.INFO, markup);
     }
 
+    public static void logResponse(String response) {
+        ExtentManager.getExtentTest().pass(MarkupHelper.createCodeBlock(response, CodeLanguage.JSON));
+    }
+
     // Overloaded method
     public static void info(String message) {
-        ExtentManager.getExtentTest().log(Status.INFO, message);
+        ExtentManager.getExtentTest().info(message);
     }
 
     public static void warning(String message) {
         ExtentManager.getExtentTest().log(Status.WARNING, message);
+    }
+
+    public static void addAuthor(Authors[] authors) {
+        for (Authors author: authors) {
+            ExtentManager.getExtentTest().assignAuthor(String.valueOf(author));
+        }
+    }
+
+    public static void addCategories(CategoryType[] categoryTypes) {
+        for (CategoryType categoryType: categoryTypes) {
+            ExtentManager.getExtentTest().assignCategory(String.valueOf(categoryType));
+        }
     }
 }

@@ -9,7 +9,7 @@ import static io.restassured.RestAssured.*;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class RequestBuilder {
 
-    public static RequestSpecification buildGetRequest() {
+    public static RequestSpecification buildRequestForGetCalls() {
         return given().baseUri("http://localhost:3000")
                 .header("Content-Type", "application/json");
     }

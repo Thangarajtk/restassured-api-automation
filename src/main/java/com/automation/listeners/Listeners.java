@@ -8,7 +8,6 @@ public class Listeners implements ITestListener, ISuiteListener {
 
 	@Override
 	public void onStart(ISuite suite) {
-        System.out.println("----- ON START ------");
 		ExtentReport.initExtentReport();
 	}
 
@@ -23,27 +22,18 @@ public class Listeners implements ITestListener, ISuiteListener {
         ExtentLogger.pass("Test - <b>" + result.getMethod().getMethodName() + "</b>  is started");
     }
 
+    @Override
     public void onTestSuccess(ITestResult result) {
         ExtentLogger.pass("Test - <b>" + result.getMethod().getMethodName() + "</b> is passed");
     }
 
+    @Override
     public void onTestFailure(ITestResult result) {
         ExtentLogger.fail("Test - <b>" + result.getMethod().getMethodName() + "</b> is failed", result.getThrowable());
     }
 
+    @Override
     public void onTestSkipped(ITestResult result) {
         ExtentLogger.skip("Test - <b>" + result.getMethod().getMethodName() + "</b> is skipped");
     }
-
-    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-
-    }
-
-    public void onStart(ITestContext context) {
-
-    }
-
-	public void onFinish(ITestContext context) {
-
-	}
 }
