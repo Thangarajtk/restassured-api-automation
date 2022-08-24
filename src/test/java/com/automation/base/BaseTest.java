@@ -26,7 +26,8 @@ public class BaseTest {
     protected static ResponseSpecification responseSpecification;
     public static Response response;
     protected StringWriter stringWriter = new StringWriter();
-    protected PrintStream printStream = new PrintStream(new WriterOutputStream(stringWriter, StandardCharsets.UTF_8), true);
+    protected PrintStream printStream = new PrintStream(new WriterOutputStream(stringWriter, StandardCharsets.UTF_8),
+            true);
 
     /**
      * RequestSpecification is an Interface and RequestSpecBuilder is a class

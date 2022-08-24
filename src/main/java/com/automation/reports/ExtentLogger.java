@@ -7,6 +7,10 @@ import com.aventstack.extentreports.markuputils.CodeLanguage;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.Markup;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
+import io.restassured.http.Header;
+import io.restassured.specification.QueryableRequestSpecification;
+import io.restassured.specification.RequestSpecification;
+import io.restassured.specification.SpecificationQuerier;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
@@ -29,20 +33,29 @@ public final class ExtentLogger {
         ExtentManager.getExtentTest().log(Status.INFO, markup);
     }
 
+    // Overloaded method
+    public static void info(String message) {
+        ExtentManager.getExtentTest().info(message);
+    }
+
     public static void logResponse(String response) {
         ExtentManager.getExtentTest().pass(MarkupHelper.createCodeBlock(response, CodeLanguage.JSON));
     }
 
-    // Overloaded method
-    public static void info(String message) {
-        ExtentManager.getExtentTest().info(message);
+    public static void logRequest(RequestSpecification requestSpecification) {
+        QueryableRequestSpecification query = SpecificationQuerier.query(requestSpecification);
+        ExtentManager.getExtentTest().pass(MarkupHelper.createCodeBlock(query.getBody(),
+                CodeLanguage.JSON));
+        for (Header header: query.getHeaders()) {
+            info(header.getName() + ":" + header.getValue());
+        }
     }
 
     public static void warning(String message) {
         ExtentManager.getExtentTest().log(Status.WARNING, message);
     }
 
-    public static void addAuthor(Authors[] authors) {
+    public static void addAuthors(Authors[] authors) {
         for (Authors author: authors) {
             ExtentManager.getExtentTest().assignAuthor(String.valueOf(author));
         }

@@ -8,8 +8,8 @@ public class BuilderDesignPatternTest {
 
     @Test
     public void builderTest() {
-        // 1. Number of parameters increases, the readability decreases
-        // 2. To ignore some fields, multiple constructors has to be created
+        // 1) Number of parameters increases, the readability decreases
+        // 2) To ignore some fields, multiple constructors has to be created
 
         // Builder design pattern will be useful to overcome above issues.
         // 1) External Builder

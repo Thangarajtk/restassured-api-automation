@@ -1,8 +1,12 @@
 package com.automation.practice.jsonserver;
 
 import com.automation.constants.FrameworkConstants;
+import com.automation.reports.ExtentLogger;
+import com.automation.requestbuilder.RequestBuilder;
 import com.automation.utils.ApiUtils;
 import com.github.javafaker.Faker;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.json.JSONArray;
@@ -32,14 +36,13 @@ public final class ConstructPostRequest {
                 "      \"email\": \"abc@testmail.com\"\n" +
                 "    }";
 
-        given()
-                .baseUri("http://localhost:3000")
-                .header("Content-Type", "application/json")
-                .body(requestBody)
-                .when()
-                .post("/employees")
-                .then()
-                .log().all();
+        RequestSpecification requestSpecification = RequestBuilder.buildRequest()
+                .body(requestBody);
+        ExtentLogger.logRequest(requestSpecification);
+
+        Response response = requestSpecification.post("/employees");
+
+        ExtentLogger.logResponse(response.asPrettyString());
     }
     // 2) From External file
     @Test
@@ -56,7 +59,7 @@ public final class ConstructPostRequest {
     }
     // 3) Read it as String from external file (.json file) and replace values
     @Test
-    public void postRequestFromFileAsString() throws IOException {
+    public void postRequestFromFileAsString() {
 
 //        String requestBody = new String(Files.readAllBytes(Paths.get(System.getProperty("user.dir") + "/src/test/java/com/automation/practice/jsonserver/test.json")));
 //        String replacedRequestBody = requestBody.replace("6",

@@ -1,6 +1,9 @@
 package com.automation.practice.jsonserver;
 
+import com.automation.reports.ExtentLogger;
 import com.automation.requestbuilder.RequestBuilder;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.testng.annotations.Test;
@@ -11,11 +14,11 @@ public final class GetRequest {
     @Test
     public void getEmployeeDetails() {
 
-        RequestBuilder.buildRequestForGetCalls()
-                .pathParam("id", 13)
-                .when()
-                .get("/employees/{id}")
-                .then()
-                .log().all();
+        RequestSpecification requestSpecification = RequestBuilder.buildRequest()
+                .pathParam("id", 13);
+
+        Response response = requestSpecification.get("/employees/{id}");
+
+        ExtentLogger.logResponse(response.asPrettyString());
     }
 }
