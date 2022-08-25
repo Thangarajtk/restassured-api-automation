@@ -40,8 +40,10 @@ http://localhost:3000/
 ```
 
 ### Demo Uri's
+```
 https://reqres.in/
 http://ergast.com/mrd/
+```
 
 ### Validate JSON Schema
 1) Create or Get JSON Schema
@@ -52,11 +54,11 @@ http://ergast.com/mrd/
 1) Create or Get XML Schema (XSD)
 2) Add XSD in src/test/resources path
 
-### Authentication
-Example : Login with registered account
+### Authorization
+Authorization gives the users permission to access a resource.
 
 ### Authentication
-Process to prove that you are authentic user or not
+Process to prove that you are valid user or not
 Supports several authentication schemes - OAuth, digest, certificate, form and preemptive basic authentication.
 Basic authentication:
 	- Preemptive : Will supply the credentials as header before the server response.
