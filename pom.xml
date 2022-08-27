@@ -11,7 +11,7 @@
 		<maven-compiler-source>11</maven-compiler-source>
 		<maven-compiler-target>11</maven-compiler-target>
 		<testng-version>7.6.1</testng-version>
-		<restassured-version>5.1.1</restassured-version>
+		<restassured.version>5.1.1</restassured.version>
 		<extentreports-version>5.0.9</extentreports-version>
 		<apache-poi-version>5.2.2</apache-poi-version>
 		<json-simple-version>1.1.1</json-simple-version>
@@ -37,7 +37,7 @@
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>rest-assured</artifactId>
-			<version>${restassured-version}</version>
+			<version>${restassured.version}</version>
 		</dependency>
 
 		<!-- REST Assured includes JsonPath and XmlPath as transitive dependencies -->
@@ -46,7 +46,7 @@
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>json-path</artifactId>
-			<version>${restassured-version}</version>
+			<version>${restassured.version}</version>
 		</dependency>
 
 		<!-- Stand-alone XmlPath (included if you depend on the rest-assured artifact). 
@@ -54,20 +54,20 @@
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>xml-path</artifactId>
-			<version>${restassured-version}</version>
+			<version>${restassured.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>rest-assured-common</artifactId>
-			<version>${restassured-version}</version>
+			<version>${restassured.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator -->
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>json-schema-validator</artifactId>
-			<version>${restassured-version}</version>
+			<version>${restassured.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
