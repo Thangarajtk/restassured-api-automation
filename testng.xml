@@ -15,7 +15,7 @@
             <!--			<class name = "com.automation.tests.PatchRequestToUpdateParticularJobId"/>-->
             <!--			<class name = "com.automation.tests.HeadRequest"/>-->
             <!--			<class name = "com.automation.tests.GetRequestWithBasicAuth"/>-->
-            <!--			<class name = "com.automation.tests.GetRequestWithDigestAuth"/>-->
+            <!--			<class name = "com.automation.practice.auth.DigestAuthTest"/>-->
             <!--			<class name = "com.automation.tests.JsonSchemaValidation"/>-->
             <!--			<class name = "com.automation.tests.XmlSchemaValidation"/>-->
             <!--			<class name = "com.automation.tests.XmlNamespaceValidation"/>-->

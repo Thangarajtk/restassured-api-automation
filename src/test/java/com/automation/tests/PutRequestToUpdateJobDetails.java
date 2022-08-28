@@ -4,6 +4,7 @@ import static io.restassured.RestAssured.given;
 import java.io.File;
 
 import com.automation.base.BaseTest;
+import com.automation.constants.FrameworkConstants;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import io.restassured.response.Response;
@@ -13,7 +14,7 @@ public class PutRequestToUpdateJobDetails extends BaseTest {
 	@Test(description="Validate the status code for PUT request")
 	public void updateUsingPutRequest() {
 		
-		File file = new File(System.getProperty("user.dir")+"/src/test/resources/json/update_job_details.json");
+		File file = new File(FrameworkConstants.RESOURCES_FOLDER_PATH +"/json/update_job_details.json");
 		
 		Response response = given().
 				spec(requestSpecification).

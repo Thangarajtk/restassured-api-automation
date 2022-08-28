@@ -97,13 +97,6 @@ java -jar wiremock-jre8-standalone-2.33.1.jar
 Note: When you specify this parameter, WireMock will still, additionally, bind to an HTTP port (8080 by default). 
 So when running multiple WireMock servers you will also need to specify the --port parameter in order to avoid conflicts.
 
-### Important Notes
-User requirement: Swagger -> YAML file - What is the API, Request body, whether it is a GET, POST, PATCH, PUT, DELETE
-How is the response will look like
-Stored procedure (Store Proc) -> DAS layer will be integrated with Business layer
-
-Apigee -> POST(Client ID, client Secret, grant type) Response -> Token, Access token
-
 ### Different ways of constructing POST request
 1. As String
 2. From external file (.json file)
