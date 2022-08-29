@@ -3,10 +3,13 @@ package com.automation.tests;
 import static io.restassured.RestAssured.given;
 
 import com.automation.base.BaseTest;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import org.testng.annotations.Test;
 import io.restassured.response.Response;
 
-public class HeadRequest extends BaseTest {
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public final class HeadRequest extends BaseTest {
 
 	@Test(description="Validate the status code for HEAD request")
 	public void headRequestToValidateStatusCode() {

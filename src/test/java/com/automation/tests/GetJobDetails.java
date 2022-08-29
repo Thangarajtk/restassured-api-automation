@@ -4,13 +4,16 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
 import com.automation.base.BaseTest;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.automation.reports.ExtentLogger;
 import io.restassured.http.Headers;
 import io.restassured.response.Response;
 
-public class GetJobDetails extends BaseTest {
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public final class GetJobDetails extends BaseTest {
 
 	@Test(description="Validate the status code for GET request")
 	public void getRequestToValidateStatusCode() {

@@ -1,13 +1,16 @@
-package com.automation.tests;
+package com.automation.practice.wiremock;
 
 import com.automation.base.BaseTest;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import org.testng.annotations.Test;
 import io.restassured.RestAssured;
 import io.restassured.config.XmlConfig;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
-public class XmlNamespaceValidation extends BaseTest {
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public final class XmlNamespaceValidation extends BaseTest {
 	
 	@Test
 	public void validateXmlNamespace() {

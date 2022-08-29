@@ -17,9 +17,9 @@
             <!--			<class name = "com.automation.tests.GetRequestWithBasicAuth"/>-->
             <!--			<class name = "com.automation.practice.auth.DigestAuthTest"/>-->
             <!--			<class name = "com.automation.tests.JsonSchemaValidation"/>-->
-            <!--			<class name = "com.automation.tests.XmlSchemaValidation"/>-->
-            <!--			<class name = "com.automation.tests.XmlNamespaceValidation"/>-->
-            <!--			<class name = "com.automation.tests.SpecifyingRequestPort"/>-->
+            <!--			<class name = "com.automation.practice.wiremock.XmlSchemaValidation"/>-->
+            <!--			<class name = "com.automation.practice.wiremock.XmlNamespaceValidation"/>-->
+            <!--			<class name = "com.automation.practice.wiremock.SpecifyingRequestPort"/>-->
             <!--			<class name = "com.automation.tests.ResponseAwareMatcher"/>-->
         </classes>
     </test> <!-- Test -->

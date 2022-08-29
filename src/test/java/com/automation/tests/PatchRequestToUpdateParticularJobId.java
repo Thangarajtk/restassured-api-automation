@@ -3,12 +3,15 @@ package com.automation.tests;
 import static io.restassured.RestAssured.given;
 
 import com.automation.base.BaseTest;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
-public class PatchRequestToUpdateParticularJobId extends BaseTest {
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public final class PatchRequestToUpdateParticularJobId extends BaseTest {
 
 	@Test(description = "Validate the status code for PATCH request using Query param")
 	public void patchRequestWithQueryParam() {

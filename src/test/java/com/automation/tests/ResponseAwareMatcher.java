@@ -2,10 +2,13 @@ package com.automation.tests;
 
 import static io.restassured.RestAssured.given;
 import com.automation.base.BaseTest;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import org.testng.annotations.Test;
 import static org.hamcrest.Matchers.*;
 
-public class ResponseAwareMatcher extends BaseTest {
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public final class ResponseAwareMatcher extends BaseTest {
 
 	@Test(description="Response Aware Matcher Validation")
 	public void responseAwareMatcherTest() {

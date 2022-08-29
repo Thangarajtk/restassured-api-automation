@@ -4,6 +4,8 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 import java.io.File;
 import com.automation.base.BaseTest;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import org.testng.annotations.Test;
 import com.automation.constants.FrameworkConstants;
 import io.restassured.response.Response;
@@ -13,7 +15,8 @@ import io.restassured.response.Response;
  * @author Administrator
  *
  */
-public class JsonSchemaValidation extends BaseTest {
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public final class JsonSchemaValidation extends BaseTest {
 	
 	@Test(description = "Validating the JSON Schema")
 	public void validateJsonSchema() {

@@ -5,11 +5,14 @@ import java.io.File;
 
 import com.automation.base.BaseTest;
 import com.automation.constants.FrameworkConstants;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import io.restassured.response.Response;
 
-public class PutRequestToUpdateJobDetails extends BaseTest {
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public final class PutRequestToUpdateJobDetails extends BaseTest {
 
 	@Test(description="Validate the status code for PUT request")
 	public void updateUsingPutRequest() {

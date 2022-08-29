@@ -4,10 +4,13 @@ import static io.restassured.RestAssured.*;
 import java.io.File;
 
 import com.automation.base.BaseTest;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import org.testng.annotations.Test;
 import io.restassured.response.Response;
 
-public class PostJobDetails extends BaseTest {
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public final class PostJobDetails extends BaseTest {
 
 	@Test(enabled=false, description="Validate the status code for POST request")
 	public void postRequestUsingJsonBody() {

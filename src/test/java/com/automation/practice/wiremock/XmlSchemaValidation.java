@@ -1,15 +1,18 @@
-package com.automation.tests;
+package com.automation.practice.wiremock;
 
 import static io.restassured.RestAssured.*;
 import static io.restassured.matcher.RestAssuredMatchers.*;
 import java.io.File;
 import com.automation.base.BaseTest;
 import com.automation.constants.FrameworkConstants;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import org.testng.annotations.Test;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
-public class XmlSchemaValidation extends BaseTest {
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public final class XmlSchemaValidation extends BaseTest {
 
 	@Test(description = "Validating the XML DTD Schema")
 	public void validateXmlDtdSchema() {

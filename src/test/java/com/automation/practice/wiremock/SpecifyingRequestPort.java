@@ -1,16 +1,19 @@
-package com.automation.tests;
+package com.automation.practice.wiremock;
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 import java.util.concurrent.TimeUnit;
 
 import com.automation.base.BaseTest;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
 
-public class SpecifyingRequestPort extends BaseTest {
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public final class SpecifyingRequestPort extends BaseTest {
 	
 	@BeforeClass
 	public static void defaultConfigurationSetup() {
