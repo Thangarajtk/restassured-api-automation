@@ -11,7 +11,7 @@ import io.restassured.response.Response;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class HeadRequest extends BaseTest {
 
-	@Test(description="Validate the status code for HEAD request")
+	@Test(description = "Validate the status code for HEAD request")
 	public void headRequestToValidateStatusCode() {
 		
 		Response response = given().

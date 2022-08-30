@@ -10,7 +10,7 @@ import static org.hamcrest.Matchers.*;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class ResponseAwareMatcher extends BaseTest {
 
-	@Test(description="Response Aware Matcher Validation")
+	@Test(description = "Response Aware Matcher Validation")
 	public void responseAwareMatcherTest() {
 		
 		given().

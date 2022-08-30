@@ -1,0 +1,168 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "first_name": "Sebastian",
+      "last_name": "Eschweiler",
+      "email": "sebastian@codingthesmartway.com"
+    },
+    {
+      "id": 2,
+      "first_name": "Steve",
+      "last_name": "Palmer",
+      "email": "steve@codingthesmartway.com"
+    },
+    {
+      "id": 3,
+      "first_name": "Ann",
+      "last_name": "Smith",
+      "email": "ann@codingthesmartway.com"
+    },
+    {
+      "id": 5,
+      "first_name": "Auto",
+      "last_name": "user",
+      "email": "abc@testmail.com"
+    },
+    {
+      "id": 6,
+      "first_name": "Test",
+      "last_name": "User",
+      "email": "test@email.com"
+    },
+    {
+      "id": 18,
+      "first_name": "Test",
+      "last_name": "User",
+      "email": "test@email.com"
+    },
+    {
+      "id": 15,
+      "first_name": "auto",
+      "last_name": "test_user",
+      "email": "test_user@email.com",
+      "jobs": [
+        "Dev",
+        "Tester"
+      ],
+      "skill": {
+        "programming": "java",
+        "automation": [
+          "web, mobile, api"
+        ]
+      }
+    },
+    {
+      "jobs": [
+        "Tester",
+        "Dev"
+      ],
+      "skill": {
+        "automation": [
+          "web, mobile, api"
+        ],
+        "programming": "java"
+      },
+      "last_name": "test_user",
+      "id": 44,
+      "first_name": "auto",
+      "email": "test_user@email.com"
+    },
+    {
+      "jobs": [
+        "Tester",
+        "Dev"
+      ],
+      "skill": {
+        "automation": [
+          "web, mobile, api"
+        ],
+        "programming": "java"
+      },
+      "last_name": "test_user",
+      "id": 35,
+      "first_name": "auto",
+      "email": "test_user@email.com"
+    },
+    {
+      "jobs": [
+        "Tester",
+        "Dev"
+      ],
+      "skill": {
+        "automation": [
+          "web, mobile, api"
+        ],
+        "programming": "java"
+      },
+      "last_name": "test_user",
+      "id": 24,
+      "first_name": "auto",
+      "email": [
+        "test_user@email.com",
+        "test_user2@email.com"
+      ]
+    },
+    {
+      "id": 43,
+      "first_name": "auto",
+      "last_name": "test_user",
+      "email": "test_user@email.com",
+      "jobs": [
+        "Dev",
+        "Tester"
+      ],
+      "skill": {
+        "programming": "java",
+        "automation": [
+          "web, mobile, api"
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "firstName": "fname",
+      "lastName": "lname",
+      "email": "testmail@test.com",
+      "jobs": [],
+      "skill": null
+    },
+    {
+      "last_name": "lastname",
+      "first_name": "firstname",
+      "id": 13
+    },
+    {
+      "firstName": "fname",
+      "id": 14,
+      "jobs": [
+        "QA",
+        "SDET"
+      ],
+      "lastName": "lname",
+      "skill": {
+        "programming": "core java",
+        "automation": [
+          "rest-assured",
+          "jackson"
+        ]
+      }
+    },
+    {
+      "firstName": "fname",
+      "id": 22,
+      "jobs": [
+        "QA",
+        "SDET"
+      ],
+      "lastName": "lname",
+      "skill": {
+        "programming": "core java",
+        "automation": [
+          "rest-assured",
+          "jackson"
+        ]
+      }
+    }
+  ]
+}

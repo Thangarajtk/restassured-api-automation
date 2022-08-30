@@ -4,6 +4,7 @@ import static io.restassured.RestAssured.*;
 import java.io.File;
 
 import com.automation.base.BaseTest;
+import com.automation.constants.FrameworkConstants;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.testng.annotations.Test;
@@ -12,10 +13,10 @@ import io.restassured.response.Response;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class PostJobDetails extends BaseTest {
 
-	@Test(enabled=false, description="Validate the status code for POST request")
+	@Test(enabled = false, description = "Validate the status code for POST request")
 	public void postRequestUsingJsonBody() {
 		
-		File file = new File(System.getProperty("user.dir")+"/src/test/resources/json/create_job_details.json");
+		File file = new File(FrameworkConstants.RESOURCES_FOLDER_PATH + "/json/create_job_details.json");
 		
 		Response response = given().
 			spec(requestSpecification).

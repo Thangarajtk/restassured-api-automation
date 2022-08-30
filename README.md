@@ -1,4 +1,4 @@
-# REST ASSURED - API Automation Framework
+# REST ASSURED - API Automation
 
 1) Java library (API) for testing RESTful web services.
 2) Used to test XML and JSON based web services.
@@ -18,8 +18,9 @@ Query Param - Used to Sort/filter the resources, it is optional.
 
 ### Quick Start
 	- Java
-	- IDE (IntelliJ)
-	- Maven (It is required if we need to run from command line)
+	- IntelliJ IDE
+	- Maven
+	- TestNG
 
 ### Create a local REST API with JSON Server for testing
 JSON Server: Used to create our own fake Rest API.
@@ -67,9 +68,11 @@ Basic authentication:
 ### OAuth
  	- Open Standard for authorization protocol.
  Dependency:
- 	1) Rest Assured.
- 	2) ScribeJava-APIs
- 	3) Developer Account
+```
+- Rest Assured
+- ScribeJava-APIs 
+- Developer Account
+```
  NOTE: Developer account is mandatory to work with OAuth authentication.
 
 ### Cookie based Authentication
@@ -103,3 +106,17 @@ So when running multiple WireMock servers you will also need to specify the --po
 3. Read it as String from external file (.json file) and replace values.
 4. Using HashMap (for Json Object {} ) and ArrayList (for Json Array []).
 5. Using external Json library (JSONObject, JSONArray).
+
+### Test Application
+Swagger Doc
+```
+https://jobportalkarate.herokuapp.com/swagger-ui.html
+```
+To access the application locally - Open terminal, navigate to the location of 'jobportal-0.0.1-SNAPSHOT' JAR file and execute the following command
+```
+java -jar -Dserver.port=5050 jobportal-0.0.1-SNAPSHOT.jar
+```
+This will start the server and the following url can be used to access the Swagger doc
+```
+http://localhost:5050/swagger-ui.html
+```

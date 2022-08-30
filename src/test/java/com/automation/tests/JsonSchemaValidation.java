@@ -13,7 +13,6 @@ import io.restassured.response.Response;
 /**
  * Dependency "json-schema-validator" has to be added to the project to perform JSON-Schema validation
  * @author Administrator
- *
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class JsonSchemaValidation extends BaseTest {

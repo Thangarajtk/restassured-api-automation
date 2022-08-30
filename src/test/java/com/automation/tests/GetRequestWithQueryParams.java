@@ -12,23 +12,23 @@ import junit.framework.Assert;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class GetRequestWithQueryParams extends BaseTest {
 
-	@Test(description="Validate the status code for GET request using query params")
-	public void getParticularJobDetailsUsingQueryParams() {
-		
-		Response response = given().
-				spec(requestSpecification).
-				headers("Content-Type", "application/json").
-				queryParam("id", 1).
-				queryParam("jobTitle", "Software Engg").
-			when().
-				get("/normal/webapi/find").
-			then().
-				extract().response();
-		
-		logRequestInReport(stringWriter.toString());
-		logResponseInReport("API RESPONSE", response.prettyPrint());
-		
-		Assert.assertEquals(response.getStatusCode(), 200);
-	}
+    @Test(description = "Validate the status code for GET request using query params")
+    public void getParticularJobDetailsUsingQueryParams() {
+
+        Response response = given().
+                spec(requestSpecification).
+                headers("Content-Type", "application/json").
+                queryParam("id", 1).
+                queryParam("jobTitle", "Software Engg").
+                when().
+                get("/normal/webapi/find").
+                then().
+                extract().response();
+
+        logRequestInReport(stringWriter.toString());
+        logResponseInReport("API RESPONSE", response.prettyPrint());
+
+        Assert.assertEquals(response.getStatusCode(), 200);
+    }
 
 }
