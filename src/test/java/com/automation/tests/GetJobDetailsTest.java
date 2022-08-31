@@ -13,7 +13,7 @@ import io.restassured.http.Headers;
 import io.restassured.response.Response;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class GetJobDetails extends BaseTest {
+public final class GetJobDetailsTest extends BaseTest {
 
     @Test(description = "Validate the status code for GET request")
     public void getRequestToValidateStatusCode() {

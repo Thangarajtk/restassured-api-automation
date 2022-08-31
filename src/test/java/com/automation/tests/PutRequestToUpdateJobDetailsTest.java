@@ -1,23 +1,26 @@
 package com.automation.tests;
 
-import static io.restassured.RestAssured.given;
-import java.io.File;
-
 import com.automation.base.BaseTest;
 import com.automation.constants.FrameworkConstants;
+import io.restassured.response.Response;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-import org.testng.Assert;
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
-import io.restassured.response.Response;
+
+import java.io.File;
+
+import static com.automation.reports.ExtentLogger.logRequest;
+import static com.automation.reports.ExtentLogger.logResponse;
+import static io.restassured.RestAssured.given;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class PutRequestToUpdateJobDetails extends BaseTest {
+public final class PutRequestToUpdateJobDetailsTest extends BaseTest {
 
 	@Test(description="Validate the status code for PUT request")
 	public void updateUsingPutRequest() {
 		
-		File file = new File(FrameworkConstants.RESOURCES_FOLDER_PATH +"/json/update_job_details.json");
+		File file = new File(FrameworkConstants.RESOURCES_FOLDER_PATH + "/json/update_job_details.json");
 		
 		Response response = given().
 				spec(requestSpecification).
@@ -27,10 +30,10 @@ public final class PutRequestToUpdateJobDetails extends BaseTest {
 				put("/normal/webapi/update").
 			then().
 				extract().response();
-		
-		logRequestInReport(stringWriter.toString());
-		logResponseInReport("API RESPONSE", response.prettyPrint());
-		
-		Assert.assertEquals(response.statusCode(), 200);
+
+		logRequest(requestSpecification);
+		logResponse(response.asPrettyString());
+
+		Assertions.assertThat(response.statusCode()).isEqualTo(200);
 	}
 }

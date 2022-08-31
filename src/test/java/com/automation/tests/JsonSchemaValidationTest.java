@@ -15,7 +15,7 @@ import io.restassured.response.Response;
  * @author Administrator
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class JsonSchemaValidation extends BaseTest {
+public final class JsonSchemaValidationTest extends BaseTest {
 	
 	@Test(description = "Validating the JSON Schema")
 	public void validateJsonSchema() {

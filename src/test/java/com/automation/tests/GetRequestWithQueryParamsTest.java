@@ -1,5 +1,7 @@
 package com.automation.tests;
 
+import static com.automation.reports.ExtentLogger.logRequest;
+import static com.automation.reports.ExtentLogger.logResponse;
 import static io.restassured.RestAssured.given;
 
 import com.automation.base.BaseTest;
@@ -10,7 +12,7 @@ import io.restassured.response.Response;
 import junit.framework.Assert;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class GetRequestWithQueryParams extends BaseTest {
+public final class GetRequestWithQueryParamsTest extends BaseTest {
 
     @Test(description = "Validate the status code for GET request using query params")
     public void getParticularJobDetailsUsingQueryParams() {
@@ -25,8 +27,8 @@ public final class GetRequestWithQueryParams extends BaseTest {
                 then().
                 extract().response();
 
-        logRequestInReport(stringWriter.toString());
-        logResponseInReport("API RESPONSE", response.prettyPrint());
+        logRequest(requestSpecification);
+        logResponse(response.asPrettyString());
 
         Assert.assertEquals(response.getStatusCode(), 200);
     }

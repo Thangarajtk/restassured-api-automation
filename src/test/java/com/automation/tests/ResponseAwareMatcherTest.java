@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import static org.hamcrest.Matchers.*;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class ResponseAwareMatcher extends BaseTest {
+public final class ResponseAwareMatcherTest extends BaseTest {
 
 	@Test(description = "Response Aware Matcher Validation")
 	public void responseAwareMatcherTest() {

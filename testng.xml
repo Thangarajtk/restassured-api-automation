@@ -7,20 +7,20 @@
     <test thread-count="5" name="Test">
         <classes>
             <class name="com.automation.practice.jsonserver.GetRequest"/>
-            <!--			<class name = "com.automation.tests.GetJobDetails"/>-->
-            <!--			<class name = "com.automation.tests.PostJobDetails"/>-->
-            <!--			<class name = "com.automation.tests.PutRequestToUpdateJobDetails"/>-->
-            <!--			<class name = "com.automation.tests.DeleteParticularJobId"/>-->
-            <!--			<class name = "com.automation.tests.GetRequestWithQueryParams"/>-->
-            <!--			<class name = "com.automation.tests.PatchRequestToUpdateParticularJobId"/>-->
-            <!--			<class name = "com.automation.tests.HeadRequest"/>-->
-            <!--			<class name = "com.automation.tests.GetRequestWithBasicAuth"/>-->
+            <!--			<class name = "com.automation.tests.GetJobDetailsTest"/>-->
+            <!--			<class name = "com.automation.tests.PostJobDetailsTest"/>-->
+            <!--			<class name = "com.automation.tests.PutRequestToUpdateJobDetailsTest"/>-->
+            <!--			<class name = "com.automation.tests.DeleteParticularJobIdTest"/>-->
+            <!--			<class name = "com.automation.tests.GetRequestWithQueryParamsTest"/>-->
+            <!--			<class name = "com.automation.tests.PatchRequestToUpdateParticularJobIdTest"/>-->
+            <!--			<class name = "com.automation.tests.HeadRequestTest"/>-->
+            <!--			<class name = "com.automation.tests.GetRequestWithBasicAuthTest"/>-->
             <!--			<class name = "com.automation.practice.auth.DigestAuthTest"/>-->
-            <!--			<class name = "com.automation.tests.JsonSchemaValidation"/>-->
+            <!--			<class name = "com.automation.tests.JsonSchemaValidationTest"/>-->
             <!--			<class name = "com.automation.practice.wiremock.XmlSchemaValidation"/>-->
             <!--			<class name = "com.automation.practice.wiremock.XmlNamespaceValidation"/>-->
             <!--			<class name = "com.automation.practice.wiremock.SpecifyingRequestPort"/>-->
-            <!--			<class name = "com.automation.tests.ResponseAwareMatcher"/>-->
+            <!--			<class name = "com.automation.tests.ResponseAwareMatcherTest"/>-->
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

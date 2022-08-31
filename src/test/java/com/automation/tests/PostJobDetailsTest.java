@@ -1,5 +1,7 @@
 package com.automation.tests;
 
+import static com.automation.reports.ExtentLogger.logRequest;
+import static com.automation.reports.ExtentLogger.logResponse;
 import static io.restassured.RestAssured.*;
 import java.io.File;
 
@@ -11,7 +13,7 @@ import org.testng.annotations.Test;
 import io.restassured.response.Response;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class PostJobDetails extends BaseTest {
+public final class PostJobDetailsTest extends BaseTest {
 
 	@Test(enabled = false, description = "Validate the status code for POST request")
 	public void postRequestUsingJsonBody() {
@@ -26,9 +28,9 @@ public final class PostJobDetails extends BaseTest {
 			post("/normal/webapi/add").
 		then().
 			extract().response();
-		
-		logRequestInReport(stringWriter.toString());
-		logResponseInReport("API RESPONSE", response.prettyPrint());
+
+		logRequest(requestSpecification);
+		logResponse(response.asPrettyString());
 		
 		response.then().assertThat().statusCode(201);
 	}

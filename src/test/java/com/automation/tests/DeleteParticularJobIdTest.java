@@ -1,17 +1,19 @@
 package com.automation.tests;
 
-import static io.restassured.RestAssured.*;
-
 import com.automation.base.BaseTest;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
+
+import static com.automation.reports.ExtentLogger.logRequest;
+import static com.automation.reports.ExtentLogger.logResponse;
+import static io.restassured.RestAssured.given;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class DeleteParticularJobId extends BaseTest {
+public final class DeleteParticularJobIdTest extends BaseTest {
 
     @Test(description = "Validate the status code for DELETE request")
     public void deleteSpecificRecordUsingDeleteRequest() {
@@ -25,8 +27,8 @@ public final class DeleteParticularJobId extends BaseTest {
                 then().
                 	extract().response();
 
-        logRequestInReport(stringWriter.toString());
-        logResponseInReport("API RESPONSE", response.prettyPrint());
+        logRequest(requestSpecification);
+        logResponse(response.asPrettyString());
 
         // Assert the status code
         Assert.assertEquals(response.statusCode(), 200);
@@ -45,8 +47,8 @@ public final class DeleteParticularJobId extends BaseTest {
                 then().
                 extract().response();
 
-        logRequestInReport(stringWriter.toString());
-        logResponseInReport("API RESPONSE", response.prettyPrint());
+        logRequest(requestSpecification);
+        logResponse(response.asPrettyString());
 
         // Assert the status code
         Assert.assertEquals(response.statusCode(), 200);

@@ -1,5 +1,7 @@
 package com.automation.tests;
 
+import static com.automation.reports.ExtentLogger.logRequest;
+import static com.automation.reports.ExtentLogger.logResponse;
 import static io.restassured.RestAssured.given;
 
 import com.automation.base.BaseTest;
@@ -11,7 +13,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class GetRequestWithBasicAuth extends BaseTest {
+public final class GetRequestWithBasicAuthTest extends BaseTest {
 
     /**
      * Basic Authentication
@@ -29,8 +31,8 @@ public final class GetRequestWithBasicAuth extends BaseTest {
                 then().
                 extract().response();
 
-        logRequestInReport(stringWriter.toString());
-        logResponseInReport("API RESPONSE", response.prettyPrint());
+        logRequest(requestSpecification);
+        logResponse(response.asPrettyString());
 
         Assert.assertEquals(response.statusCode(), 200);
     }

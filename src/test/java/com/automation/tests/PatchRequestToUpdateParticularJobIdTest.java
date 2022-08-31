@@ -1,5 +1,7 @@
 package com.automation.tests;
 
+import static com.automation.reports.ExtentLogger.logRequest;
+import static com.automation.reports.ExtentLogger.logResponse;
 import static io.restassured.RestAssured.given;
 
 import com.automation.base.BaseTest;
@@ -11,7 +13,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class PatchRequestToUpdateParticularJobId extends BaseTest {
+public final class PatchRequestToUpdateParticularJobIdTest extends BaseTest {
 
 	@Test(description = "Validate the status code for PATCH request using Query param")
 	public void patchRequestWithQueryParam() {
@@ -26,9 +28,9 @@ public final class PatchRequestToUpdateParticularJobId extends BaseTest {
 				patch("/normal/webapi/update/details").
 			then().
 				extract().response();
-		
-		logRequestInReport(stringWriter.toString());
-		logResponseInReport("API RESPONSE", response.prettyPrint());
+
+		logRequest(requestSpecification);
+		logResponse(response.asPrettyString());
 		
 		// Assert the status code
 		Assert.assertEquals(response.statusCode(), 200);
