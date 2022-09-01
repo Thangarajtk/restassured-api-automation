@@ -1,16 +1,16 @@
 package com.automation.tests;
 
-import static com.automation.reports.ExtentLogger.logRequest;
-import static com.automation.reports.ExtentLogger.logResponse;
-import static io.restassured.RestAssured.given;
-
 import com.automation.base.BaseTest;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
+
+import static com.automation.reports.ExtentLogger.logRequest;
+import static com.automation.reports.ExtentLogger.logResponse;
+import static io.restassured.RestAssured.given;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class GetRequestWithBasicAuthTest extends BaseTest {

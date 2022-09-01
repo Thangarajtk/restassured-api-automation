@@ -14,7 +14,7 @@ public final class JiraUtils {
         String requestBody = ApiUtils.readJsonAndGetAsString("");
 
         Response response = given()
-                .auth().basic("username", "password")
+                .auth().basic("<<username>>", "<<password>>")
                 .header("Content-Type", "application/json")
                 .log().all()
                 .body(requestBody)
