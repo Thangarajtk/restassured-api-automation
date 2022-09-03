@@ -1,4 +1,4 @@
-# REST ASSURED - API Automation
+# REST ASSURED - API automation framework
 
 1) Java library (API) for testing RESTful web services.
 2) Used to test XML and JSON based web services.
@@ -38,6 +38,11 @@ https://medium.com/codingthesmartway-com-blog/create-a-rest-api-with-json-server
 3) Created API will be available in the local server 
 ```
 http://localhost:3000/
+```
+
+To start Json Server on the machine IP address
+```
+json-server --host <<ipaddress>> --watch db.json
 ```
 
 ### Demo Uri's
@@ -119,4 +124,22 @@ java -jar -Dserver.port=5050 jobportal-0.0.1-SNAPSHOT.jar
 This will start the server and the following url can be used to access the Swagger doc
 ```
 http://localhost:5050/swagger-ui.html
+```
+
+### Build Docker Image
+```
+docker build -t <imagename>:<tag> .
+```
+
+### Create docker image on top of a container (Base image)
+```
+docker commit <<containerid>>
+docker tag <<container/image id>> <<newImageName>>
+docker build -t <<newImageName>>
+```
+
+### Push image to docker hub
+```
+docker login
+docker push <<imagename>>
 ```

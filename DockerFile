@@ -1,0 +1,6 @@
+FROM maven:3.6.3-jdk-8
+COPY extent-test-report/index.html home/apiframework/index.html
+COPY pom.xml    home/apiframework/pom.xml
+COPY testng.xml home/apiframework/testng.xml
+WORKDIR home/apiframework
+ENTRYPOINT mvn clean test
