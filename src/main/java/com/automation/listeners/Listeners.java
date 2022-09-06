@@ -1,5 +1,6 @@
 package com.automation.listeners;
 
+import com.automation.annotations.FrameworkAnnotation;
 import org.testng.*;
 import com.automation.reports.ExtentLogger;
 import com.automation.reports.ExtentReport;
@@ -21,6 +22,10 @@ public class Listeners implements ITestListener, ISuiteListener {
 	@Override
     public void onTestStart(ITestResult result) {
 		ExtentReport.createTest(result.getMethod().getMethodName());
+        ExtentLogger.addAuthors(result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(FrameworkAnnotation.class)
+                .author());
+        ExtentLogger.addCategories(result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(FrameworkAnnotation.class)
+                .category());
         ExtentLogger.pass(MESSAGE + result.getMethod().getMethodName() + "</b>  is started");
     }
 

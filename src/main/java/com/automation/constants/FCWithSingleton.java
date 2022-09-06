@@ -4,7 +4,7 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class FCWithSingleton {
+public final class FCWithSingleton {
 
     // Singleton design pattern - Single instance for a class at a particular point of time
     // It is part of Creational design pattern

@@ -1,15 +1,13 @@
 package com.automation.practice.jsonserver;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
+import com.automation.utils.ExcelUtils;
+import io.restassured.http.ContentType;
 import org.json.simple.JSONObject;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.automation.utils.ExcelUtils;
-
-import io.restassured.http.ContentType;
+import java.util.ArrayList;
+import java.util.Map;
 
 import static io.restassured.RestAssured.*;
 
@@ -20,7 +18,7 @@ public class PostRequestDataDrivenExcelTest {
 	public Object[][] getPostData() {
 		Object[][] data;
 		ExcelUtils xlReader = new ExcelUtils();
-		HashMap<String, ArrayList<Object>> map = xlReader.getExcelData();
+		Map<String, ArrayList<Object>> map = xlReader.getExcelData();
 		
 		ArrayList<Object> value = map.get("FirstName");
 		data = new Object[value.size()][2];

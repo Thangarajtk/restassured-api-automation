@@ -10,11 +10,11 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven-compiler-source>11</maven-compiler-source>
 		<maven-compiler-target>11</maven-compiler-target>
-		<testng-version>7.6.1</testng-version>
+		<testng.version>7.6.1</testng.version>
 		<restassured.version>5.1.1</restassured.version>
-		<extentreports-version>5.0.9</extentreports-version>
-		<apache-poi-version>5.2.2</apache-poi-version>
-		<json-simple-version>1.1.1</json-simple-version>
+		<extentreports.version>5.0.9</extentreports.version>
+		<apache-poi.version>5.2.2</apache-poi.version>
+		<json-simple.version>1.1.1</json-simple.version>
 		<owner.version>1.0.12</owner.version>
 		<lombok.version>1.18.24</lombok.version>
 		<unirest-java.version>1.4.9</unirest-java.version>
@@ -23,6 +23,8 @@
 		<gson.version>2.9.0</gson.version>
 		<jackson-databind.version>2.13.3</jackson-databind.version>
 		<assertj.version>3.23.1</assertj.version>
+		<javafaker.version>1.0.2</javafaker.version>
+		<scribejava-apis.version>8.3.1</scribejava-apis.version>
 	</properties>
 
 	<dependencies>
@@ -74,35 +76,35 @@
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>${testng-version}</version>
+			<version>${testng.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
 		<dependency>
 			<groupId>com.googlecode.json-simple</groupId>
 			<artifactId>json-simple</artifactId>
-			<version>${json-simple-version}</version>
+			<version>${json-simple.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
 		<dependency>
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>
-			<version>${extentreports-version}</version>
+			<version>${extentreports.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
-			<version>${apache-poi-version}</version>
+			<version>${apache-poi.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
-			<version>${apache-poi-version}</version>
+			<version>${apache-poi.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
@@ -129,7 +131,7 @@
 		<dependency>
 			<groupId>com.github.scribejava</groupId>
 			<artifactId>scribejava-apis</artifactId>
-			<version>8.3.1</version>
+			<version>${scribejava-apis.version}</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -165,7 +167,7 @@
 		<dependency>
 			<groupId>com.github.javafaker</groupId>
 			<artifactId>javafaker</artifactId>
-			<version>1.0.2</version>
+			<version>${javafaker.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->

@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 import com.automation.constants.FrameworkConstants;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -48,7 +49,7 @@ public final class ExcelUtils {
         return row.getLastCellNum();
     }
 
-    public HashMap<String, ArrayList<Object>> getExcelData() {
+    public Map<String, ArrayList<Object>> getExcelData() {
         HashMap<String, ArrayList<Object>> map = new HashMap<>();
         ArrayList<Object> list;
 
