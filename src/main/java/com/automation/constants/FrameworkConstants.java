@@ -22,11 +22,9 @@ public final class FrameworkConstants {
     private static final String extentReportPath = PROJECT_PATH + File.separator + "extent-test-report";
 
     public static String getExtentReportPath() {
-        if (ConfigFactory.getConfig().override_reports().equalsIgnoreCase("yes")) {
-            return extentReportPath + File.separator + "index.html";
-        } else {
-            return extentReportPath + File.separator + getCurrentDateTime() + File.separator + "index.html";
-        }
+        return ConfigFactory.getConfig().override_reports().equalsIgnoreCase("yes") ?
+                extentReportPath + File.separator + "index.html" :
+                extentReportPath + File.separator + getCurrentDateTime() + File.separator + "index.html";
     }
 
     private static String getCurrentDateTime() {

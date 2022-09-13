@@ -44,15 +44,11 @@ public final class ExtentLogger {
 
     public static void logRequest(RequestSpecification requestSpecification) {
         QueryableRequestSpecification query = SpecificationQuerier.query(requestSpecification);
-        ExtentManager.getExtentTest().pass(MarkupHelper.createCodeBlock(query.getBody(),
+        ExtentManager.getExtentTest().pass(MarkupHelper.createCodeBlock(String.valueOf(query.getBody()),
                 CodeLanguage.JSON));
         for (Header header: query.getHeaders()) {
             info(header.getName() + ":" + header.getValue());
         }
-    }
-
-    public static void warning(String message) {
-        ExtentManager.getExtentTest().log(Status.WARNING, message);
     }
 
     public static void addAuthors(Authors[] authors) {
