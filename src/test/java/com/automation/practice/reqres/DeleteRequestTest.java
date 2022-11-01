@@ -4,7 +4,7 @@ import static io.restassured.RestAssured.*;
 
 import org.testng.annotations.Test;
 
-public class DeleteRequestTestDemo {
+public class DeleteRequestTest {
 
     @Test
     public void testDeleteRequest() {

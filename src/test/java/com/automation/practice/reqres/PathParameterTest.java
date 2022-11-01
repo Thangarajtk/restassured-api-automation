@@ -3,7 +3,7 @@ package com.automation.practice.reqres;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 
-public class PathParameter {
+public class PathParameterTest {
 
     @Test
     public void testPathParameter() {

@@ -12,7 +12,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class XmlSchemaValidation extends BaseTest {
+public final class XmlSchemaValidationTest extends BaseTest {
 
 	@Test(description = "Validating the XML DTD Schema")
 	public void validateXmlDtdSchema() {

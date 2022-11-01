@@ -1,8 +1,11 @@
 package com.automation.tests;
 
+import static com.automation.enums.Authors.USER_1;
+import static com.automation.enums.CategoryType.SMOKE;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
+import com.automation.annotations.FrameworkAnnotation;
 import com.automation.base.BaseTest;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -15,6 +18,7 @@ import io.restassured.response.Response;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class GetJobDetailsTest extends BaseTest {
 
+    @FrameworkAnnotation(author = USER_1, category = {SMOKE})
     @Test(description = "Validate the status code for GET request")
     public void getRequestToValidateStatusCode() {
         Response response = given().
@@ -33,6 +37,7 @@ public final class GetJobDetailsTest extends BaseTest {
         response.then().assertThat().statusCode(200);
     }
 
+    @FrameworkAnnotation(author = USER_1, category = {SMOKE})
     @Test(description = "Validate the JSON response body for GET request")
     public void getRequestToValidateJsonResponseBody() {
         Response response = given().
@@ -52,6 +57,7 @@ public final class GetJobDetailsTest extends BaseTest {
                 "[0].jobId", equalTo(1));
     }
 
+    @FrameworkAnnotation(author = USER_1, category = {SMOKE})
     @Test(description = "Validate the XML response body for GET request")
     public void getRequestToValidateXmlResponseBody() {
         Response response = given().
@@ -70,6 +76,7 @@ public final class GetJobDetailsTest extends BaseTest {
                 "List.item.jobId", equalTo("1"));
     }
 
+    @FrameworkAnnotation(author = USER_1, category = {SMOKE})
     @Test(description = "Validate the JSON response body using Json Path for GET request")
     public void getRequestToValidateResponseBodyUsingJsonPath() {
         Response response = given().
@@ -89,6 +96,7 @@ public final class GetJobDetailsTest extends BaseTest {
         Assert.assertEquals(jobTitle, "Software Engg");
     }
 
+    @FrameworkAnnotation(author = USER_1, category = {SMOKE})
     @Test(description = "Validate the JSON response header for GET request")
     public void getRequestToValidateJsonResponseHeader() {
         Response response = given().
@@ -105,6 +113,7 @@ public final class GetJobDetailsTest extends BaseTest {
         response.then().assertThat().header("content-type", equalTo("application/json"));
     }
 
+    @FrameworkAnnotation(author = USER_1, category = {SMOKE})
     @Test(description = "Validate the XML response header for GET request")
     public void getRequestToValidateXmlResponseHeader() {
         Response response = given().
@@ -124,6 +133,7 @@ public final class GetJobDetailsTest extends BaseTest {
         response.then().assertThat().header("content-type", equalTo("application/xml"));
     }
 
+    @FrameworkAnnotation(author = USER_1, category = {SMOKE})
     @Test(description = "Validate the status line for GET request")
     public void getRequestToValidateStatusLine() {
         Response response = given().

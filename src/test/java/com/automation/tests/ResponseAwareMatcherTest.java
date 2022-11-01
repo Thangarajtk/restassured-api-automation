@@ -1,6 +1,10 @@
 package com.automation.tests;
 
+import static com.automation.enums.Authors.USER_2;
+import static com.automation.enums.CategoryType.SMOKE;
 import static io.restassured.RestAssured.given;
+
+import com.automation.annotations.FrameworkAnnotation;
 import com.automation.base.BaseTest;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -10,6 +14,7 @@ import static org.hamcrest.Matchers.*;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class ResponseAwareMatcherTest extends BaseTest {
 
+	@FrameworkAnnotation(author = USER_2, category = {SMOKE})
 	@Test(description = "Response Aware Matcher Validation")
 	public void responseAwareMatcherTest() {
 		

@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 import io.restassured.RestAssured;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class SpecifyingRequestPort extends BaseTest {
+public final class SpecifyingRequestPortTest extends BaseTest {
 	
 	@BeforeClass
 	public static void defaultConfigurationSetup() {

@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class XmlNamespaceValidation extends BaseTest {
+public final class XmlNamespaceValidationTest extends BaseTest {
 	
 	@Test
 	public void validateXmlNamespace() {

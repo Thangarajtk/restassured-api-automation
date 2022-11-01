@@ -14,62 +14,62 @@ import static io.restassured.RestAssured.*;
 
 public class PostRequestDataDrivenExcelTest {
 
-	@DataProvider(name = "input")
-	public Object[][] getPostData() {
-		Object[][] data;
-		ExcelUtils xlReader = new ExcelUtils();
-		Map<String, ArrayList<Object>> map = xlReader.getExcelData();
-		
-		ArrayList<Object> value = map.get("FirstName");
-		data = new Object[value.size()][2];
+    @DataProvider(name = "input")
+    public Object[][] getPostData() {
+        Object[][] data;
+        ExcelUtils xlReader = new ExcelUtils();
+        Map<String, ArrayList<Object>> map = xlReader.getExcelData();
 
-		for (int i = 0; i < value.size(); i++) {
-			data[i][0]=map.get("FirstName").get(i);
-			data[i][1]=map.get("SubjectId").get(i);
-		}
-		return data;
-	}
+        ArrayList<Object> value = map.get("FirstName");
+        data = new Object[value.size()][2];
 
-	@Test(dataProvider="input")
-	public void testPostRequest(String firstName, String subjectId) {
+        for (int i = 0; i < value.size(); i++) {
+            data[i][0] = map.get("FirstName").get(i);
+            data[i][1] = map.get("SubjectId").get(i);
+        }
+        return data;
+    }
 
-		JSONObject request = new JSONObject();
-		request.put("firstName", firstName);
-		request.put("subjectId", Integer.parseInt(subjectId));
+    @Test(dataProvider = "input")
+    public void testPostRequest(String firstName, String subjectId) {
 
-		baseURI = "http://localhost:3000/";
+        JSONObject request = new JSONObject();
+        request.put("firstName", firstName);
+        request.put("subjectId", Integer.parseInt(subjectId));
 
-		given().
-			header("Content-Type", "application.json").
-			contentType(ContentType.JSON).
-			accept(ContentType.JSON).
-			body(request.toJSONString()).
-		when().
-			post("/users").
-		then().
-			assertThat().
-			statusCode(201);
-	}
+        baseURI = "http://localhost:3000/";
 
-	// Available Libraries Gson, Jackson, Json and Simple Json
-	@Test
-	public void testPostRequest() {
+        given().
+                header("Content-Type", "application.json").
+                contentType(ContentType.JSON).
+                accept(ContentType.JSON).
+                body(request.toJSONString()).
+                when().
+                post("/users").
+                then().
+                assertThat().
+                statusCode(201);
+    }
 
-		org.json.JSONObject request = new org.json.JSONObject();
-		//POST request body
-		request.put("name", "Raj");
-		request.put("Job", "Automation Engineer");
+    // Available Libraries Gson, Jackson, Json and Simple Json
+    @Test
+    public void testPostRequest() {
 
-		given().
-				baseUri("https://reqres.in").
-				header("Content-Type", "application.json").
-				contentType(ContentType.JSON).
-				accept(ContentType.JSON).
-				body(request.toString());
-		when().
-				post("/api/users").
-				then().
-				assertThat().
-				statusCode(201);
-	}
+        org.json.JSONObject request = new org.json.JSONObject();
+        //POST request body
+        request.put("name", "Raj");
+        request.put("Job", "Automation Engineer");
+
+        given().
+                baseUri("https://reqres.in").
+                header("Content-Type", "application.json").
+                contentType(ContentType.JSON).
+                accept(ContentType.JSON).
+                body(request.toString());
+        when().
+                post("/api/users").
+                then().
+                assertThat().
+                statusCode(201);
+    }
 }

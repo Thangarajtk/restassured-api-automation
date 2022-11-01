@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 import static io.restassured.RestAssured.given;
 
-public class QueryParameters {
+public class QueryParametersTest {
 
     @Test
     public void testSingleQueryParam() {

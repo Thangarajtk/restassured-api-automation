@@ -10,7 +10,7 @@ import java.util.Arrays;
 
 import static io.restassured.RestAssured.given;
 
-public final class PostRequestUsingPojo {
+public final class PostRequestUsingPojoTest {
 
     // POJO - Plain Old Java Object
     // {} - Create class file for every Json Object

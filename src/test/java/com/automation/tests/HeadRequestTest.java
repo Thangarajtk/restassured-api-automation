@@ -1,7 +1,10 @@
 package com.automation.tests;
 
+import static com.automation.enums.Authors.USER_2;
+import static com.automation.enums.CategoryType.SMOKE;
 import static io.restassured.RestAssured.given;
 
+import com.automation.annotations.FrameworkAnnotation;
 import com.automation.base.BaseTest;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -11,6 +14,7 @@ import io.restassured.response.Response;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class HeadRequestTest extends BaseTest {
 
+	@FrameworkAnnotation(author = USER_2, category = {SMOKE})
 	@Test(description = "Validate the status code for HEAD request")
 	public void headRequestToValidateStatusCode() {
 		

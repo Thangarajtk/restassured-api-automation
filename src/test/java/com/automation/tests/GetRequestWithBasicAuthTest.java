@@ -1,5 +1,6 @@
 package com.automation.tests;
 
+import com.automation.annotations.FrameworkAnnotation;
 import com.automation.base.BaseTest;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -8,6 +9,9 @@ import lombok.NoArgsConstructor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import static com.automation.enums.Authors.USER_1;
+import static com.automation.enums.Authors.USER_2;
+import static com.automation.enums.CategoryType.SMOKE;
 import static com.automation.reports.ExtentLogger.logRequest;
 import static com.automation.reports.ExtentLogger.logResponse;
 import static io.restassured.RestAssured.given;
@@ -20,6 +24,7 @@ public final class GetRequestWithBasicAuthTest extends BaseTest {
      * 1) Preemptive
      * 2) Challanged
      */
+    @FrameworkAnnotation(author = USER_2, category = {SMOKE})
     @Test(description = "Validate the status code for secure GET request with Basic Authentication")
     public void secureGetRequestUsingChallengedBasicAuth() {
         Response response = given().

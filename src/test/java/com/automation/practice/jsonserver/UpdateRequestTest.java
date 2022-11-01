@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public final class UpdateRequest {
+public final class UpdateRequestTest {
 
     @Test
     public void updateTest() {

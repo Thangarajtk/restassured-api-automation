@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import org.testng.annotations.Test;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class GetRequest {
+public final class GetRequestTest {
 
     @Test
     public void getEmployeeDetails() {

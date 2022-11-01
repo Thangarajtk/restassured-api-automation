@@ -13,7 +13,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.testng.annotations.Test;
 import java.io.File;
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -22,7 +21,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class ConstructPostRequest {
+public final class ConstructPostRequestTest {
 
     // Different ways of constructing POST request
     // 1) As String
