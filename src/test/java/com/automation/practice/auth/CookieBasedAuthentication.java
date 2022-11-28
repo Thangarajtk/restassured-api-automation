@@ -8,7 +8,7 @@ import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.*;
 
-public class CookieBasedAuthentication {
+public final class CookieBasedAuthentication {
 
     @Test
     public void testCookieBasedAuthentication() {

@@ -11,7 +11,7 @@ import com.automation.base.BaseTest;
 import org.testng.annotations.*;
 import static io.restassured.RestAssured.*;
 
-public class GetRequest extends BaseTest {
+public final class GetRequestTest extends BaseTest {
 
     static String responseString = null;
 

@@ -9,7 +9,7 @@ import com.automation.base.BaseTest;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.response.Response;
 
-public class ExtractResponse extends BaseTest {
+public final class ExtractResponseTest extends BaseTest {
 
     @Test
     public void testExtractResponse() {

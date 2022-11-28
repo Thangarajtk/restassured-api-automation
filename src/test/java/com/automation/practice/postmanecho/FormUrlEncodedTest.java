@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class FormUrlEncodedTest {
+public final class FormUrlEncodedTest {
 
     @Test
     public void testFormUrlEncoded() {

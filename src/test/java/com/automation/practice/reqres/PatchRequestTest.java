@@ -10,7 +10,7 @@ import io.restassured.http.ContentType;
  * PATCH request does partial update
  * Fields that need to be updated by the client, only that field is updated without modifying the other field.
  */
-public class PatchRequestTest {
+public final class PatchRequestTest {
 
 	@Test
 	public void testPatchRequest() {

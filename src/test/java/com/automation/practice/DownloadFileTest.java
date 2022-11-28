@@ -6,7 +6,7 @@ import java.io.*;
 
 import static io.restassured.RestAssured.given;
 
-public class DownloadFileTest {
+public final class DownloadFileTest {
 
     @Test
     public void testDownloadFile() throws IOException {

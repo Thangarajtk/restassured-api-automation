@@ -9,7 +9,7 @@ import io.restassured.path.json.JsonPath;
 
 import static io.restassured.RestAssured.*;
 
-public class GetAPITest extends BaseTest {
+public final class GetAPITest extends BaseTest {
 
     @BeforeClass
     public void beforeTest() {

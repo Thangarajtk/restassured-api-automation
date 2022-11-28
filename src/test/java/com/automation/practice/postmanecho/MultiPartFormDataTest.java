@@ -3,7 +3,7 @@ package com.automation.practice.postmanecho;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 
-public class MultiPartFormDataTest {
+public final class MultiPartFormDataTest {
 
     @Test
     public void testMultiPartFormData() {

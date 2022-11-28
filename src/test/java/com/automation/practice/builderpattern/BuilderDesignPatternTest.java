@@ -4,7 +4,7 @@ import com.automation.pojo.Student;
 import com.automation.pojo.StudentBuilder;
 import org.testng.annotations.Test;
 
-public class BuilderDesignPatternTest {
+public final class BuilderDesignPatternTest {
 
     @Test
     public void builderTest() {

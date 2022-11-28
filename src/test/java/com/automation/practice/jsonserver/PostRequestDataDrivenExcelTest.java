@@ -12,7 +12,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.*;
 
 
-public class PostRequestDataDrivenExcelTest {
+public final class PostRequestDataDrivenExcelTest {
 
     @DataProvider(name = "input")
     public Object[][] getPostData() {
