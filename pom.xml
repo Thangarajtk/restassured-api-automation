@@ -10,7 +10,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven-compiler-source>11</maven-compiler-source>
 		<maven-compiler-target>11</maven-compiler-target>
-		<testng.version>7.6.1</testng.version>
+		<testng.version>7.7.0</testng.version>
 		<restassured.version>5.3.0</restassured.version>
 		<extentreports.version>5.0.9</extentreports.version>
 		<apache-poi.version>5.2.2</apache-poi.version>
@@ -25,32 +25,12 @@
 		<assertj.version>3.23.1</assertj.version>
 		<javafaker.version>1.0.2</javafaker.version>
 		<scribejava-apis.version>8.3.3</scribejava-apis.version>
+		<maven-checkstyle-plugin.version>3.2.0</maven-checkstyle-plugin.version>
+		<codestyle.version>1.1.0</codestyle.version>
+		<checkstyle.version>10.5.0</checkstyle.version>
+		<checkstyle.config>checkstyles/checkstyle.xml</checkstyle.config>
+		<checkstyle.suppress>checkstyles/checkstyle-suppressions.xml</checkstyle.suppress>
 	</properties>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
-				<configuration>
-					<source>8</source>
-					<target>8</target>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.0.0-M5</version>
-				<configuration>
-					<suiteXmlFiles>
-						<suiteXmlFile>testng.xml</suiteXmlFile>
-					</suiteXmlFiles>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy -->
@@ -202,6 +182,80 @@
 			<version>${assertj.version}</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-checkstyle-plugin -->
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-checkstyle-plugin</artifactId>
+			<version>${maven-checkstyle-plugin.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.duraspace</groupId>
+			<artifactId>codestyle</artifactId>
+			<version>${codestyle.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.puppycrawl.tools</groupId>
+			<artifactId>checkstyle</artifactId>
+			<version>${checkstyle.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/uk.co.jemos.podam/podam -->
+		<dependency>
+			<groupId>uk.co.jemos.podam</groupId>
+			<artifactId>podam</artifactId>
+			<version>7.2.11.RELEASE</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<source>8</source>
+					<target>8</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M5</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>${maven-checkstyle-plugin.version}</version>
+				<executions>
+					<execution>
+						<id>verify-style</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<configLocation>${checkstyle.config}</configLocation>
+					<suppressionsLocation>${checkstyle.suppress}</suppressionsLocation>
+					<inputEncoding>UTF-8</inputEncoding>
+					<outputEncoding>UTF-8</outputEncoding>
+					<consoleOutput>true</consoleOutput>
+					<logViolationsToConsole>true</logViolationsToConsole>
+					<failOnViolation>true</failOnViolation>
+					<includeTestSourceDirectory>true</includeTestSourceDirectory>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
