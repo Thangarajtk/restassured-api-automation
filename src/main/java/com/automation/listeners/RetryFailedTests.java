@@ -6,16 +6,16 @@ import org.testng.ITestResult;
 
 public class RetryFailedTests implements IRetryAnalyzer {
 
-	private int count = 0;
-	private final int maxRetry = ConfigFactory.getConfig().retry_count();
+  private final int maxRetry = ConfigFactory.getConfig().retry_count();
+  private int count = 0;
 
-	@Override
-	public boolean retry(ITestResult result) {
-		boolean value = false;
-		if (ConfigFactory.getConfig().retry_failed_tests()) {
-			value = count < maxRetry;
-			count++;
-		}
-		return value;
-	}
+  @Override
+  public boolean retry(ITestResult result) {
+    boolean value = false;
+    if (ConfigFactory.getConfig().retry_failed_tests()) {
+      value = count < maxRetry;
+      count++;
+    }
+    return value;
+  }
 }

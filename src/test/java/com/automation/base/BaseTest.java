@@ -22,39 +22,39 @@ import static com.automation.config.ConfigFactory.getConfig;
 
 public class BaseTest {
 
-    protected static RequestSpecification requestSpecification;
-    protected static ResponseSpecification responseSpecification;
-    public static Response response;
-    protected StringWriter stringWriter = new StringWriter();
-    protected PrintStream printStream = new PrintStream(new WriterOutputStream(stringWriter, StandardCharsets.UTF_8),
-            true);
+  public static Response response;
+  protected static RequestSpecification requestSpecification;
+  protected static ResponseSpecification responseSpecification;
+  protected StringWriter stringWriter = new StringWriter();
+  protected PrintStream printStream = new PrintStream(new WriterOutputStream(stringWriter, StandardCharsets.UTF_8),
+                                                      true);
 
-    /**
-     * RequestSpecification is an Interface and RequestSpecBuilder is a class
-     */
-    @BeforeClass
-    public void createRequestSpecification() {
-        requestSpecification = new RequestSpecBuilder()
-                .setBaseUri(getConfig().base_uri())
-                .addFilter(new RequestLoggingFilter(printStream))
-                .log(LogDetail.ALL)
-                .build();
-    }
+  /**
+   * RequestSpecification is an Interface and RequestSpecBuilder is a class
+   */
+  @BeforeClass
+  public void createRequestSpecification() {
+    requestSpecification = new RequestSpecBuilder()
+      .setBaseUri(getConfig().base_uri())
+      .addFilter(new RequestLoggingFilter(printStream))
+      .log(LogDetail.ALL)
+      .build();
+  }
 
-    @BeforeClass
-    public void createResponseSpecification() {
-        responseSpecification = new ResponseSpecBuilder().
-                expectStatusCode(200).
-                expectContentType(ContentType.JSON).build();
-    }
+  @BeforeClass
+  public void createResponseSpecification() {
+    responseSpecification = new ResponseSpecBuilder().
+      expectStatusCode(200).
+      expectContentType(ContentType.JSON).build();
+  }
 
-    protected void logRequestInReport(String request) {
-        ExtentLogger.info(MarkupHelper.createLabel("API REQUEST", ExtentColor.ORANGE));
-        ExtentLogger.info(MarkupHelper.createCodeBlock(request));
-    }
+  protected void logRequestInReport(String request) {
+    ExtentLogger.info(MarkupHelper.createLabel("API REQUEST", ExtentColor.ORANGE));
+    ExtentLogger.info(MarkupHelper.createCodeBlock(request));
+  }
 
-    protected void logResponseInReport(String label, String response) {
-        ExtentLogger.info(MarkupHelper.createLabel(label, ExtentColor.ORANGE));
-        ExtentLogger.info(MarkupHelper.createCodeBlock(response));
-    }
+  protected void logResponseInReport(String label, String response) {
+    ExtentLogger.info(MarkupHelper.createLabel(label, ExtentColor.ORANGE));
+    ExtentLogger.info(MarkupHelper.createCodeBlock(response));
+  }
 }

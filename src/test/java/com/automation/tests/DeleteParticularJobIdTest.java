@@ -18,44 +18,44 @@ import static io.restassured.RestAssured.given;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class DeleteParticularJobIdTest extends BaseTest {
 
-    @FrameworkAnnotation(author = USER_1, category = {SMOKE})
-    @Test(description = "Validate the status code for DELETE request")
-    public void deleteSpecificRecordUsingDeleteRequest() {
+  @FrameworkAnnotation(author = USER_1, category = {SMOKE})
+  @Test(description = "Validate the status code for DELETE request")
+  public void deleteSpecificRecordUsingDeleteRequest() {
 
-        Response response = given().
-                	spec(requestSpecification).
-                	accept(ContentType.JSON).
-                	contentType(ContentType.JSON).
-                when().
-                	delete("/normal/webapi/remove/3").
-                then().
-                	extract().response();
+    Response response = given().
+      spec(requestSpecification).
+      accept(ContentType.JSON).
+      contentType(ContentType.JSON).
+      when().
+      delete("/normal/webapi/remove/3").
+      then().
+      extract().response();
 
-        logRequest(requestSpecification);
-        logResponse(response.asPrettyString());
+    logRequest(requestSpecification);
+    logResponse(response.asPrettyString());
 
-        // Assert the status code
-        Assert.assertEquals(response.statusCode(), 200);
-    }
+    // Assert the status code
+    Assert.assertEquals(response.statusCode(), 200);
+  }
 
-    @FrameworkAnnotation(author = USER_1, category = {SMOKE})
-    @Test(description = "Validate the DELETE request with Path param")
-    public void deleteRequestWithPathParam() {
+  @FrameworkAnnotation(author = USER_1, category = {SMOKE})
+  @Test(description = "Validate the DELETE request with Path param")
+  public void deleteRequestWithPathParam() {
 
-        Response response = given().
-                spec(requestSpecification).
-                accept(ContentType.JSON).
-                contentType(ContentType.JSON).
-                pathParam("id", 5).
-                when().
-                delete("/normal/webapi/remove/{id}").
-                then().
-                extract().response();
+    Response response = given().
+      spec(requestSpecification).
+      accept(ContentType.JSON).
+      contentType(ContentType.JSON).
+      pathParam("id", 5).
+      when().
+      delete("/normal/webapi/remove/{id}").
+      then().
+      extract().response();
 
-        logRequest(requestSpecification);
-        logResponse(response.asPrettyString());
+    logRequest(requestSpecification);
+    logResponse(response.asPrettyString());
 
-        // Assert the status code
-        Assert.assertEquals(response.statusCode(), 200);
-    }
+    // Assert the status code
+    Assert.assertEquals(response.statusCode(), 200);
+  }
 }

@@ -20,24 +20,24 @@ import static io.restassured.RestAssured.given;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class PutRequestToUpdateJobDetailsTest extends BaseTest {
 
-	@FrameworkAnnotation(author = USER_2, category = {SMOKE})
-	@Test(description="Validate the status code for PUT request")
-	public void updateUsingPutRequest() {
-		
-		File file = new File(FrameworkConstants.RESOURCES_FOLDER_PATH + "/json/update_job_details.json");
-		
-		Response response = given().
-				spec(requestSpecification).
-				headers("Content-Type", "application/json", "Accept", "application/json").
-				body(file).
-			when().
-				put("/normal/webapi/update").
-			then().
-				extract().response();
+  @FrameworkAnnotation(author = USER_2, category = {SMOKE})
+  @Test(description = "Validate the status code for PUT request")
+  public void updateUsingPutRequest() {
 
-		logRequest(requestSpecification);
-		logResponse(response.asPrettyString());
+    File file = new File(FrameworkConstants.RESOURCES_FOLDER_PATH + "/json/update_job_details.json");
 
-		Assertions.assertThat(response.statusCode()).isEqualTo(200);
-	}
+    Response response = given().
+      spec(requestSpecification).
+      headers("Content-Type", "application/json", "Accept", "application/json").
+      body(file).
+      when().
+      put("/normal/webapi/update").
+      then().
+      extract().response();
+
+    logRequest(requestSpecification);
+    logResponse(response.asPrettyString());
+
+    Assertions.assertThat(response.statusCode()).isEqualTo(200);
+  }
 }

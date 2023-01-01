@@ -2,9 +2,11 @@ package com.automation.annotations;
 
 import com.automation.enums.Authors;
 import com.automation.enums.CategoryType;
+
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
+
 import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
@@ -13,7 +15,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Documented
 public @interface FrameworkAnnotation {
 
-    Authors[] author();
+  Authors[] author();
 
-    CategoryType[] category();
+  CategoryType[] category();
 }

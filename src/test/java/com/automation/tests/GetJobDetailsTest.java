@@ -1,153 +1,154 @@
 package com.automation.tests;
 
-import static com.automation.enums.Authors.USER_1;
-import static com.automation.enums.CategoryType.SMOKE;
-import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.*;
-
 import com.automation.annotations.FrameworkAnnotation;
 import com.automation.base.BaseTest;
+import com.automation.reports.ExtentLogger;
+import io.restassured.http.Headers;
+import io.restassured.response.Response;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import com.automation.reports.ExtentLogger;
-import io.restassured.http.Headers;
-import io.restassured.response.Response;
+
+import static com.automation.enums.Authors.USER_1;
+import static com.automation.enums.CategoryType.SMOKE;
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasItem;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class GetJobDetailsTest extends BaseTest {
 
-    @FrameworkAnnotation(author = USER_1, category = {SMOKE})
-    @Test(description = "Validate the status code for GET request")
-    public void getRequestToValidateStatusCode() {
-        Response response = given().
-                spec(requestSpecification).
-                when().
-                get("/normal/webapi/all").
-                then().
-                log().all(). // All Response logging
-                        log().ifError(). // Log response only if error
-                        log().ifValidationFails(). // Log response only if there is failure in validation
-                        extract().response();
+  @FrameworkAnnotation(author = USER_1, category = {SMOKE})
+  @Test(description = "Validate the status code for GET request")
+  public void getRequestToValidateStatusCode() {
+    Response response = given().
+      spec(requestSpecification).
+      when().
+      get("/normal/webapi/all").
+      then().
+      log().all().// All Response logging
+        log().ifError().// Log response only if error
+        log().ifValidationFails().// Log response only if there is failure in validation
+        extract().response();
 
-        logRequestInReport(stringWriter.toString());
-        logResponseInReport("API RESPONSE", response.prettyPrint());
+    logRequestInReport(stringWriter.toString());
+    logResponseInReport("API RESPONSE", response.prettyPrint());
 
-        response.then().assertThat().statusCode(200);
-    }
+    response.then().assertThat().statusCode(200);
+  }
 
-    @FrameworkAnnotation(author = USER_1, category = {SMOKE})
-    @Test(description = "Validate the JSON response body for GET request")
-    public void getRequestToValidateJsonResponseBody() {
-        Response response = given().
-                spec(requestSpecification).
-                when().
-                get("/normal/webapi/all").
-                then().
-                spec(responseSpecification).
-                extract().response();
+  @FrameworkAnnotation(author = USER_1, category = {SMOKE})
+  @Test(description = "Validate the JSON response body for GET request")
+  public void getRequestToValidateJsonResponseBody() {
+    Response response = given().
+      spec(requestSpecification).
+      when().
+      get("/normal/webapi/all").
+      then().
+      spec(responseSpecification).
+      extract().response();
 
-        logRequestInReport(stringWriter.toString());
-        logResponseInReport("API RESPONSE", response.prettyPrint());
+    logRequestInReport(stringWriter.toString());
+    logResponseInReport("API RESPONSE", response.prettyPrint());
 
-        // Hamcrest Matchers assertion
-        response.then().assertThat().body("[0].jobTitle", equalTo("Software Engg"),
-                "[0].project[0].technology", hasItem("Kotlin"),
-                "[0].jobId", equalTo(1));
-    }
+    // Hamcrest Matchers assertion
+    response.then().assertThat().body("[0].jobTitle", equalTo("Software Engg"),
+                                      "[0].project[0].technology", hasItem("Kotlin"),
+                                      "[0].jobId", equalTo(1));
+  }
 
-    @FrameworkAnnotation(author = USER_1, category = {SMOKE})
-    @Test(description = "Validate the XML response body for GET request")
-    public void getRequestToValidateXmlResponseBody() {
-        Response response = given().
-                spec(requestSpecification).
-                header("Accept", "application/xml").
-                when().
-                get("/normal/webapi/all").
-                then().
-                extract().response();
+  @FrameworkAnnotation(author = USER_1, category = {SMOKE})
+  @Test(description = "Validate the XML response body for GET request")
+  public void getRequestToValidateXmlResponseBody() {
+    Response response = given().
+      spec(requestSpecification).
+      header("Accept", "application/xml").
+      when().
+      get("/normal/webapi/all").
+      then().
+      extract().response();
 
-        logRequestInReport(stringWriter.toString());
-        logResponseInReport("API RESPONSE", response.prettyPrint());
+    logRequestInReport(stringWriter.toString());
+    logResponseInReport("API RESPONSE", response.prettyPrint());
 
-        response.then().assertThat().body("List.item.jobTitle", equalTo("Software Engg"),
-                "List.item.project.project.technology.technology", hasItem("Kotlin"),
-                "List.item.jobId", equalTo("1"));
-    }
+    response.then().assertThat().body("List.item.jobTitle", equalTo("Software Engg"),
+                                      "List.item.project.project.technology.technology", hasItem("Kotlin"),
+                                      "List.item.jobId", equalTo("1"));
+  }
 
-    @FrameworkAnnotation(author = USER_1, category = {SMOKE})
-    @Test(description = "Validate the JSON response body using Json Path for GET request")
-    public void getRequestToValidateResponseBodyUsingJsonPath() {
-        Response response = given().
-                spec(requestSpecification).
-                when().
-                get("/normal/webapi/all").
-                then().
-                extract().response();
+  @FrameworkAnnotation(author = USER_1, category = {SMOKE})
+  @Test(description = "Validate the JSON response body using Json Path for GET request")
+  public void getRequestToValidateResponseBodyUsingJsonPath() {
+    Response response = given().
+      spec(requestSpecification).
+      when().
+      get("/normal/webapi/all").
+      then().
+      extract().response();
 
-        String jobTitle = response.jsonPath().get("[0].jobTitle");
+    String jobTitle = response.jsonPath().get("[0].jobTitle");
 
-        logRequestInReport(stringWriter.toString());
-        logResponseInReport("API RESPONSE", response.prettyPrint());
-        logResponseInReport("API RESPONSE BODY", jobTitle);
+    logRequestInReport(stringWriter.toString());
+    logResponseInReport("API RESPONSE", response.prettyPrint());
+    logResponseInReport("API RESPONSE BODY", jobTitle);
 
-        // TestNG Assertion
-        Assert.assertEquals(jobTitle, "Software Engg");
-    }
+    // TestNG Assertion
+    Assert.assertEquals(jobTitle, "Software Engg");
+  }
 
-    @FrameworkAnnotation(author = USER_1, category = {SMOKE})
-    @Test(description = "Validate the JSON response header for GET request")
-    public void getRequestToValidateJsonResponseHeader() {
-        Response response = given().
-                spec(requestSpecification).
-                when().
-                get("/normal/webapi/all");
+  @FrameworkAnnotation(author = USER_1, category = {SMOKE})
+  @Test(description = "Validate the JSON response header for GET request")
+  public void getRequestToValidateJsonResponseHeader() {
+    Response response = given().
+      spec(requestSpecification).
+      when().
+      get("/normal/webapi/all");
 
-        Headers responseHeaders = response.then().extract().headers();
+    Headers responseHeaders = response.then().extract().headers();
 
-        logRequestInReport(stringWriter.toString());
-        logResponseInReport("API RESPONSE", response.prettyPrint());
-        logResponseInReport("API RESPONSE HEADER", responseHeaders.toString());
+    logRequestInReport(stringWriter.toString());
+    logResponseInReport("API RESPONSE", response.prettyPrint());
+    logResponseInReport("API RESPONSE HEADER", responseHeaders.toString());
 
-        response.then().assertThat().header("content-type", equalTo("application/json"));
-    }
+    response.then().assertThat().header("content-type", equalTo("application/json"));
+  }
 
-    @FrameworkAnnotation(author = USER_1, category = {SMOKE})
-    @Test(description = "Validate the XML response header for GET request")
-    public void getRequestToValidateXmlResponseHeader() {
-        Response response = given().
-                spec(requestSpecification).
-                header("Accept", "application/xml").
-                when().
-                get("/normal/webapi/all").
-                then().
-                extract().response();
+  @FrameworkAnnotation(author = USER_1, category = {SMOKE})
+  @Test(description = "Validate the XML response header for GET request")
+  public void getRequestToValidateXmlResponseHeader() {
+    Response response = given().
+      spec(requestSpecification).
+      header("Accept", "application/xml").
+      when().
+      get("/normal/webapi/all").
+      then().
+      extract().response();
 
-        Headers responseHeaders = response.then().extract().headers();
+    Headers responseHeaders = response.then().extract().headers();
 
-        logRequestInReport(stringWriter.toString());
-        logResponseInReport("API RESPONSE", response.prettyPrint());
-        logResponseInReport("API RESPONSE HEADER", responseHeaders.toString());
+    logRequestInReport(stringWriter.toString());
+    logResponseInReport("API RESPONSE", response.prettyPrint());
+    logResponseInReport("API RESPONSE HEADER", responseHeaders.toString());
 
-        response.then().assertThat().header("content-type", equalTo("application/xml"));
-    }
+    response.then().assertThat().header("content-type", equalTo("application/xml"));
+  }
 
-    @FrameworkAnnotation(author = USER_1, category = {SMOKE})
-    @Test(description = "Validate the status line for GET request")
-    public void getRequestToValidateStatusLine() {
-        Response response = given().
-                spec(requestSpecification).
-                when().
-                get("/normal/webapi/al");
+  @FrameworkAnnotation(author = USER_1, category = {SMOKE})
+  @Test(description = "Validate the status line for GET request")
+  public void getRequestToValidateStatusLine() {
+    Response response = given().
+      spec(requestSpecification).
+      when().
+      get("/normal/webapi/al");
 
-        String actualStatusLine = response.then().extract().statusLine();
+    String actualStatusLine = response.then().extract().statusLine();
 
-        logRequestInReport(stringWriter.toString());
-        logResponseInReport("API RESPONSE", response.prettyPrint());
-        logResponseInReport("API RESPONSE STATUS LINE", actualStatusLine);
+    logRequestInReport(stringWriter.toString());
+    logResponseInReport("API RESPONSE", response.prettyPrint());
+    logResponseInReport("API RESPONSE STATUS LINE", actualStatusLine);
 
-        Assert.assertEquals(actualStatusLine.trim(), "HTTP/1.1 404");
-        ExtentLogger.pass("Expected Status line is HTTP/1.1 404 but actual was " + actualStatusLine.trim());
-    }
+    Assert.assertEquals(actualStatusLine.trim(), "HTTP/1.1 404");
+    ExtentLogger.pass("Expected Status line is HTTP/1.1 404 but actual was " + actualStatusLine.trim());
+  }
 }

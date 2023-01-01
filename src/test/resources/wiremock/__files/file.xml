@@ -9,12 +9,12 @@
             <experience>Mobile Iron</experience>
         </experience>
         <project>
-		<projectName>Movie App</projectName>
-                <technology>
-                    <technology>Kotlin</technology>
-                    <technology>SQL Lite</technology>
-                    <technology>Gradle</technology>
-                </technology>
+            <projectName>Movie App</projectName>
+            <technology>
+                <technology>Kotlin</technology>
+                <technology>SQL Lite</technology>
+                <technology>Gradle</technology>
+            </technology>
         </project>
     </item>
 </List>

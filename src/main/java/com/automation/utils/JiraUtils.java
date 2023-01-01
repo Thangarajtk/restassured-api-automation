@@ -9,17 +9,17 @@ import static io.restassured.RestAssured.given;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class JiraUtils {
 
-    public static void createIssue() {
+  public static void createIssue() {
 
-        String requestBody = ApiUtils.readJsonAndGetAsString("");
+    String requestBody = ApiUtils.readJsonAndGetAsString("");
 
-        Response response = given()
-                .auth().basic("<<username>>", "<<password>>")
-                .header("Content-Type", "application/json")
-                .log().all()
-                .body(requestBody)
-                .post("http://localhost:8080/rest/api/2/issue/");
+    Response response = given()
+      .auth().basic("<<username>>", "<<password>>")
+      .header("Content-Type", "application/json")
+      .log().all()
+      .body(requestBody)
+      .post("http://localhost:8080/rest/api/2/issue/");
 
-        response.prettyPrint();
-    }
+    response.prettyPrint();
+  }
 }

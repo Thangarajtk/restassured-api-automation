@@ -10,14 +10,14 @@ import static io.restassured.RestAssured.given;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class BasicAuthTest {
 
-    @Test
-    public void basicAuth() {
-        Response response = given()
-                .auth()
-                .basic("postman", "password")
-                .log().all()
-                .get("https://postman-echo.com/basic-auth");
+  @Test
+  public void basicAuth() {
+    Response response = given()
+      .auth()
+      .basic("postman", "password")
+      .log().all()
+      .get("https://postman-echo.com/basic-auth");
 
-        response.prettyPrint();
-    }
+    response.prettyPrint();
+  }
 }

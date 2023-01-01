@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static com.automation.enums.Authors.USER_1;
 import static com.automation.enums.Authors.USER_2;
 import static com.automation.enums.CategoryType.SMOKE;
 import static com.automation.reports.ExtentLogger.logRequest;
@@ -19,26 +18,26 @@ import static io.restassured.RestAssured.given;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class GetRequestWithBasicAuthTest extends BaseTest {
 
-    /**
-     * Basic Authentication
-     * 1) Preemptive
-     * 2) Challanged
-     */
-    @FrameworkAnnotation(author = USER_2, category = {SMOKE})
-    @Test(description = "Validate the status code for secure GET request with Basic Authentication")
-    public void secureGetRequestUsingChallengedBasicAuth() {
-        Response response = given().
-                spec(requestSpecification).
-                accept(ContentType.JSON).
-                auth().basic("admin", "welcome").
-                when().
-                get("/secure/webapi/all").
-                then().
-                extract().response();
+  /**
+   * Basic Authentication
+   * 1) Preemptive
+   * 2) Challanged
+   */
+  @FrameworkAnnotation(author = USER_2, category = {SMOKE})
+  @Test(description = "Validate the status code for secure GET request with Basic Authentication")
+  public void secureGetRequestUsingChallengedBasicAuth() {
+    Response response = given().
+      spec(requestSpecification).
+      accept(ContentType.JSON).
+      auth().basic("admin", "welcome").
+      when().
+      get("/secure/webapi/all").
+      then().
+      extract().response();
 
-        logRequest(requestSpecification);
-        logResponse(response.asPrettyString());
+    logRequest(requestSpecification);
+    logResponse(response.asPrettyString());
 
-        Assert.assertEquals(response.statusCode(), 200);
-    }
+    Assert.assertEquals(response.statusCode(), 200);
+  }
 }

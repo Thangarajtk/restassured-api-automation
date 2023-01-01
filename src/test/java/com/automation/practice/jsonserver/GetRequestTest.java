@@ -11,14 +11,14 @@ import org.testng.annotations.Test;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class GetRequestTest {
 
-    @Test
-    public void getEmployeeDetails() {
+  @Test
+  public void getEmployeeDetails() {
 
-        RequestSpecification requestSpecification = RequestBuilder.buildRequest()
-                .pathParam("id", 13);
+    RequestSpecification requestSpecification = RequestBuilder.buildRequest()
+      .pathParam("id", 13);
 
-        Response response = requestSpecification.get("/employees/{id}");
+    Response response = requestSpecification.get("/employees/{id}");
 
-        ExtentLogger.logResponse(response.asPrettyString());
-    }
+    ExtentLogger.logResponse(response.asPrettyString());
+  }
 }

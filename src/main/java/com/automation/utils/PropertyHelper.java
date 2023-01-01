@@ -14,18 +14,18 @@ import java.util.Properties;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class PropertyHelper {
 
-    private static final Properties properties = new Properties();
-    private static final Map<String, String> MAP = new HashMap<>();
+  private static final Properties properties = new Properties();
+  private static final Map<String, String> MAP = new HashMap<>();
 
-    static {
-        try(FileInputStream inputStream = new FileInputStream(FrameworkConstants.CONFIG_PROPERTIES_PATH)) {
-            properties.load(inputStream);
-        } catch (IOException e) {
-            System.exit(0);
-        }
+  static {
+    try (FileInputStream inputStream = new FileInputStream(FrameworkConstants.CONFIG_PROPERTIES_PATH)) {
+      properties.load(inputStream);
+    } catch (IOException e) {
+      System.exit(0);
     }
+  }
 
-    public static String getValue(ConfigProperties key) {
-        return MAP.get(key.name().toLowerCase());
-    }
+  public static String getValue(ConfigProperties key) {
+    return MAP.get(key.name().toLowerCase());
+  }
 }

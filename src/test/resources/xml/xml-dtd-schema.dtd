@@ -1,21 +1,21 @@
 <?xml encoding="UTF-8"?>
 
-<!ELEMENT student (score,perctg:score,grouping,perctg:grouping)>
-<!ATTLIST student
-  xmlns CDATA #FIXED ''>
+        <!ELEMENT student (score,perctg:score,grouping,perctg:grouping)>
+        <!ATTLIST student
+                xmlns CDATA #FIXED ''>
 
-<!ELEMENT score (#PCDATA)>
-<!ATTLIST score
-  xmlns CDATA #FIXED ''>
+        <!ELEMENT score (#PCDATA)>
+        <!ATTLIST score
+                xmlns CDATA #FIXED ''>
 
-<!ELEMENT perctg:score (#PCDATA)>
-<!ATTLIST perctg:score
-  xmlns:perctg CDATA #FIXED 'https://calculate-percentage'>
+        <!ELEMENT perctg:score (#PCDATA)>
+        <!ATTLIST perctg:score
+                xmlns:perctg CDATA #FIXED 'https://calculate-percentage'>
 
-<!ELEMENT grouping (#PCDATA)>
-<!ATTLIST grouping
-  xmlns CDATA #FIXED ''>
+        <!ELEMENT grouping (#PCDATA)>
+        <!ATTLIST grouping
+                xmlns CDATA #FIXED ''>
 
-<!ELEMENT perctg:grouping (#PCDATA)>
-<!ATTLIST perctg:grouping
-  xmlns:perctg CDATA #FIXED 'https://calculate-percentage'>
+        <!ELEMENT perctg:grouping (#PCDATA)>
+        <!ATTLIST perctg:grouping
+                xmlns:perctg CDATA #FIXED 'https://calculate-percentage'>

@@ -1,10 +1,11 @@
 package com.automation.practice.reqres;
 
-import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.when;
+import io.restassured.http.ContentType;
 import org.json.JSONObject;
 import org.testng.annotations.Test;
-import io.restassured.http.ContentType;
+
+import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.when;
 
 /**
  * PATCH request does partial update
@@ -12,24 +13,24 @@ import io.restassured.http.ContentType;
  */
 public final class PatchRequestTest {
 
-	@Test
-	public void testPatchRequest() {
-		
-		JSONObject request = new JSONObject();
-	
-		request.put("name", "Raj");
-		request.put("Job", "Automation Engineer");
-		
-		given().
-			header("Content-Type", "application.json").
-			contentType(ContentType.JSON).
-			accept(ContentType.JSON).
-			body(request.toString());
-		when().
-			patch("https://reqres.in/api/users/2").
-		then().
-			assertThat().
-				statusCode(200).
-			log().all();
-	}
+  @Test
+  public void testPatchRequest() {
+
+    JSONObject request = new JSONObject();
+
+    request.put("name", "Raj");
+    request.put("Job", "Automation Engineer");
+
+    given().
+      header("Content-Type", "application.json").
+      contentType(ContentType.JSON).
+      accept(ContentType.JSON).
+      body(request.toString());
+    when().
+      patch("https://reqres.in/api/users/2").
+      then().
+      assertThat().
+      statusCode(200).
+      log().all();
+  }
 }

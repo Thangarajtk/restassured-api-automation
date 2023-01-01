@@ -1,7 +1,7 @@
 <?xml version = "1.0" encoding = "utf-8"?>
 <student xmlns:perctg="https://calculate-percentage">
-	<score>300</score>
-	<perctg:score>90%</perctg:score>
-	<grouping>299</grouping>
-	<perctg:grouping>99</perctg:grouping>
+    <score>300</score>
+    <perctg:score>90%</perctg:score>
+    <grouping>299</grouping>
+    <perctg:grouping>99</perctg:grouping>
 </student>

@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+
 import java.util.List;
 
 @Getter
@@ -17,10 +18,10 @@ import java.util.List;
 @Builder
 public class Employee {
 
-    private Integer id;
-    private String firstname;
-    private String lastname;
-    private String email;
-    private List<String> jobs;
-    private Skill skill;
+  private Integer id;
+  private String firstname;
+  private String lastname;
+  private String email;
+  private List<String> jobs;
+  private Skill skill;
 }

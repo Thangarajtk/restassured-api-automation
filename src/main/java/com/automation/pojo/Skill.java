@@ -11,6 +11,6 @@ import java.util.List;
 @AllArgsConstructor
 public class Skill {
 
-    private String programming;
-    private List<String> automation;
+  private String programming;
+  private List<String> automation;
 }
