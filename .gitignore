@@ -2,3 +2,6 @@
 extent-test-report
 target
 test-output
+
+# LOG FILE
+logs
