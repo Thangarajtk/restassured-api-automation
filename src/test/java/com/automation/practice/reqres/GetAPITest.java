@@ -1,8 +1,9 @@
 package com.automation.practice.reqres;
 
-import com.automation.base.BaseTest;
 import io.restassured.http.Method;
 import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -12,12 +13,14 @@ import java.util.List;
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 
-public final class GetAPITest extends BaseTest {
+public final class GetAPITest {
+
+  private Response response;
 
   @BeforeClass
   public void beforeTest() {
     baseURI = "https://reqres.in/api/unknown";
-    requestSpecification = given();
+    RequestSpecification requestSpecification = given();
     response = requestSpecification.request(Method.GET, "");
   }
 

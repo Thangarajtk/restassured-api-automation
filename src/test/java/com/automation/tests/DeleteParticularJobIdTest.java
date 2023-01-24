@@ -1,9 +1,9 @@
 package com.automation.tests;
 
 import com.automation.annotations.FrameworkAnnotation;
-import com.automation.base.BaseTest;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.testng.Assert;
@@ -11,17 +11,19 @@ import org.testng.annotations.Test;
 
 import static com.automation.enums.Authors.USER_1;
 import static com.automation.enums.CategoryType.SMOKE;
+import static com.automation.models.builders.RequestBuilder.createRequestSpecification;
 import static com.automation.reports.ExtentLogger.logRequest;
 import static com.automation.reports.ExtentLogger.logResponse;
 import static io.restassured.RestAssured.given;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class DeleteParticularJobIdTest extends BaseTest {
+public final class DeleteParticularJobIdTest {
 
   @FrameworkAnnotation(author = USER_1, category = {SMOKE})
   @Test(description = "Validate the status code for DELETE request")
   public void deleteSpecificRecordUsingDeleteRequest() {
 
+    RequestSpecification requestSpecification = createRequestSpecification();
     Response response = given().
       spec(requestSpecification).
       accept(ContentType.JSON).
@@ -41,7 +43,7 @@ public final class DeleteParticularJobIdTest extends BaseTest {
   @FrameworkAnnotation(author = USER_1, category = {SMOKE})
   @Test(description = "Validate the DELETE request with Path param")
   public void deleteRequestWithPathParam() {
-
+    RequestSpecification requestSpecification = createRequestSpecification();
     Response response = given().
       spec(requestSpecification).
       accept(ContentType.JSON).

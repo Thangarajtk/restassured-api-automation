@@ -1,21 +1,19 @@
 package com.automation.practice.ergast;
 
-import com.automation.base.BaseTest;
-import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
+import static com.automation.reports.ExtentLogger.logResponseInReport;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasSize;
 
-public final class ExtractResponseTest extends BaseTest {
+public final class ExtractResponseTest {
 
   @Test
   public void testExtractResponse() {
     Response response = given().
       baseUri("http://ergast.com").
-      filter(new RequestLoggingFilter(printStream)).
       when().
       get("/api/f1/2017/circuits.json").
       then().

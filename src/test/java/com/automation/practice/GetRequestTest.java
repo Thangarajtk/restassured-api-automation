@@ -1,11 +1,11 @@
 package com.automation.practice;
 
-import com.automation.base.BaseTest;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import io.restassured.http.Method;
 import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.testng.annotations.BeforeClass;
@@ -13,10 +13,12 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.requestSpecification;
 
-public final class GetRequestTest extends BaseTest {
+public final class GetRequestTest {
 
   static String responseString = null;
+  private static Response response;
 
   public static String parseGetRequest() {
     try {

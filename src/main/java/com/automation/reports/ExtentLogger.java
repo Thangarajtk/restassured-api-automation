@@ -51,6 +51,16 @@ public final class ExtentLogger {
     }
   }
 
+  public static void logRequestInReport(String request) {
+    ExtentLogger.info(MarkupHelper.createLabel("API REQUEST", ExtentColor.ORANGE));
+    ExtentLogger.info(MarkupHelper.createCodeBlock(request));
+  }
+
+  public static void logResponseInReport(String label, String response) {
+    ExtentLogger.info(MarkupHelper.createLabel(label, ExtentColor.ORANGE));
+    ExtentLogger.info(MarkupHelper.createCodeBlock(response));
+  }
+
   public static void addAuthors(Authors[] authors) {
     for (Authors author : authors) {
       ExtentManager.getExtentTest().assignAuthor(String.valueOf(author));

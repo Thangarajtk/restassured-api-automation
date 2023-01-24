@@ -9,7 +9,7 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.testng.annotations.Test;
 
-import static com.automation.requestbuilder.RequestBuilder.buildRequest;
+import static com.automation.models.builders.RequestBuilder.buildRequest;
 import static com.automation.utils.RandomUtils.getFirstname;
 import static com.automation.utils.RandomUtils.getId;
 import static com.automation.utils.RandomUtils.getLastname;

@@ -1,6 +1,5 @@
 package com.automation.practice.wiremock;
 
-import com.automation.base.BaseTest;
 import com.automation.constants.FrameworkConstants;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -10,12 +9,14 @@ import org.testng.annotations.Test;
 
 import java.io.File;
 
+import static com.automation.reports.ExtentLogger.logRequestInReport;
+import static com.automation.reports.ExtentLogger.logResponseInReport;
 import static io.restassured.RestAssured.given;
 import static io.restassured.matcher.RestAssuredMatchers.matchesDtd;
 import static io.restassured.matcher.RestAssuredMatchers.matchesXsd;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class XmlSchemaValidationTest extends BaseTest {
+public final class XmlSchemaValidationTest {
 
   @Test(description = "Validating the XML DTD Schema")
   public void validateXmlDtdSchema() {
@@ -31,7 +32,7 @@ public final class XmlSchemaValidationTest extends BaseTest {
       body(matchesDtd(file)).
       extract().response();
 
-    logRequestInReport(stringWriter.toString());
+    logRequestInReport(response.toString());
     logResponseInReport("API RESPONSE", response.prettyPrint());
   }
 
@@ -51,7 +52,7 @@ public final class XmlSchemaValidationTest extends BaseTest {
       body(matchesXsd(file)).
       extract().response();
 
-    logRequestInReport(stringWriter.toString());
+    logRequestInReport(response.toString());
     logResponseInReport("API RESPONSE", response.prettyPrint());
   }
 }

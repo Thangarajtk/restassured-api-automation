@@ -1,6 +1,5 @@
 package com.automation.practice.wiremock;
 
-import com.automation.base.BaseTest;
 import io.restassured.RestAssured;
 import io.restassured.config.XmlConfig;
 import lombok.AccessLevel;
@@ -11,7 +10,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class XmlNamespaceValidationTest extends BaseTest {
+public final class XmlNamespaceValidationTest {
 
   @Test
   public void validateXmlNamespace() {

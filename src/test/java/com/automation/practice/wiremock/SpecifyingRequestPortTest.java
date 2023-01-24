@@ -1,6 +1,5 @@
 package com.automation.practice.wiremock;
 
-import com.automation.base.BaseTest;
 import io.restassured.RestAssured;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -13,7 +12,7 @@ import static io.restassured.RestAssured.when;
 import static org.hamcrest.Matchers.lessThan;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class SpecifyingRequestPortTest extends BaseTest {
+public final class SpecifyingRequestPortTest {
 
   @BeforeClass
   public static void defaultConfigurationSetup() {

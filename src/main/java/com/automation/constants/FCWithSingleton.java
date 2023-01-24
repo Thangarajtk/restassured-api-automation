@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 public final class FCWithSingleton {
 
   // Singleton design pattern - Single instance for a class at a particular point of time
-  // It is part of Creational design pattern
+  // It is part of creational design pattern
   private static FCWithSingleton INSTANCE = null;
 
   private static synchronized FCWithSingleton getInstance() { // To make it Thread-Safe
