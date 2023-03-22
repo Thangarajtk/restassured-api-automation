@@ -1,7 +1,6 @@
 package com.automation.models.builders;
 
 import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.filter.log.LogDetail;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.specification.RequestSpecification;
 import lombok.AccessLevel;
@@ -14,6 +13,7 @@ import java.nio.charset.StandardCharsets;
 
 import static com.automation.config.ConfigFactory.getConfig;
 import static io.restassured.RestAssured.given;
+import static io.restassured.filter.log.LogDetail.ALL;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class RequestBuilder {
@@ -29,7 +29,7 @@ public final class RequestBuilder {
     return new RequestSpecBuilder()
       .setBaseUri(getConfig().base_uri())
       .addFilter(new RequestLoggingFilter(printStream))
-      .log(LogDetail.ALL)
+      .log(ALL)
       .build();
   }
 

@@ -1,6 +1,5 @@
 package com.automation.reports;
 
-import com.automation.constants.FrameworkConstants;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
@@ -13,10 +12,12 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.util.Objects;
 
+import static com.automation.constants.FrameworkConstants.getExtentReportPath;
+
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class ExtentReport {
 
-  private static final ExtentSparkReporter extentSparkReporter = new ExtentSparkReporter(FrameworkConstants.getExtentReportPath());
+  private static final ExtentSparkReporter extentSparkReporter = new ExtentSparkReporter(getExtentReportPath());
   private static ExtentReports extentReports;
 
   /**
@@ -51,7 +52,7 @@ public final class ExtentReport {
     }
     ExtentManager.unload();
     try {
-      Desktop.getDesktop().browse(new File(FrameworkConstants.getExtentReportPath()).toURI());
+      Desktop.getDesktop().browse(new File(getExtentReportPath()).toURI());
     } catch (IOException e) {
       e.printStackTrace();
     }

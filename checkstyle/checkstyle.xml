@@ -9,7 +9,7 @@
     <property name="localeCountry" value=""/>
 
     <module name="SuppressionFilter">
-        <property name="file" value="checkstyles/checkstyle-suppressions.xml"/>
+        <property name="file" value="checkstyle/checkstyle-suppressions.xml"/>
     </module>
     <!--Add more checks from google style guide:-->
     <!--https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml-->

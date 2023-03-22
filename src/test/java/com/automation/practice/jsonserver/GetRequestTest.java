@@ -1,7 +1,7 @@
 package com.automation.practice.jsonserver;
 
-import com.automation.reports.ExtentLogger;
 import com.automation.models.builders.RequestBuilder;
+import com.automation.reports.ExtentLogger;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import lombok.AccessLevel;

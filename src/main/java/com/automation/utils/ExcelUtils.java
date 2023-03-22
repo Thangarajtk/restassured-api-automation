@@ -26,7 +26,7 @@ public final class ExcelUtils {
   private XSSFCell cell;
 
   public ExcelUtils() {
-    String filePath = FrameworkConstants.RESOURCES_FOLDER_PATH + "/TestData.xlsx";
+    String filePath = FrameworkConstants.RESOURCES_FOLDER_PATH + File.separator + "TestData.xlsx";
     try {
       wb = new XSSFWorkbook(filePath);
     } catch (IOException e) {

@@ -14,6 +14,8 @@ import io.restassured.specification.SpecificationQuerier;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class ExtentLogger {
 
@@ -21,20 +23,20 @@ public final class ExtentLogger {
     ExtentManager.getExtentTest().pass(MarkupHelper.createLabel(message, ExtentColor.GREEN));
   }
 
-  public static void fail(String message, Throwable t) {
-    ExtentManager.getExtentTest().fail(message).fail(t);
+  public static void logFailureDetails(String message) {
+    ExtentManager.getExtentTest().fail(message);
   }
 
   public static void skip(String message) {
     ExtentManager.getExtentTest().skip(message);
   }
 
-  public static void info(Markup markup) {
+  public static void logInfo(Markup markup) {
     ExtentManager.getExtentTest().log(Status.INFO, markup);
   }
 
   // Overloaded method
-  public static void info(String message) {
+  public static void logInfo(String message) {
     ExtentManager.getExtentTest().info(message);
   }
 
@@ -47,18 +49,24 @@ public final class ExtentLogger {
     ExtentManager.getExtentTest().pass(MarkupHelper.createCodeBlock(String.valueOf(query.getBody()),
                                                                     CodeLanguage.JSON));
     for (Header header : query.getHeaders()) {
-      info(header.getName() + ":" + header.getValue());
+      logInfo(header.getName() + ":" + header.getValue());
     }
   }
 
   public static void logRequestInReport(String request) {
-    ExtentLogger.info(MarkupHelper.createLabel("API REQUEST", ExtentColor.ORANGE));
-    ExtentLogger.info(MarkupHelper.createCodeBlock(request));
+    logInfo(MarkupHelper.createLabel("API REQUEST", ExtentColor.ORANGE));
+    logInfo(MarkupHelper.createCodeBlock(request));
   }
 
   public static void logResponseInReport(String label, String response) {
-    ExtentLogger.info(MarkupHelper.createLabel(label, ExtentColor.ORANGE));
-    ExtentLogger.info(MarkupHelper.createCodeBlock(response));
+    logInfo(MarkupHelper.createLabel(label, ExtentColor.ORANGE));
+    logInfo(MarkupHelper.createCodeBlock(response));
+  }
+
+  public static void logHeaders(List<Header> headerList) {
+    String[][] headers = headerList.stream().map(header -> new String[] {header.getName(), header.getValue()})
+      .toArray(String[][] :: new);
+    ExtentManager.getExtentTest().info(MarkupHelper.createTable(headers));
   }
 
   public static void addAuthors(Authors[] authors) {

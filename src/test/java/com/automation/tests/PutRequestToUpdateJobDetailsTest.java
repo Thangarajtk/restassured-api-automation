@@ -17,7 +17,6 @@ import static com.automation.models.builders.RequestBuilder.createRequestSpecifi
 import static com.automation.reports.ExtentLogger.logRequest;
 import static com.automation.reports.ExtentLogger.logResponse;
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.requestSpecification;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class PutRequestToUpdateJobDetailsTest {

@@ -1,8 +1,8 @@
 package com.automation.practice.jsonserver;
 
 import com.automation.constants.FrameworkConstants;
-import com.automation.reports.ExtentLogger;
 import com.automation.models.builders.RequestBuilder;
+import com.automation.reports.ExtentLogger;
 import com.automation.utils.ApiUtils;
 import com.github.javafaker.Faker;
 import io.restassured.response.Response;

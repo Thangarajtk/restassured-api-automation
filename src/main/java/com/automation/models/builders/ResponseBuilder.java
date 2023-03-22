@@ -6,12 +6,14 @@ import io.restassured.specification.ResponseSpecification;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
+import static java.net.HttpURLConnection.HTTP_OK;
+
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class ResponseBuilder {
 
   public static ResponseSpecification createResponseSpecification() {
     return new ResponseSpecBuilder().
-      expectStatusCode(200).
+      expectStatusCode(HTTP_OK).
       expectContentType(ContentType.JSON).build();
   }
 }
