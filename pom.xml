@@ -24,11 +24,12 @@
         <commons-io.version>2.11.0</commons-io.version>
         <wiremock-jre8-standalone.version>2.35.0</wiremock-jre8-standalone.version>
         <gson.version>2.10.1</gson.version>
-        <jackson-databind.version>2.14.2</jackson-databind.version>
+        <jackson-databind.version>2.15.1</jackson-databind.version>
         <assertj.version>3.24.2</assertj.version>
         <javafaker.version>1.0.2</javafaker.version>
         <scribejava-apis.version>8.3.3</scribejava-apis.version>
         <log4j.version>2.20.0</log4j.version>
+        <poiji.version>4.1.1</poiji.version>
         <codestyle.version>1.1.0</codestyle.version>
         <checkstyle.version>10.9.1</checkstyle.version>
         <checkstyle.config>checkstyle/checkstyle.xml</checkstyle.config>
@@ -224,6 +225,14 @@
             <artifactId>log4j-api</artifactId>
             <version>${log4j.version}</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.github.ozlerhakan/poiji -->
+        <dependency>
+            <groupId>com.github.ozlerhakan</groupId>
+            <artifactId>poiji</artifactId>
+            <version>${poiji.version}</version>
+        </dependency>
+
 
     </dependencies>
 

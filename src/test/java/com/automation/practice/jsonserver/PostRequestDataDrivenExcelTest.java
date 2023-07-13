@@ -6,7 +6,9 @@ import org.json.simple.JSONObject;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import static io.restassured.RestAssured.baseURI;
@@ -17,10 +19,9 @@ import static io.restassured.RestAssured.when;
 public final class PostRequestDataDrivenExcelTest {
 
   @DataProvider(name = "input")
-  public Object[][] getPostData() {
+  public Object[][] getPostData() throws IOException {
     Object[][] data;
-    ExcelUtils xlReader = new ExcelUtils();
-    Map<String, ArrayList<Object>> map = xlReader.getExcelData();
+    Map<String, ArrayList<Object>> map = ExcelUtils.getExcelData();
 
     ArrayList<Object> value = map.get("FirstName");
     data = new Object[value.size()][2];

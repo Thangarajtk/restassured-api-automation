@@ -13,6 +13,8 @@ import java.util.Set;
 
 public class AssertionUtils {
 
+  private AssertionUtils() {}
+
   public static void assertExpectedValuesWithJsonPath(Response response,
                                                       Map<String, Object> expectedValuesMap) {
 

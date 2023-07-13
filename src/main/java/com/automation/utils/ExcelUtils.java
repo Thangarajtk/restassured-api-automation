@@ -1,6 +1,11 @@
 package com.automation.utils;
 
 import com.automation.constants.FrameworkConstants;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -11,67 +16,60 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
+@Slf4j
 public final class ExcelUtils {
 
   FileInputStream in;
   FileOutputStream out;
-  int cellNum;
-  int rowNum;
+  int cellNum, rowNum;
   private XSSFWorkbook wb;
   private XSSFSheet sh;
   private XSSFRow row;
   private XSSFCell cell;
 
-  public ExcelUtils() {
-    String filePath = FrameworkConstants.RESOURCES_FOLDER_PATH + File.separator + "TestData.xlsx";
-    try {
-      wb = new XSSFWorkbook(filePath);
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-  }
+  public static List<Map<String, Object>> getExcelData() throws IOException {
+    List<Map<String, Object>> dataFromExcel = new ArrayList<>();
+    Workbook workbook = WorkbookFactory.create(new File(FrameworkConstants.RESOURCES_FOLDER_PATH +
+                                                          File.separator + "TestData.xlsx"));
+    Sheet sheet = workbook.getSheetAt(0);
+    int totalRows = sheet.getPhysicalNumberOfRows();
+    Map<String, Object> mapData;
+    List<String> allKeys = new ArrayList<>();
 
-  public XSSFSheet getSheetByIndex(int index) {
-    sh = wb.getSheetAt(index);
-    return sh;
-  }
-
-  public int getRowCount() {
-    return getSheetByIndex(0).getLastRowNum();
-  }
-
-  public int getColumnCount() {
-    row = getSheetByIndex(0).getRow(0);
-    return row.getLastCellNum();
-  }
-
-  public Map<String, ArrayList<Object>> getExcelData() {
-    HashMap<String, ArrayList<Object>> map = new HashMap<>();
-    ArrayList<Object> list;
-
-    for (int i = 0; i < getColumnCount(); i++) {
-      list = new ArrayList<>();
-      for (int j = 1; j < getRowCount(); j++) {
-        cell = getSheetByIndex(0).getRow(j).getCell(i);
-
-        switch (cell.getCellType()) {
-          case NUMERIC:
-            list.add(cell.getNumericCellValue());
-            break;
-          case FORMULA:
-            list.add(cell.getCellFormula());
-            break;
-          default:
-            list.add(cell.getStringCellValue());
-            break;
+    for (int i = 0; i < totalRows; i++) {
+      mapData = new LinkedHashMap<>();
+      if (i == 0) {
+        int totalCols = sheet.getRow(0).getPhysicalNumberOfCells();
+        for (int j = 0; j < totalCols; j++) {
+          allKeys.add(sheet.getRow(0).getCell(j).getStringCellValue());
         }
+      } else {
+        int totalCols = sheet.getRow(i).getPhysicalNumberOfCells();
+        for (int j = 0; j < totalCols; j++) {
+          Cell cell = sheet.getRow(i).getCell(j);
+          Object cellValue;
+          switch (cell.getCellType()) {
+            case NUMERIC:
+              cellValue = cell.getNumericCellValue();
+              break;
+            case FORMULA:
+              cellValue = cell.getCellFormula();
+              break;
+            default:
+              cellValue = cell.getStringCellValue();
+              break;
+          }
+          mapData.put(allKeys.get(j), cellValue);
+        }
+        dataFromExcel.add(mapData);
       }
-      map.put(getSheetByIndex(0).getRow(0).getCell(i).getStringCellValue(), list);
     }
-    return map;
+
+    return dataFromExcel;
   }
 
   public void writeData(String tcID, String key, String value) {
@@ -105,7 +103,7 @@ public final class ExcelUtils {
       out = new FileOutputStream(f);
       workbook.write(out);
       out.close();
-      System.out.println("Written successfully on file....");
+      log.info("Written successfully on file....");
       workbook.close();
     } catch (Exception e) {
       e.printStackTrace();

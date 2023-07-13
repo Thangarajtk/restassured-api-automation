@@ -26,7 +26,6 @@ public final class GetJobDetailsTest {
   @FrameworkAnnotation(author = USER_1, category = {SMOKE})
   @Test(description = "Validate the status code for GET request")
   public void getRequestToValidateStatusCode() {
-    RequestSpecification requestSpecification = createRequestSpecification();
     Response response = given().
       spec(createRequestSpecification()).
       when().
