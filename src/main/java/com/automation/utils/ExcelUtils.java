@@ -31,10 +31,9 @@ public final class ExcelUtils {
   private XSSFRow row;
   private XSSFCell cell;
 
-  public static List<Map<String, Object>> getExcelData() throws IOException {
+  public static List<Map<String, Object>> getExcelData(String filePath) throws IOException {
     List<Map<String, Object>> dataFromExcel = new ArrayList<>();
-    Workbook workbook = WorkbookFactory.create(new File(FrameworkConstants.RESOURCES_FOLDER_PATH +
-                                                          File.separator + "TestData.xlsx"));
+    Workbook workbook = WorkbookFactory.create(new File(filePath));
     Sheet sheet = workbook.getSheetAt(0);
     int totalRows = sheet.getPhysicalNumberOfRows();
     Map<String, Object> mapData;

@@ -1,13 +1,16 @@
 package com.automation.practice.jsonserver;
 
+import com.automation.constants.FrameworkConstants;
 import com.automation.utils.ExcelUtils;
 import io.restassured.http.ContentType;
 import org.json.simple.JSONObject;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -19,18 +22,15 @@ import static io.restassured.RestAssured.when;
 public final class PostRequestDataDrivenExcelTest {
 
   @DataProvider(name = "input")
-  public Object[][] getPostData() throws IOException {
-    Object[][] data;
-    Map<String, ArrayList<Object>> map = ExcelUtils.getExcelData();
+  public Iterator<Object[]> getPostData() throws IOException {
+    List<Map<String, Object>> excelData = ExcelUtils.getExcelData(
+      FrameworkConstants.RESOURCES_FOLDER_PATH + File.separator + "TestData.xlsx");
 
-    ArrayList<Object> value = map.get("FirstName");
-    data = new Object[value.size()][2];
-
-    for (int i = 0; i < value.size(); i++) {
-      data[i][0] = map.get("FirstName").get(i);
-      data[i][1] = map.get("SubjectId").get(i);
+    List<Object[]> dataList = new ArrayList<>();
+    for (Map<String, Object> data: excelData) {
+      dataList.add(new Object[] {data});
     }
-    return data;
+    return dataList.iterator();
   }
 
   @Test(dataProvider = "input")
