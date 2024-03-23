@@ -24,8 +24,7 @@ public final class RequestBuilder {
    * @return
    */
   public static RequestSpecification createRequestSpecification() {
-    PrintStream printStream = new PrintStream(new WriterOutputStream(
-      new StringWriter(), StandardCharsets.UTF_8), true);
+    PrintStream printStream = new PrintStream(new WriterOutputStream(new StringWriter(), StandardCharsets.UTF_8), true);
 
     return new RequestSpecBuilder()
       .setBaseUri(getConfig().base_uri())

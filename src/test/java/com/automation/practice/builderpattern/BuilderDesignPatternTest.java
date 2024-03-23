@@ -1,7 +1,7 @@
 package com.automation.practice.builderpattern;
 
-import com.automation.pojo.Student;
-import com.automation.pojo.StudentBuilder;
+import com.automation.models.pojo.Student;
+import com.automation.models.pojo.StudentBuilder;
 import org.testng.annotations.Test;
 
 public final class BuilderDesignPatternTest {

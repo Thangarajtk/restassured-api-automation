@@ -1,7 +1,7 @@
 package com.automation.practice.jsonserver;
 
-import com.automation.pojo.Employee;
-import com.automation.pojo.Skill;
+import com.automation.models.pojo.Employee;
+import com.automation.models.pojo.Skill;
 import io.restassured.response.Response;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;

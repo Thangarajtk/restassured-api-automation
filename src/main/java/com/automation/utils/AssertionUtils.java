@@ -15,8 +15,7 @@ public class AssertionUtils {
 
   private AssertionUtils() {}
 
-  public static void assertExpectedValuesWithJsonPath(Response response,
-                                                      Map<String, Object> expectedValuesMap) {
+  public static void assertExpectedValuesWithJsonPath(Response response, Map<String, Object> expectedValuesMap) {
 
     List<AssertionKeys> actualValueMap = new ArrayList<>();
     actualValueMap.add(new AssertionKeys("JSON_PATH", "EXPECTED_VALUE", "ACTUAL_VALUE", "RESULT"));

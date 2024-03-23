@@ -1,5 +1,6 @@
 package com.automation.reports;
 
+import com.automation.customexceptions.ReportInitializationException;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
@@ -38,7 +39,7 @@ public final class ExtentReport {
         extentSparkReporter.config().setTheme(Theme.DARK);
       }
     } catch (Exception e) {
-      e.printStackTrace();
+      throw new ReportInitializationException("Failed to initialize extent report - " + e.getMessage());
     }
   }
 

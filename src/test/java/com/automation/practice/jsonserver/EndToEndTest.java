@@ -1,6 +1,6 @@
 package com.automation.practice.jsonserver;
 
-import com.automation.pojo.Employee;
+import com.automation.models.pojo.Employee;
 import com.automation.reports.ExtentLogger;
 import com.automation.utils.ApiUtils;
 import io.restassured.response.Response;

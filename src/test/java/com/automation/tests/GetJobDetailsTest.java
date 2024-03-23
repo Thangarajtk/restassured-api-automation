@@ -4,7 +4,6 @@ import com.automation.annotations.FrameworkAnnotation;
 import com.automation.reports.ExtentLogger;
 import io.restassured.http.Headers;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.testng.Assert;

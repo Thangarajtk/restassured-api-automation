@@ -1,4 +1,4 @@
-package com.automation.pojo;
+package com.automation.models.pojo;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;

@@ -1,4 +1,4 @@
-package com.automation.pojo;
+package com.automation.models.pojo;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

@@ -1,6 +1,5 @@
 package com.automation.utils;
 
-import com.automation.constants.FrameworkConstants;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -33,9 +32,11 @@ public final class ExcelUtils {
 
   public static List<Map<String, Object>> getExcelData(String filePath) throws IOException {
     List<Map<String, Object>> dataFromExcel = new ArrayList<>();
-    Workbook workbook = WorkbookFactory.create(new File(filePath));
-    Sheet sheet = workbook.getSheetAt(0);
-    int totalRows = sheet.getPhysicalNumberOfRows();
+      Sheet sheet;
+      try (Workbook workbook = WorkbookFactory.create(new File(filePath))) {
+          sheet = workbook.getSheetAt(0);
+      }
+      int totalRows = sheet.getPhysicalNumberOfRows();
     Map<String, Object> mapData;
     List<String> allKeys = new ArrayList<>();
 
