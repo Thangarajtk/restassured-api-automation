@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.apache.logging.log4j.LogManager.getLogger;
-
+// This is Basic Authentication test
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class BasicAuthTest {
 
