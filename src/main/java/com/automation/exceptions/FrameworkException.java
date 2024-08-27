@@ -1,13 +1,13 @@
-package com.automation.customexceptions;
+package com.automation.exceptions;
 
-public class ReportInitializationException extends FrameworkException {
+public class FrameworkException extends RuntimeException {
 
   /**
    * Pass the message that needs to be appended to the stacktrace
    *
    * @param message Details about the exception or custom message
    */
-  public ReportInitializationException(String message) {
+  public FrameworkException(String message) {
     super(message);
   }
 
@@ -15,7 +15,7 @@ public class ReportInitializationException extends FrameworkException {
    * @param message Details about the exception or custom message
    * @param cause   Pass the enriched stacktrace or customised stacktrace
    */
-  public ReportInitializationException(String message, Throwable cause) {
+  public FrameworkException(String message, Throwable cause) {
     super(message, cause);
   }
 

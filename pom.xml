@@ -12,26 +12,26 @@
         <maven.compiler.target>11</maven.compiler.target>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
-        <maven-checkstyle-plugin.version>3.3.1</maven-checkstyle-plugin.version>
-        <testng.version>7.9.0</testng.version>
+        <maven-checkstyle-plugin.version>3.5.0</maven-checkstyle-plugin.version>
+        <testng.version>7.10.2</testng.version>
         <restassured.version>5.4.0</restassured.version>
-        <extentreports.version>5.1.1</extentreports.version>
-        <apache-poi.version>5.2.5</apache-poi.version>
+        <extentreports.version>5.1.2</extentreports.version>
+        <apache-poi.version>5.3.0</apache-poi.version>
         <json-simple.version>1.1.1</json-simple.version>
         <owner.version>1.0.12</owner.version>
-        <lombok.version>1.18.32</lombok.version>
+        <lombok.version>1.18.34</lombok.version>
         <unirest-java.version>1.4.9</unirest-java.version>
-        <commons-io.version>2.15.1</commons-io.version>
+        <commons-io.version>2.16.1</commons-io.version>
         <wiremock-jre8-standalone.version>3.0.1</wiremock-jre8-standalone.version>
-        <gson.version>2.10.1</gson.version>
-        <jackson-databind.version>2.16.1</jackson-databind.version>
-        <assertj.version>3.25.2</assertj.version>
+        <gson.version>2.10</gson.version>
+        <jackson-databind.version>2.17.0</jackson-databind.version>
+        <assertj.version>3.26.3</assertj.version>
         <javafaker.version>1.0.2</javafaker.version>
         <scribejava-apis.version>8.3.3</scribejava-apis.version>
-        <log4j.version>2.22.1</log4j.version>
-        <poiji.version>4.2.0</poiji.version>
+        <log4j.version>2.23.1</log4j.version>
+        <poiji.version>4.5.0</poiji.version>
         <codestyle.version>1.1.0</codestyle.version>
-        <checkstyle.version>10.12.7</checkstyle.version>
+        <checkstyle.version>10.14.1</checkstyle.version>
         <checkstyle.config>checkstyle/checkstyle.xml</checkstyle.config>
         <checkstyle.suppress>checkstyle/checkstyle-suppressions.xml</checkstyle.suppress>
     </properties>
@@ -41,7 +41,7 @@
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy</artifactId>
-            <version>3.0.20</version>
+            <version>3.0.22</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
@@ -208,7 +208,7 @@
         <dependency>
             <groupId>uk.co.jemos.podam</groupId>
             <artifactId>podam</artifactId>
-            <version>8.0.1.RELEASE</version>
+            <version>8.0.2.RELEASE</version>
             <scope>test</scope>
         </dependency>
 
@@ -285,4 +285,11 @@
             </plugin>
         </plugins>
     </build>
+    <repositories>
+        <repository>
+            <id>maven_central</id>
+            <name>Maven Central</name>
+            <url>https://repo.maven.apache.org/maven2/</url>
+        </repository>
+    </repositories>
 </project>

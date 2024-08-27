@@ -1,6 +1,6 @@
 package com.automation.reports;
 
-import com.automation.customexceptions.ReportInitializationException;
+import com.automation.exceptions.ReportInitializationException;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;

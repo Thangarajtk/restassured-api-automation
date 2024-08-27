@@ -1,7 +1,7 @@
 package com.automation.utils;
 
 import com.automation.constants.FrameworkConstants;
-import com.automation.customexceptions.FrameworkException;
+import com.automation.exceptions.FrameworkException;
 import com.automation.enums.ConfigProperties;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
